@@ -5,7 +5,11 @@ import {
 } from "./node_modules/three/examples/jsm/controls/OrbitControls.js"
 
 let alturaSuelo = 0.49;
+let distancia = 1.5;
 let rowLength = 6;
+let counterRow = 0;
+let row = 0;
+// length dependiente de distancia !!!
 
 
 
@@ -17,23 +21,7 @@ scene.fog = new THREE.Fog("white", 0.1, 30);
 const camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.1, 1000);
 
 camera.position.set(0, 2, 3);
-// camera.target = (0, 10, 1);
-
-
-// GEOMETRIA
-// const geometryBox = new THREE.BoxGeometry(1, 1, 1);
-// const materialBox = new THREE.MeshStandardMaterial({
-// 	color: 0xffffff
-// });
-// const box = new THREE.Mesh(geometryBox, materialBox);
-
-// box.position.setY((box.geometry.parameters.height) / 2);
-// box.castShadow = true;
-//
-//
-// scene.add(box);
-
-
+camera.focus = 1;
 
 
 
@@ -89,7 +77,7 @@ renderer.render(scene, camera);
 
 
 // CONTROLS
-const controls = new OrbitControls(camera, canvas);
+// const controls = new OrbitControls(camera, canvas);
 // controls.target.set(0, 0, 0);   // SET THE ORIGIN OF ORBIT CONTROLS
 
 
@@ -104,17 +92,13 @@ function animate() {
 
 	renderer.setSize(window.innerWidth, window.innerHeight);
 
-
-	controls.update();
+	// controls.update();
 	renderer.render(scene, camera);
-
-
 }
 
-renderer.domElement.addEventListener("click", function() {
 
-})
 
+// MODELS
 const geometryBox = new THREE.BoxGeometry(1, 1, 1);
 const materialBox = new THREE.MeshStandardMaterial({
 	color: 0xffffff
@@ -122,21 +106,18 @@ const materialBox = new THREE.MeshStandardMaterial({
 const geometrySpehere = new THREE.SphereGeometry(0.5, 8, 6);
 const materialSpehere = new THREE.MeshStandardMaterial();
 
-
 const box01 = new THREE.Mesh(geometryBox, materialBox);
 const box02 = new THREE.Mesh(geometryBox, materialBox);
 const spehere03 = new THREE.Mesh(geometrySpehere, materialSpehere);
 const box04 = new THREE.Mesh(geometryBox, materialBox);
 
-
-
 let models = [box01, box02, spehere03, box04];
 
 
-let counterRow = 0;
+
 
 // FUNCTION
-let row = 0;
+
 
 function generateElements(arrayModels, arrayPerson, colors) {
 	arrayPerson.forEach((item, i) => {
@@ -214,6 +195,31 @@ function setPosition(index, array) {
 
 }
 
+
+let dummyTargetPosition = new THREE.Vector3(0, 0, 0);
+dummyTargetPosition;
+// let wheelCount = 0;
+let count = 0;
+
+function getWheelCount(e) {
+	e.deltaY < 0 ? count-- : count++;
+	// console.log(count)
+	return count;
+}
+
+
+
+canvas.addEventListener("wheel", function(e) {
+	// let count = getWheelCount(e);
+	camera.position.set(0, 2, getWheelCount(e))
+
+});
+
+
+
+
+
+// scope.domElement.addEventListener( 'wheel', onMouseWheel, { passive: false } );
 
 
 
