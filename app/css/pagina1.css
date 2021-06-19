@@ -1,0 +1,15 @@
+.container{
+    background: linear-gradient( rgba(146, 221, 234, 0.549), rgba(136, 140, 108, 0.842));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+        }
+
+    background-color: rgb(136, 140, 108);
+    background-color: rgb(146, 221, 234)
+
+
+
+
+
+
