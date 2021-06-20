@@ -1,0 +1,86 @@
+.container
+{ 
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    
+}
+
+.header-brand
+{
+  
+}
+.header-message 
+{
+    border-radius: 25px;
+    
+}
+.form-main
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    width: 90vw;
+    height: 90vh;
+
+    
+       
+}
+
+.depo-pg-02 {
+    
+    font-family:Arial, Helvetica, sans-serif;
+    font-style: italic;
+    border-radius: 20%;
+    opacity: 0.9;
+    width: 50vw;
+    height: 40vh;
+    border-radius: 4%;
+}
+.form-row
+{
+    
+    
+} 
+.alias {
+
+    background-color: rgb(220, 217, 223);
+    font-family:Arial, Helvetica, sans-serif;
+    font-style: italic;
+    width: 90px;
+    height: 30px;
+    border-radius: 4%;
+    opacity: 0.9;
+    width: 20vw;
+    height: 10vh;
+
+}
+
+.country {
+
+    background-color: rgb(220, 217, 223);
+    font-family:Arial, Helvetica, sans-serif;
+    font-style: italic;
+    width: 90px;
+    height: 30px;
+    border-radius: 4%;
+    opacity: 0.9;
+    width: 20vw;
+    height: 10vh;
+
+}
+.form-btn-send
+ {
+    display:flex;
+    justify-content: center;
+    background-color: rgb(13, 12, 47);
+    border-radius: 4px;
+    width: 20vw;
+    height: 5vh;
+    
+}

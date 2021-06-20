@@ -1,5 +1,7 @@
 .container4{
-background: linear-gradient(rgba(136, 140, 108, 0.842), rgba(146, 221, 234, 0.54));
+
 display: flex;
 flex-direction: column;
 align-items: center;}
+
+
