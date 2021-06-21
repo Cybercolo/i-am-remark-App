@@ -7,7 +7,7 @@
     justify-content: center;
     align-items: center;
     
-    background-color: darksalmon;
+    
 }
 
 .header-brand
@@ -17,32 +17,38 @@
 .header-message 
 {
     border-radius: 25px;
-    background-color: greenyellow;
+    
 }
 .form-main
 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: deepskyblue;
+    
     width: 90vw;
     height: 90vh;
+
+    
        
 }
 
 .depo-pg-02 {
-    background-color: rgb(220, 217, 223);
+    
     font-family:Arial, Helvetica, sans-serif;
     font-style: italic;
     border-radius: 20%;
     opacity: 0.9;
     width: 50vw;
     height: 40vh;
+    border-radius: 4%;
 }
 .form-row
 {
+<<<<<<< HEAD
     background-color: #FD9DB1;
     opacity: 59%;
+=======
+>>>>>>> 93ed428371d12d3ea75edfcb1f37c9085d7af0f3
     
     
 } 
@@ -53,7 +59,7 @@
     font-style: italic;
     width: 90px;
     height: 30px;
-    border-radius: 25%;
+    border-radius: 4%;
     opacity: 0.9;
     width: 20vw;
     height: 10vh;
@@ -67,7 +73,7 @@
     font-style: italic;
     width: 90px;
     height: 30px;
-    border-radius: 25%;
+    border-radius: 4%;
     opacity: 0.9;
     width: 20vw;
     height: 10vh;
@@ -77,8 +83,8 @@
  {
     display:flex;
     justify-content: center;
-    background-color: rgb(235, 233, 224);
-    border-radius: 25px;
+    background-color: rgb(13, 12, 47);
+    border-radius: 4px;
     width: 20vw;
     height: 5vh;
     

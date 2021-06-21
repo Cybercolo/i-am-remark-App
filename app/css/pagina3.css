@@ -1,18 +1,46 @@
+.container{
+   
+    display: flex;
+    flex-direction: column;
+    align-items: center;}
 
-nav{
-background-color: burlywood;
-
+.animacion3d{
+    width: 90px;
+    height: 90px;
+    border-radius: 25%;
+    opacity: 0.9;
+   
 }
-
-
+/* 
+    background-color: rgb(136, 140, 108);
+    background-color: rgb(146, 221, 234); */
 
 .usuario{
- padding: 20px;
- background-color: rgb(190, 146, 231);
-
+    padding: 50px 70px;
+    border-radius: 40px;
+    background-color: rgb(254, 255, 255) ;
+    box-shadow: 10px 10px rgba(0, 0, 0, 0.2);
 }
 
-footer{
-
-    background-color: rgb(224, 127, 146);
+button{
+    background-color: white;
+     border: 1p;
+     border-radius: 50px;
+     padding: 20px;
+     overflow: hidden;
+     transition: 1s all ease;
+    
 }
+
+a{
+    background-color: rgb(103, 12, 12);
+    border: 1p;
+    border-radius: 50px;
+    padding: 20px;
+
+
+}
+section{
+ display: flex;
+ flex-direction: column;
+ align-content: flex-end;}

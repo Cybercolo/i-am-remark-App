@@ -1,0 +1,24 @@
+.todo{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0%
+    padding:0%
+    box-sizing: border-box;}
+    
+
+    ;
+  }
+
+.mision{
+    color: #202124;
+    font-family: "google sans",Arial,sans-serif;
+    font-size: 32px;
+    line-height: 40px;
+    margin: 0;
+}
+
+
+
