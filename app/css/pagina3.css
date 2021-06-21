@@ -1,3 +1,19 @@
+*{
+    background-color: rgb(255, 255, 255);
+   }
+
+.brand{
+
+    margin: 40px;
+
+}
+
+.gei{
+
+    margin: 20px;
+
+}
+
 .container{
    
     display: flex;
@@ -11,36 +27,65 @@
     opacity: 0.9;
    
 }
-/* 
-    background-color: rgb(136, 140, 108);
-    background-color: rgb(146, 221, 234); */
+
 
 .usuario{
-    padding: 50px 70px;
+    padding: 30px 20px;
     border-radius: 40px;
     background-color: rgb(254, 255, 255) ;
-    box-shadow: 10px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 4px 4px 2px 2px rgba(120, 120, 120, 0.2);
+    margin: 40px;
 }
 
-button{
-    background-color: white;
-     border: 1p;
+.view{
+    background-color: white;    
      border-radius: 50px;
-     padding: 20px;
-     overflow: hidden;
-     transition: 1s all ease;
-    
+     padding: 20px;     
+    text-decoration: none;
+    margin: 30px;
 }
 
-a{
-    background-color: rgb(103, 12, 12);
-    border: 1p;
+
+button {
+
+    background-color:linear-gradient(rgb(255, 255, 255) rgb(199, 199, 199))   ;
     border-radius: 50px;
     padding: 20px;
+    border:none;
+    box-shadow:10px 10px 8px 0 rgba(255, 255, 255, 0.5) inset,
+    -4px -4px 10px 0 rgba(0, 0, 0, .2) inset
 
+
+
+
+
+
+    /* box-shadow: 10px 10px 8px 0 rgba(255, 255, 255, 0.5) inset,
+    -4px -4px 10px 0 rgba(0, 0, 0, .2) inset,
+    10px 10px 8px 0 rgba(255, 255, 255, 0.5) ,
+    -4px -4px 10px 0 rgba(0, 0, 0, .2) ; */
+  
+}
+a{
+    background-color: rgb(238, 232, 232);
+    border-radius: 50px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-content: flex-end;
+    text-decoration: none;
+    margin: 50px;
+    box-shadow: 10px 10px 8px 0 rgb(248, 245, 245) inset,
+    -4px -4px 10px 0 rgba(0, 0, 0, .2) inset,
 
 }
-section{
- display: flex;
- flex-direction: column;
- align-content: flex-end;}
+
+.animacion3d{
+    padding: 50px 80px;
+    border-radius: 40px;
+    background-color: rgb(255, 255, 255) ;
+    box-shadow: 4px 4px 2px 2px rgba(120, 120, 120, 0.2);
+    margin: 40px;
+
+}
+

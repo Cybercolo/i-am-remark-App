@@ -6,19 +6,33 @@
     align-items: center;
     margin: 0%
     padding:0%
-    box-sizing: border-box;}
-    
-
-    ;
-  }
+    box-sizing: border-box;
+}
 
 .mision{
     color: #202124;
-    font-family: "google sans",Arial,sans-serif;
+    font-family: 'Raleway', sans-serif;
     font-size: 32px;
     line-height: 40px;
     margin: 0;
 }
 
+.video1
+{
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+.form-btn-letsgo{
+display:flex;
+justify-content: center;
+background-color: rgb(13, 12, 47);
+border-radius: 4px;
+width: 20vw;
+height: 5vh;
+color: #ffffff;
+font-family: 'Raleway', sans-serif;
+}
 
 
