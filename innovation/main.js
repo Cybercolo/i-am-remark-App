@@ -225,7 +225,7 @@ function stopZoomOut(maxZoomOutValue) {
 
 let root = " ";
 const gltfLoader = new GLTFLoader();
-  const url = 'models3D/persona.gltf';
+  const url = 'models3D/persona.glb';
   gltfLoader.load(url, (gltf) => 
   {
     root = gltf.scene;
