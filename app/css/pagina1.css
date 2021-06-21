@@ -1,0 +1,9 @@
+.datemin, .label-datemin {
+font-style: italic;
+color: indigo;
+}
+.datemax, .labe-datemax {
+    font-style: italic;
+    color: rgb(28, 142, 45);
+
+}
