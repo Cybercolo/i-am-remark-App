@@ -6,13 +6,10 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    media query
+    
 }
 
-.header-brand
-{
-  
-}
+
 .header-message 
 {
     color: #202124;
@@ -43,11 +40,7 @@
     height: 40vh;
     border-radius: 4%;
 }
-.form-row
-{
-    
-    
-} 
+ 
 .alias {
 
     background-color: rgb(255, 255, 255);
@@ -87,7 +80,4 @@
     font-family: 'Raleway', sans-serif;
 }
 
-font-family: 'Homemade Apple', cursive;
-font-family: 'Open Sans', sans-serif;
-font-family: 'Raleway', sans-serif;
-font-family: 'Roboto', sans-serif;
+
