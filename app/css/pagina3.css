@@ -19,20 +19,6 @@
     margin: 20px;
 
 }
-<<<<<<< HEAD
-.popup {
-
-    background-color:snow;
-    font-family:Arial, Helvetica, sans-serif;
-    font-style: italic;
-    border-radius: 35px;
-    opacity: 0.9;
-    width: 40vw;
-    height: 30vh;
-    margin-bottom: 4px;
-    border:none; 
-}
-=======
 
 .container{
    
@@ -46,7 +32,6 @@
     border-radius: 25%;
     opacity: 0.9;
    
->>>>>>> 59cd2965ecaaf99023d81be5008d5c670ef70fbf
 }
 
 
