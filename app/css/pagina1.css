@@ -1,3 +1,14 @@
+<<<<<<< HEAD
+.datemin, .label-datemin {
+font-style: italic;
+color: indigo;
+}
+.datemax, .labe-datemax {
+    font-style: italic;
+    color: rgb(28, 142, 45);
+
+}
+=======
 .todo{
     width: 100vw;
     height: 100vh;
@@ -24,15 +35,40 @@ flex-direction: column;
 align-items: center;
 }
 
-.form-btn-letsgo{
-display:flex;
-justify-content: center;
-background-color: rgb(13, 12, 47);
-border-radius: 4px;
-width: 20vw;
-height: 5vh;
-color: #ffffff;
-font-family: 'Open Sans', sans-serif;
+/*** ESTILOS BOTÓN  ***/
+.boton {
+  background: #fff; /* color de fondo */
+  color: #0D0C2F; /* color de fuente */
+  border: 2px solid #0D0C2F; /* tamaño y color de borde */
+  padding: 16px 20px;
+  border-radius: 3px; /* redondear bordes */
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  display: inline-block;
+  text-decoration:none;
+
+}
+.boton:hover {
+  color: #fff;/* color de fuente hover */
+}
+.boton::after {
+  content: "";
+  background: #0D0C2F; /* color de fondo hover */
+  position: absolute;
+  z-index: -1;
+  padding: 16px 20px;
+  display: block;
+  left: -20%;
+  right: -20%;
+  top: 0;
+  bottom: 0;
+  transform: skewX(-45deg) scale(0, 1);
+  transition: all 0.3s ease;
+}
+.boton:hover::after {
+  transition: all 0.3s ease-out;
+  transform: skewX(-45deg) scale(1, 1);
 }
 
 /*font-family: 'Homemade Apple', cursive;
@@ -40,3 +76,6 @@ font-family: 'Open Sans', sans-serif;
 font-family: 'Raleway', sans-serif;
 font-family: 'Roboto', sans-serif;/*
 
+.todo
+@media screen and (device-aspect-ratio: 16/9), screen and (device-aspect-ratio: 16/10) { ... }
+>>>>>>> 59cd2965ecaaf99023d81be5008d5c670ef70fbf
