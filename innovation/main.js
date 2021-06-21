@@ -1,4 +1,5 @@
 import * as THREE from "three"
+import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader"; 
 
 import {
 	OrbitControls
@@ -218,6 +219,20 @@ function stopZoomOut(maxZoomOutValue) {
 	wheelCount = maxZoomOutValue;
 	groundLength = 1;
 }
+
+
+//CARGAR PERSONAJE//
+
+let root = " ";
+const gltfLoader = new GLTFLoader();
+  const url = 'models3D/persona.gltf';
+  gltfLoader.load(url, (gltf) => 
+  {
+    root = gltf.scene;
+    root.position.set(0, 0, 0)
+
+    scene.add(root);
+  });
 
 
 
