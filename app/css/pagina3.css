@@ -1,8 +1,25 @@
+*{
+    background-color:#FAFCFB;
+    color: #202124;
+    font-family: 'Raleway', sans-serif;
+    font-family: 'Homemade Apple', cursive;
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Raleway', sans-serif;
+    font-family: 'Roboto', sans-serif;
+   }
 
-nav{
-background-color: burlywood;
+.brand{
+
+    margin: 40px;
 
 }
+
+.gei{
+
+    margin: 20px;
+
+}
+<<<<<<< HEAD
 .popup {
 
     background-color:snow;
@@ -15,16 +32,82 @@ background-color: burlywood;
     margin-bottom: 4px;
     border:none; 
 }
+=======
+
+.container{
+   
+    display: flex;
+    flex-direction: column;
+    align-items: center;}
+
+.animacion3d{
+    width: 90px;
+    height: 90px;
+    border-radius: 25%;
+    opacity: 0.9;
+   
+>>>>>>> 59cd2965ecaaf99023d81be5008d5c670ef70fbf
 }
 
 
 .usuario{
- padding: 20px;
- background-color: rgb(190, 146, 231);
+    padding: 30px 20px;
+    border-radius: 40px;
+    background-color: rgb(254, 255, 255) ;
+    box-shadow: 4px 4px 2px 2px rgba(120, 120, 120, 0.2);
+    margin: 40px;
+}
+
+.view{
+    background-color: white;    
+     border-radius: 50px;
+     padding: 20px;     
+    text-decoration: none;
+    margin: 30px;
+}
+
+
+button {
+
+    background-color:linear-gradient(rgb(255, 255, 255) rgb(199, 199, 199))   ;
+    border-radius: 50px;
+    padding: 20px;
+    border:none;
+    box-shadow:4px 14px 10px 0 rgba(255, 255, 255, 0.5) inset,
+    -4px -4px 10px 0 rgba(0, 0, 0, .2) inset;
+
+
+
+
+
+
+    /* box-shadow: 10px 10px 8px 0 rgba(255, 255, 255, 0.5) inset,
+    -4px -4px 10px 0 rgba(0, 0, 0, .2) inset,
+    10px 10px 8px 0 rgba(255, 255, 255, 0.5) ,
+    -4px -4px 10px 0 rgba(0, 0, 0, .2) ; */
+  
+}
+a{
+    background-color: #FAFCFB;
+    border-radius: 50px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-content: flex-end;
+    text-decoration: none;
+    text-decoration-color: chocolate;
+    margin: 50px;
+    box-shadow: 10px 10px 8px 0 rgb(255, 255, 255) inset,
+    -4px -4px 10px 0 rgba(0, 0, 0, .2) inset;
+}
+
+.animacion3d{
+    padding: 50px 80px;
+    border-radius: 40px;
+    background-color: rgb(255, 255, 255) ;
+    box-shadow: 4px 4px 2px 2px rgba(120, 120, 120, 0.2);
+    margin: 40px;
 
 }
 
-footer{
 
-    background-color: rgb(224, 127, 146);
-}
