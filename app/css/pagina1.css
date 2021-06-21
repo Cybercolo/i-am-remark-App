@@ -4,57 +4,39 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 0%
-    padding:0%
-    box-sizing: border-box;}
-    
-
-    ;
-  }
+    margin: 0%;
+    padding:0%;
+    box-sizing: border-box;
+}
 
 .mision{
     color: #202124;
-    font-family: "google sans",Arial,sans-serif;
+    font-family: 'Raleway', sans-serif;
     font-size: 32px;
     line-height: 40px;
     margin: 0;
 }
 
-/*** ESTILOS BOTÓN GROW SKEW ***/
-.boton {
-  background: #fff; /* color de fondo */
-  color: #0D0C2F; /* color de fuente */
-  border: 2px solid #0D0C2F; /* tamaño y color de borde */
-  padding: 16px 20px;
-  border-radius: 3px; /* redondear bordes */
-  position: relative;
-  z-index: 1;
-  overflow: hidden;
-  display: inline-block;
-  text-decoration:none;
-
-}
-.boton:hover {
-  color: #fff;/* color de fuente hover */
-}
-.boton::after {
-  content: "";
-  background: #0D0C2F; /* color de fondo hover */
-  position: absolute;
-  z-index: -1;
-  padding: 16px 20px;
-  display: block;
-  left: -20%;
-  right: -20%;
-  top: 0;
-  bottom: 0;
-  transform: skewX(-45deg) scale(0, 1);
-  transition: all 0.3s ease;
-}
-.boton:hover::after {
-  transition: all 0.3s ease-out;
-  transform: skewX(-45deg) scale(1, 1);
+.video1
+{
+display: flex;
+flex-direction: column;
+align-items: center;
 }
 
+.form-btn-letsgo{
+display:flex;
+justify-content: center;
+background-color: rgb(13, 12, 47);
+border-radius: 4px;
+width: 20vw;
+height: 5vh;
+color: #ffffff;
+font-family: 'Open Sans', sans-serif;
+}
 
+/*font-family: 'Homemade Apple', cursive;
+font-family: 'Open Sans', sans-serif;
+font-family: 'Raleway', sans-serif;
+font-family: 'Roboto', sans-serif;/*
 
