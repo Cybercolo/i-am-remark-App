@@ -181,13 +181,26 @@ canvas.addEventListener("wheel", function(e) {
 });
 
 function moveCameraY(e) {
-	if (e.deltaY < 0) {
-		camera.position.y++
-	} else if (camera.position.y <= 1) {
-		camera.position.y = 1;
+
+	let auxiliarY = 0;
+
+	if (camera.position.y < 4 ) {
+		if (e.deltaY < 0) {
+			camera.position.y++
+		} else if (camera.position.y <= 1) { // para que la cam no atraviese el suelo
+			camera.position.y = 1;
+		} else {
+			camera.position.y--
+		}
+		if (camera.position.z > -3 && camera.position.z < -6) {
+			camera.position.y--
+			console.log('dentro y: ', camera.position.y)
+		}
 	} else {
-		camera.position.y--
+		camera.position.y = 4;
 	}
+	console.log('y: ', camera.position.y)
+	console.log('z: ', camera.position.z)
 }
 
 function getWheelCount(e) {
@@ -195,7 +208,7 @@ function getWheelCount(e) {
 	return wheelCount;
 }
 
-function longerGround(e) {
+function longerGround(e) { // para que el suelo se alargue si la camara se va muy lejos
 	e.deltaY < 0 ? ground.scale.set(1, (groundLength += 0.05), 1) : ground.scale.set(1, (groundLength -= 0.05), 1);
 }
 
