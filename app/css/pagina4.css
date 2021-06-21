@@ -4,7 +4,13 @@ display: flex;
 flex-direction: column;
 align-items: center;}
 
-color: #202124;
+*{
+    margin: 0px;
+    padding: 0px;
+    color: #202124;
     font-family: 'Raleway', sans-serif;
-    
-
+    font-family: 'Homemade Apple';
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Raleway', sans-serif;
+    font-family: 'Roboto', sans-serif;
+}
