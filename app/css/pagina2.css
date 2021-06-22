@@ -12,21 +12,13 @@
     
 }
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 59cd2965ecaaf99023d81be5008d5c670ef70fbf
 .header-message 
 {
     color: #202124;
     font-family: 'Raleway', sans-serif;
     border-radius: 25px;
-<<<<<<< HEAD
     text-shadow: gainsboro;
     font-style: italic;
-=======
-    
->>>>>>> 59cd2965ecaaf99023d81be5008d5c670ef70fbf
 }
 
 .form-main
@@ -34,18 +26,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-<<<<<<< HEAD
     width: 90vw;
     height: 90vh;
     font-size: 10px;
     position:relative;
-=======
-    
-    width: 90vw;
-    height: 90vh;
-
-    
->>>>>>> 59cd2965ecaaf99023d81be5008d5c670ef70fbf
        
 }
 .form-row
@@ -55,24 +39,18 @@
     
 } 
 .depo-pg-02 {
-<<<<<<< HEAD
     background-color:snow;
-=======
-    
->>>>>>> 59cd2965ecaaf99023d81be5008d5c670ef70fbf
     font-family:Arial, Helvetica, sans-serif;
     font-style: italic;
     border-radius: 35px;
     opacity: 0.9;
     width: 50vw;
     height: 40vh;
-<<<<<<< HEAD
     
     border:none; 
 }
 
 .alias  {
-=======
     border-radius: 4%;
 }
 
@@ -80,16 +58,11 @@
 .alias {
 
     background-color: rgb(255, 255, 255);
->>>>>>> 59cd2965ecaaf99023d81be5008d5c670ef70fbf
     font-family:Arial, Helvetica, sans-serif;
     font-style: italic;
     width: 90px;
     height: 30px;
-<<<<<<< HEAD
     border-radius: 30px;
-=======
-    border-radius: 4%;
->>>>>>> 59cd2965ecaaf99023d81be5008d5c670ef70fbf
     opacity: 0.9;
     width: 25vw;
     height: 10vh;
@@ -98,21 +71,14 @@
 }
 
 
-<<<<<<< HEAD
 .country  {
 
-=======
     background-color: rgb(255, 255, 255);
->>>>>>> 59cd2965ecaaf99023d81be5008d5c670ef70fbf
     font-family:Arial, Helvetica, sans-serif;
     font-style: italic;
     width: 90px;
     height: 30px;
-<<<<<<< HEAD
     border-radius: 30px;
-=======
-    border-radius: 4%;
->>>>>>> 59cd2965ecaaf99023d81be5008d5c670ef70fbf
     opacity: 0.9;
     width: 25vw;
     height: 10vh;
@@ -125,7 +91,6 @@
    
     
 }
-<<<<<<< HEAD
 
 .button-send {
     border: none;
@@ -141,18 +106,3 @@
    
 }
 
-=======
-.form-btn-send
- {
-    display:flex;
-    justify-content: center;
-    background-color: rgb(13, 12, 47);
-    border-radius: 4px;
-    width: 20vw;
-    height: 5vh;
-    color: #ffffff;
-    font-family: 'Raleway', sans-serif;
-}
-
-
->>>>>>> 59cd2965ecaaf99023d81be5008d5c670ef70fbf
