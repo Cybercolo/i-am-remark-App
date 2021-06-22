@@ -1,3 +1,13 @@
+
+@media screen 
+and (device-width: 360px) 
+and (device-height: 640px) 
+and (-webkit-device-pixel-ratio: 4) {
+
+}
+
+
+
 .todo{
     width: 100vw;
     height: 100vh;
@@ -35,7 +45,7 @@ color: #ffffff;
 font-family: 'Open Sans', sans-serif;
 }
 
-/*font-family: 'Homemade Apple', cursive;
+font-family: 'Homemade Apple', cursive;
 font-family: 'Open Sans', sans-serif;
 font-family: 'Raleway', sans-serif;
 font-family: 'Roboto', sans-serif;/*
@@ -119,3 +129,8 @@ align-items: center;
   .todo
   @media screen and (device-aspect-ratio: 16/9), screen and (device-aspect-ratio: 16/10) { ... }
   
+
+
+
+  
+ @media only screen and (max-width: 600px);

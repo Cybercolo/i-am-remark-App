@@ -1,4 +1,14 @@
+
+@media screen 
+and (device-width: 360px) 
+and (device-height: 640px) 
+and (-webkit-device-pixel-ratio: 4) {
+
+}
+
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
+
 
 .container
 { 
@@ -11,7 +21,6 @@
     background: linear-gradient(39deg, #888C6C 9.95%, rgba(146, 221, 234, 0.54) 88.83%);
     
 }
-
 .header-message 
 {
     color: #202124;
@@ -87,10 +96,7 @@
   
 }
 
-.form-btn-send {
-   
-    
-}
+
 
 .button-send {
     border: none;
@@ -106,3 +112,4 @@
    
 }
 
+@media only screen and (max-width: 600px)
