@@ -20,7 +20,9 @@
     text-shadow: gainsboro;
     font-style: italic;
 }
-
+.header-message:hover {
+    color:royalblue;
+}
 .form-main
 {
     display: flex;
@@ -34,27 +36,26 @@
 }
 .form-row
 {
-    margin-bottom: 26px;
+    margin-bottom: 12px;
     justify-content: space-around;
     
 } 
 .depo-pg-02 {
+    box-shadow: 0px 0px 10px 0px silver inset;
     background-color:snow;
     font-family:Arial, Helvetica, sans-serif;
     font-style: italic;
     border-radius: 35px;
     opacity: 0.9;
     width: 50vw;
-    height: 40vh;
-    
+    height: 40vh; 
     border:none; 
 }
 
 .alias  {
+    box-shadow: inset 0px 4px 6px 0px grey;
     font-family:Arial, Helvetica, sans-serif;
     font-style: italic;
-    width: 90px;
-    height: 30px;
     border-radius: 30px;
     opacity: 0.9;
     width: 25vw;
@@ -64,11 +65,9 @@
 }
 
 .country  {
-
+    box-shadow: inset 0px 4px 6px 0px grey;
     font-family:Arial, Helvetica, sans-serif;
     font-style: italic;
-    width: 90px;
-    height: 30px;
     border-radius: 30px;
     opacity: 0.9;
     width: 25vw;
@@ -92,8 +91,8 @@
     height: 50px;
     border-radius: 25px;
     padding-top: 10px;
-   
-
-   
 }
+.button-send:hover {
+    background-color:aliceblue; 
 
+}

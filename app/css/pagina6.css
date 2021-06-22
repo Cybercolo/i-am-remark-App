@@ -1,0 +1,43 @@
+
+header{
+    width: 90vw;
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+div {
+    width: 100vw;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    }
+
+body {
+    background-image: linear-gradient(39deg, #888C6C 9.95%, rgba(146, 221, 234, 0.54) 88.83%);
+}
+.why_you {
+    box-shadow: 0px 4px 6px 0px rgb(64, 73, 106);
+    background: rgba(26, 33, 58, 1);
+    color:aliceblue; 
+    font-size: 22px;
+    font-family:Arial, Helvetica, sans-serif;
+    font-style: italic;
+    border-radius: 30px;
+    opacity: 0.9;
+    width: 340px;
+    height: 58px;
+    padding: 0px; 
+    border:none;    
+}
+h3 {
+    display: flex;
+    justify-content: center;
+    color: darkgoldenrod;
+    font-size: 28px;
+    text-align: center;
+}
