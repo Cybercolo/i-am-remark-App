@@ -14,7 +14,7 @@ let groundLength = 1;
 //////////////////// ESCENA ////////////////////
 const scene = new THREE.Scene();
 scene.background = new THREE.Color("white");
-scene.fog = new THREE.Fog("white", 0.1, 30);
+scene.fog = new THREE.Fog("white", 0.1, 35);
 
 //////////////////// CAMARAS ////////////////////
 const camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.1, 1000);
@@ -23,13 +23,10 @@ camera.position.set(0, 1, 4);
 //////////////////// LIGHT ////////////////////
 const hemisphereLight = new THREE.HemisphereLight("white", "grey", 0.4);
 
-
-
 const pointLight = new THREE.PointLight(0xffffff);
 pointLight.intensity = 0.7;
 pointLight.position.set(5, 10, 15);
 pointLight.castShadow = true;
-
 
 scene.add(hemisphereLight, pointLight);
 //////////////////// GROUND ////////////////////
@@ -49,8 +46,6 @@ scene.add(ground);
 const gridHelper = new THREE.GridHelper(20, 20);
 const pointLightHelper = new THREE.PointLightHelper(pointLight);
 scene.add(pointLightHelper, gridHelper);
-
-
 
 
 //////////////////// RENDERER ////////////////////
@@ -130,7 +125,6 @@ function animate() {
 }
 
 //////////////////// FUNCTIONS ////////////////////
-
 function generateElements(arrayModels, arrayPerson, colors) {
 	arrayPerson.forEach((item, i) => {
 		if (i % 5 == 0) {
