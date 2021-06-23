@@ -1,4 +1,3 @@
-
 @media screen 
 and (device-width: 360px) 
 and (device-height: 640px) 
@@ -6,13 +5,15 @@ and (-webkit-device-pixel-ratio: 4) {
 
 }
 
+
+
 .todo{
     width: 100vw;
     height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 0;
+    margin: 30px 30px 30px 30px;
     padding:0;
     box-sizing: border-box;
 }
@@ -20,7 +21,7 @@ and (-webkit-device-pixel-ratio: 4) {
 .mision{
     color: #202124;
     font-family: 'Raleway', sans-serif;
-    font-size: 32px;
+    font-size: 28px;
     line-height: 40px;
     margin: 0;
 }
@@ -75,4 +76,3 @@ font-family: 'Roboto', sans-serif;/*
 
 .todo
 @media screen and (device-aspect-ratio: 16/9), screen and (device-aspect-ratio: 16/10) { ... }*/
-
