@@ -18,7 +18,7 @@ and (-webkit-device-pixel-ratio: 4) {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(39deg, #888C6C 9.95%, rgba(146, 221, 234, 0.54) 88.83%);
+    background: linear-gradient(39deg, #888C6C 9.95%, rgba(146, 221, 234, 0.54) 88.83%) inset;
     
 }
 .header-message 
@@ -29,7 +29,9 @@ and (-webkit-device-pixel-ratio: 4) {
     text-shadow: gainsboro;
     font-style: italic;
 }
-
+.header-message:hover {
+    color:royalblue;
+}
 .form-main
 {
     display: flex;
@@ -43,34 +45,26 @@ and (-webkit-device-pixel-ratio: 4) {
 }
 .form-row
 {
-    margin-bottom: 26px;
+    margin-bottom: 12px;
     justify-content: space-around;
     
 } 
 .depo-pg-02 {
+    box-shadow: 0px 0px 10px 0px silver inset;
     background-color:snow;
     font-family:Arial, Helvetica, sans-serif;
     font-style: italic;
     border-radius: 35px;
     opacity: 0.9;
     width: 50vw;
-    height: 40vh;
-    
+    height: 40vh; 
     border:none; 
 }
 
 .alias  {
-    border-radius: 4%;
-}
-
-
-.alias {
-
-    background-color: rgb(255, 255, 255);
+    box-shadow: inset 0px 4px 6px 0px grey;
     font-family:Arial, Helvetica, sans-serif;
     font-style: italic;
-    width: 90px;
-    height: 30px;
     border-radius: 30px;
     opacity: 0.9;
     width: 25vw;
@@ -79,14 +73,10 @@ and (-webkit-device-pixel-ratio: 4) {
     border:none;    
 }
 
-
 .country  {
-
-    background-color: rgb(255, 255, 255);
+    box-shadow: inset 0px 4px 6px 0px grey;
     font-family:Arial, Helvetica, sans-serif;
     font-style: italic;
-    width: 90px;
-    height: 30px;
     border-radius: 30px;
     opacity: 0.9;
     width: 25vw;
@@ -96,20 +86,22 @@ and (-webkit-device-pixel-ratio: 4) {
   
 }
 
-
+.form-btn-send {
+   
+    
+}
 
 .button-send {
     border: none;
-    padding: 10px;
-    box-shadow: -5px -5px 5px 0px rgba(236, 232, 232, 0.5) ,
-    5px 5px 5px 0px rgba(228, 224, 224, 0.5) ;
-    width: 90px;
-    height: 50px;
+    padding: 25px;
+    box-shadow: -5px -5px 5px 0px rgba(236, 232, 232, 0.5) inset,
+    5px 5px 5px 0px rgba(228, 224, 224, 0.5)inset ;
+    width: 10vw;
+    height: 5vh;
     border-radius: 25px;
-    padding-top: 30px;
-   
-
-   
+    padding-top: 10px;
 }
+.button-send:hover {
+    background-color:aliceblue; 
 
-@media only screen and (max-width: 600px)
+}

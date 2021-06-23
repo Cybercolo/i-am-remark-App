@@ -7,7 +7,7 @@ and (-webkit-device-pixel-ratio: 4) {
 
 
 
-.todo{
+.container{
     width: 100vw;
     height: 100vh;
     display: flex;
@@ -19,7 +19,7 @@ and (-webkit-device-pixel-ratio: 4) {
 }
 
 .mision{
-    color: #202124;
+    color: #61646e;
     font-family: 'Raleway', sans-serif;
     font-size: 28px;
     line-height: 40px;

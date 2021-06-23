@@ -5,10 +5,17 @@
 
 }
 
+.logo{
+  margin-top: 20px;
+}
+
+.botones{
+  margin-bottom: 20px;
+}
 
 
 .container{
-
+position:relative;
 display: flex;
 flex-direction: column;
 align-items: center;
@@ -16,14 +23,16 @@ background:radial-gradient(112.66% 58.05% at 48.31% -1.3%, rgba(255, 255, 255, 0
 linear-gradient(0deg, #AEC8CF, #AEC8CF);
 
 
+
 }
 
 .frame{
 
   width: 100%;
-  height: 100%;
-  background: brown;
-  
+  height: 100vh;
+  position:fixed;
+  border:solid darkgoldenrod 2px;
+ 
 }
 
 .balon1{
@@ -64,7 +73,6 @@ linear-gradient(0deg, #AEC8CF, #AEC8CF);
     font-family: 'Roboto', sans-serif;
     box-sizing: border-box;
     
-  
 }
 
 /*** ESTILOS BOTÓN  ***/
