@@ -1,11 +1,18 @@
+
+@media screen {
+and (device-width: 360px)
+and (device-height: 640px)
+and (-webkit-device-pixel-ratio: 4) 
+}
+
 .todo{
     width: 100vw;
     height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 0%;
-    padding:0%;
+    margin: 0;
+    padding:0;
     box-sizing: border-box;
 }
 
@@ -66,4 +73,4 @@ font-family: 'Raleway', sans-serif;
 font-family: 'Roboto', sans-serif;/*
 
 .todo
-@media screen and (device-aspect-ratio: 16/9), screen and (device-aspect-ratio: 16/10) { ... }
+@media screen and (device-aspect-ratio: 16/9), screen and (device-aspect-ratio: 16/10) { ... }*/
