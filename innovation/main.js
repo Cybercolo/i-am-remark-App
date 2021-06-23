@@ -1,5 +1,7 @@
 import * as THREE from "three"
-import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader"; 
+import {
+	GLTFLoader
+} from "three/examples/jsm/loaders/GLTFLoader";
 
 import {
 	OrbitControls
@@ -60,20 +62,6 @@ renderer.shadowMap.enabled = true;
 renderer.render(scene, camera);
 
 //////////////////// DATA ////////////////////
-const geometryBox = new THREE.BoxGeometry(1, 2, 1);
-const materialBox = new THREE.MeshStandardMaterial({
-	color: 0xffffff
-});
-const geometrySpehere = new THREE.SphereGeometry(0.5, 8, 6);
-const materialSpehere = new THREE.MeshStandardMaterial();
-
-const box01 = new THREE.Mesh(geometryBox, materialBox);
-const box02 = new THREE.Mesh(geometryBox, materialBox);
-const spehere03 = new THREE.Mesh(geometrySpehere, materialSpehere);
-const box04 = new THREE.Mesh(geometryBox, materialBox);
-
-
-let models = [box01, box02, spehere03, box04];
 let colors = [0xc4ec6e, 0x7089fa, 0xef86f7, 0xb681eb];
 let boxes = [{
 		id: "caja1"
@@ -112,6 +100,61 @@ let boxes = [{
 		name: "caja12"
 	}
 ];
+
+
+
+
+
+const geometryBox = new THREE.BoxGeometry(1, 2, 1);
+const materialBox = new THREE.MeshStandardMaterial({
+	color: 0xffffff
+});
+// const geometrySpehere = new THREE.SphereGeometry(0.5, 8, 6);
+// const materialSpehere = new THREE.MeshStandardMaterial();
+//
+const box01 = new THREE.Mesh(geometryBox, materialBox);
+// const box02 = new THREE.Mesh(geometryBox, materialBox);
+// const spehere03 = new THREE.Mesh(geometrySpehere, materialSpehere);
+// const box04 = new THREE.Mesh(geometryBox, materialBox);
+
+
+
+let modelsArray = [];
+let modelLocationArray = ["models3D/model01.glb", "models3D/model02.glb", "models3D/model03.glb"]
+
+
+// modelLocationArray.forEach((modelLocation, i) => {
+// 	loadModels(modelLocation, i);
+// });
+
+
+
+
+function getRandomModelLocation() {
+	let randomLocation = getRandomItem(modelLocationArray);
+	return randomLocation;
+}
+
+//
+// function loadModel(randomLocation) {
+// 	const gltfLoader = new GLTFLoader();
+// 	gltfLoader.load(randomLocation, function(gltf), onLoad) {
+// 		// gltf.scene --> Group
+// 		// gltf.scene.children[0] --> Mesh
+//
+// 		// modelsArray.push(gltf.scene.children[0]);
+// 		// console.log(modelsArray)
+//
+//
+// 		let clone = gltf.scene.children[0].clone();
+// 		console.log(gltf.scene.children[0])
+// 		console.log("here");
+//
+// 		// scene.add(clone)
+// 	}
+// }
+
+
 //////////////////// LOOP ////////////////////
 function animate() {
 	requestAnimationFrame(animate);
@@ -126,22 +169,59 @@ function animate() {
 }
 
 //////////////////// FUNCTIONS ////////////////////
-function generateElements(arrayModels, arrayPerson, colors) {
-	arrayPerson.forEach((item, i) => {
-		if (i % 5 == 0) {
-			row++;
-		}
-		let person = getRandomItem(arrayModels).clone();
-		let color = new THREE.MeshStandardMaterial();
-		person.material = color;
-		person.castShadow = true;
-		person.material.color.set(getRandomItem(colors));
 
-		person.position.set(setPosition(i, arrayPerson).x, setPosition(i, arrayPerson).y, setPosition(i, arrayPerson).z);
+// function generateElements(modelsArray, arrayPerson, colors) {
+// 	arrayPerson.forEach((item, i) => {
+// 		if (i % 5 == 0) {
+// 			row++;
+// 		}
+//
+// 		let person = getRandomItem(modelsArray).clone();
+// 		let color = new THREE.MeshStandardMaterial();
+// 		person.material = color;
+// 		person.castShadow = true;
+// 		person.material.color.set(getRandomItem(colors));
+//
+// 		person.position.set(setPosition(i, arrayPerson).x, setPosition(i, arrayPerson).y, setPosition(i, arrayPerson).z);
+//
+// 		scene.add(person);
+//
+// 	});
+//
+// }
 
-		scene.add(person);
+
+function generateElements(arrayPerson, colors) {
+	arrayPerson.forEach((item, index) => {
+
+		const gltfLoader = new GLTFLoader();
+		console.log(item)
+		gltfLoader.load("models3D/model01.glb", function(gltf) {
+			if (index % 5 == 0) {
+				row++;
+			}
+
+			console.log("row" + row)
+			console.log(item)
+			// gltf.scene --> Group
+			// gltf.scene.children[0] --> Mesh
+
+			let person = gltf.scene.children[0].clone();
+			let color = new THREE.MeshStandardMaterial();
+			person.material = color;
+			person.castShadow = true;
+			person.material.color.set(getRandomItem(colors));
+
+			person.position.set(setPosition(index, arrayPerson).x, setPosition(index, arrayPerson).y, setPosition(index, arrayPerson).z);
+			scene.add(person);
+
+			// scene.add(clone)
+		});
+		// let person = getRandomModel().clone();
+
 	});
 }
+
 
 function getRandomItem(array) {
 	let index = Math.floor(Math.random() * array.length);
@@ -179,7 +259,7 @@ function moveCameraY(e) {
 
 	let auxiliarY = 0;
 
-	if (camera.position.y < 4 ) {
+	if (camera.position.y < 4) {
 		if (e.deltaY < 0) {
 			camera.position.y++
 		} else if (camera.position.y <= 1) { // para que la cam no atraviese el suelo
@@ -189,13 +269,13 @@ function moveCameraY(e) {
 		}
 		if (camera.position.z > -3 && camera.position.z < -6) {
 			camera.position.y--
-			console.log('dentro y: ', camera.position.y)
+			// console.log('dentro y: ', camera.position.y)
 		}
 	} else {
 		camera.position.y = 4;
 	}
-	console.log('y: ', camera.position.y)
-	console.log('z: ', camera.position.z)
+	// console.log('y: ', camera.position.y)
+	// console.log('z: ', camera.position.z)
 }
 
 function getWheelCount(e) {
@@ -217,25 +297,66 @@ function stopZoomOut(maxZoomOutValue) {
 
 //CARGAR PERSONAJE//
 
-let root = " ";
-const gltfLoader = new GLTFLoader();
-  const url = 'models3D/persona.glb';
-  gltfLoader.load(url, (gltf) => 
-  {
-    root = gltf.scene;
-    root.position.set(0, 0, 0)
+//
+// const gltfLoader = new GLTFLoader();
+// const model = 'models3D/persona.glb';
+//
+// gltfLoader.load(url, (gltf) => {
+// 	let model = gltf.scene;
+// 	model.position.set(0, 0, 0)
+//
+// 	scene.add(model);
+// });
 
-    scene.add(root);
-  });
+
+
+// const gltfLoader = new GLTFLoader();
+//
+// let models = [box01, box02];
+//
+// let modelLocationArray = ["models3D/model01.glb", "models3D/persona.glb"]
+// modelLocationArray.forEach((modelLocation, i) => {
+// 	loadModels(modelLocation, i);
+//
+// });
+//
+// function loadModels(modelLocation, i) {
+// 	gltfLoader.load(modelLocation, function(gltf) {
+// 		let model = gltf.scene;
+// 		// gltf.scene --> Group
+// 		models.push(model);
+// 		model.position.set(0, i, 0);
+//
+// 		console.log(models);
+// 		scene.add(model);
+// 	});
+// }
 
 
 
-generateElements(models, boxes, colors);
+
+
+// generateElements(models, boxes, colors);
 animate();
+generateElements(boxes, colors);
 
 
-
-
+// const geometry = new THREE.BoxGeometry(1, 1, 1);
+// const material = new THREE.MeshBasicMaterial({
+// 	color: 0x00ff00
+// });
+//
+// const cubeA = new THREE.Mesh(geometry, material);
+// cubeA.position.set(100, 100, 0);
+//
+// const cubeB = new THREE.Mesh(geometry, material);
+// cubeB.position.set(-100, -100, 0); //create a group and add the two cubes //These cubes can now be rotated / scaled etc as a group
+//
+// const group = new THREE.Group();
+// group.add(cubeA);
+// group.add(cubeB);
+// console.log(group)
+// scene.add( group );
 
 
 
