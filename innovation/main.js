@@ -8,7 +8,7 @@ import {
 } from "./node_modules/three/examples/jsm/controls/OrbitControls.js"
 
 //////////////////// GLOBAL VARIABLES ////////////////////
-let alturaSuelo = 0.49;
+let alturaSuelo = 0.01;
 let row = 0;
 let distancia = 1.25;
 let rowLength = 4 * distancia;
@@ -24,12 +24,13 @@ const camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerH
 camera.position.set(0, 1, 4);
 
 //////////////////// LIGHT ////////////////////
-const hemisphereLight = new THREE.HemisphereLight("white", "grey", 0.4);
+const hemisphereLight = new THREE.HemisphereLight(0xb5b5b5, 0x474747, 1);
 
 const pointLight = new THREE.PointLight(0xffffff);
 pointLight.intensity = 0.7;
 pointLight.position.set(5, 10, 15);
 pointLight.castShadow = true;
+
 
 scene.add(hemisphereLight, pointLight);
 //////////////////// GROUND ////////////////////
@@ -48,7 +49,7 @@ scene.add(ground);
 //////////////////// HELPERS ////////////////////
 const gridHelper = new THREE.GridHelper(20, 20);
 const pointLightHelper = new THREE.PointLightHelper(pointLight);
-scene.add(pointLightHelper, gridHelper);
+scene.add(pointLightHelper);
 
 
 //////////////////// RENDERER ////////////////////
@@ -123,18 +124,6 @@ let modelsArray = [];
 let modelLocationArray = ["models3D/model01.glb", "models3D/model02.glb", "models3D/model03.glb"]
 
 
-// modelLocationArray.forEach((modelLocation, i) => {
-// 	loadModels(modelLocation, i);
-// });
-
-
-
-
-function getRandomModelLocation() {
-	let randomLocation = getRandomItem(modelLocationArray);
-	return randomLocation;
-}
-
 //
 // function loadModel(randomLocation) {
 // 	const gltfLoader = new GLTFLoader();
@@ -163,7 +152,6 @@ function animate() {
 	camera.updateProjectionMatrix();
 
 	renderer.setSize(window.innerWidth, window.innerHeight);
-
 	// controls.update();
 	renderer.render(scene, camera);
 }
@@ -192,36 +180,44 @@ function animate() {
 
 
 function generateElements(arrayPerson, colors) {
-	arrayPerson.forEach((item, index) => {
+	let index = 0;
+	const gltfLoader = new GLTFLoader();
 
-		const gltfLoader = new GLTFLoader();
-		console.log(item)
-		gltfLoader.load("models3D/model01.glb", function(gltf) {
+	arrayPerson.forEach((item) => {
+
+		gltfLoader.load(getRandomModelLocation(), function(gltf) {
 			if (index % 5 == 0) {
 				row++;
 			}
-
-			console.log("row" + row)
-			console.log(item)
-			// gltf.scene --> Group
-			// gltf.scene.children[0] --> Mesh
-
-			let person = gltf.scene.children[0].clone();
+			let group = gltf.scene;
+			let person = group.children[0].clone();
 			let color = new THREE.MeshStandardMaterial();
 			person.material = color;
-			person.castShadow = true;
+			// gltf.scene --> Group
+			// gltf.scene.children[0] --> Mesh
 			person.material.color.set(getRandomItem(colors));
-
+			person.scale.set(2, 2, 2);
+			person.rotation.set(-1.5707963267948966, 0, -1.5707963267948966);
 			person.position.set(setPosition(index, arrayPerson).x, setPosition(index, arrayPerson).y, setPosition(index, arrayPerson).z);
+			person.castShadow = true;
+
+			// person.geometry.computeBoundingBox();
+
+			let boundingBox = person.geometry.boundingBox;
+			let objectHeight = boundingBox.max.z - boundingBox.min.z;
+			let objectWidth = boundingBox.max.y - boundingBox.min.y;
+
+			generateTextBubble(`hey ${index}`, objectWidth, person.position.x, objectHeight, person.position.z);
 			scene.add(person);
-
-			// scene.add(clone)
+			index++;
 		});
-		// let person = getRandomModel().clone();
-
 	});
 }
 
+function getRandomModelLocation() {
+	let randomLocation = getRandomItem(modelLocationArray);
+	return randomLocation;
+}
 
 function getRandomItem(array) {
 	let index = Math.floor(Math.random() * array.length);
@@ -238,28 +234,87 @@ function setPosition(index, array) {
 	return vector;
 }
 
+function generateTextBubble(data, objectWidth, objectPositionX, objectHeight, objectPositionZ) {
+	const bubbleShape = new THREE.Shape();
+	let bubbleWidth = 1;
+	let bubbleHeight = 0.75;
+	let bubbleBorderRadius = 0.2;
+	let bubblePositionX = -0.5;
+	let bubblePositionY = 0;
+
+	function roundedRect(ctx, x, y, width, height, radius) {
+		ctx.moveTo(x, y + radius);
+		ctx.lineTo(x, y + height - radius);
+		ctx.quadraticCurveTo(x, y + height, x + radius, y + height);
+		ctx.lineTo(x + width - radius, y + height);
+		ctx.quadraticCurveTo(x + width, y + height, x + width, y + height - radius);
+		ctx.lineTo(x + width, y + radius);
+		ctx.quadraticCurveTo(x + width, y, x + width - radius, y);
+		ctx.lineTo(x + radius, y);
+		ctx.quadraticCurveTo(x, y, x, y + radius);
+	}
+	roundedRect(bubbleShape, bubblePositionX, bubblePositionY, bubbleWidth, bubbleHeight, bubbleBorderRadius);
+
+	let bubbleGeometry = new THREE.ShapeGeometry(bubbleShape);
+	let bubbleMaterial = new THREE.MeshBasicMaterial({
+		color: 0x699c99
+	});
+	const bubbleMesh = new THREE.Mesh(bubbleGeometry, bubbleMaterial);
+	bubbleMesh.position.set(objectPositionX, (objectHeight * 2) + 0.15, objectPositionZ);
+	addText(data, bubbleMesh)
+
+	scene.add(bubbleMesh);
+}
+
+
+function addText(data, bubbleMesh) {
+	let canvas = document.createElement('canvas');
+	canvas.width = 256;
+	canvas.height = 256;
+	let ctx = canvas.getContext("2d");
+	ctx.font = "44pt Arial";
+	ctx.fillStyle = "white";
+	ctx.textAlign = "center";
+	ctx.fillText(data, 128, 44);
+
+	let tex = new THREE.Texture(canvas);
+	tex.needsUpdate = true;
+	let spriteMat = new THREE.SpriteMaterial({
+		map: tex
+	});
+	let sprite = new THREE.Sprite(spriteMat);
+
+	bubbleMesh.add(sprite);
+	scene.add(bubbleMesh);
+
+};
+
+
+
+
+
+
+
 // SCROLL MOVEMENT
 let wheelCount = camera.position.z;
 
 canvas.addEventListener("wheel", function(e) {
 	let maxZoomOutValue = 7;
-
+	pointLight.position.set(pointLight.position.x, pointLight.position.y, camera.position.z + 10);
 	camera.position.z = getWheelCount(e);
+	console.log()
 
 	longerGround(e);
 
 	if (camera.position.z > maxZoomOutValue) {
 		stopZoomOut(maxZoomOutValue);
-	}
-	moveCameraY(e)
+	} else if (camera.position.y < 3.5)
+		moveCameraY(e)
 
 });
 
 function moveCameraY(e) {
-
-	let auxiliarY = 0;
-
-	if (camera.position.y < 4) {
+	if (camera.position.y < 3.5) {
 		if (e.deltaY < 0) {
 			camera.position.y++
 		} else if (camera.position.y <= 1) { // para que la cam no atraviese el suelo
@@ -267,15 +322,7 @@ function moveCameraY(e) {
 		} else {
 			camera.position.y--
 		}
-		if (camera.position.z > -3 && camera.position.z < -6) {
-			camera.position.y--
-			// console.log('dentro y: ', camera.position.y)
-		}
-	} else {
-		camera.position.y = 4;
 	}
-	// console.log('y: ', camera.position.y)
-	// console.log('z: ', camera.position.z)
 }
 
 function getWheelCount(e) {
@@ -297,7 +344,6 @@ function stopZoomOut(maxZoomOutValue) {
 
 //CARGAR PERSONAJE//
 
-//
 // const gltfLoader = new GLTFLoader();
 // const model = 'models3D/persona.glb';
 //
@@ -307,7 +353,6 @@ function stopZoomOut(maxZoomOutValue) {
 //
 // 	scene.add(model);
 // });
-
 
 
 // const gltfLoader = new GLTFLoader();
@@ -336,34 +381,16 @@ function stopZoomOut(maxZoomOutValue) {
 
 
 
-// generateElements(models, boxes, colors);
+
 animate();
 generateElements(boxes, colors);
 
 
-// const geometry = new THREE.BoxGeometry(1, 1, 1);
-// const material = new THREE.MeshBasicMaterial({
-// 	color: 0x00ff00
-// });
-//
-// const cubeA = new THREE.Mesh(geometry, material);
-// cubeA.position.set(100, 100, 0);
-//
-// const cubeB = new THREE.Mesh(geometry, material);
-// cubeB.position.set(-100, -100, 0); //create a group and add the two cubes //These cubes can now be rotated / scaled etc as a group
-//
-// const group = new THREE.Group();
-// group.add(cubeA);
-// group.add(cubeB);
-// console.log(group)
-// scene.add( group );
 
 
 
 
 
-// POINTLIGHT FOLLOWING CAMERA
-// pointLight.position.set(camera.position.x, camera.position.y, camera.position.z);
 
 // GENERACIÓN RANDOM
 // let x = Math.floor(Math.random() * (ground.geometry.parameters.width / 2));
