@@ -65,44 +65,66 @@ renderer.render(scene, camera);
 //////////////////// DATA ////////////////////
 let colors = [0xc4ec6e, 0x7089fa, 0xef86f7, 0xb681eb];
 let boxes = [{
-		id: "caja1"
+		name: "Mei",
+		description: "I'm remarkable because I decided to follow my dreams and becore and artist.",
+		country: "China"
 	},
 	{
-		name: "caja2"
+		name: "Sam",
+		description: "I'm remarkable because I'm self confident after facing years and years of bullying.",
+		country: "Holand"
 	},
 	{
-		name: "caja3"
+		name: "Zara",
+		description: "I'm remarkable because I was the first girl in my neightbourhood to go to college.",
+		country: "India"
 	},
 	{
-		name: "caja4"
+		name: "Mayra",
+		description: "I'm remarkable because I help my parents at work.",
+		country: "India"
 	},
 	{
-		name: "caja5"
+		name: "Leon",
+		description: "I'm remarkable because I look after my little sister more than my parents.",
+		country: "Greek"
 	},
 	{
-		name: "caja6"
+		name: "Anna",
+		description: "I'm remarkable because I don't drink alcohol",
+		country: "USA"
 	},
 	{
-		name: "caja7"
+		name: "Irma",
+		description: "I'm remarkable because I'm finishing my Bachelors in a couple of months while having depression.",
+		country: "Latvia"
 	},
 	{
-		name: "caja8"
+		name: "Velvet",
+		description: "I'm remarkable because I'm queer.",
+		country: "Russia"
 	},
 	{
-		name: "caja9"
+		name: "Julie",
+		description: "I'm remarkable because I love to play basketball and noone else does.",
+		country: "France"
 	},
 	{
-		name: "caja10"
+		name: "Lucia",
+		description: "I'm remarkable because I take care of my disabled cousine.",
+		country: "Spain"
 	},
 	{
-		name: "caja11"
+		name: "Mark",
+		description: "I'm remarkable because I git A+ in Maths.",
+		country: "Europe"
 	},
 	{
-		name: "caja12"
+		name: "David",
+		description: "I'm remarkable because I work since 15yo.",
+		country: "Spain"
 	}
 ];
-
-
 
 
 
@@ -121,7 +143,7 @@ const box01 = new THREE.Mesh(geometryBox, materialBox);
 
 
 let modelsArray = [];
-let modelLocationArray = ["models3D/model01.glb", "models3D/model02.glb", "models3D/model03.glb"]
+let modelLocationArray = ["models3D/model01.glb", "models3D/model02.glb", "models3D/model03.glb", "models3D/model04.glb", "models3D/model05.glb", "models3D/model06.glb", "models3D/model07.glb", "models3D/model08.glb"]
 
 
 //
@@ -178,41 +200,7 @@ function animate() {
 //
 // }
 
-
-function generateElements(arrayPerson, colors) {
-	let index = 0;
-	const gltfLoader = new GLTFLoader();
-
-	arrayPerson.forEach((item) => {
-
-		gltfLoader.load(getRandomModelLocation(), function(gltf) {
-			if (index % 5 == 0) {
-				row++;
-			}
-			let group = gltf.scene;
-			let person = group.children[0].clone();
-			let color = new THREE.MeshStandardMaterial();
-			person.material = color;
-			// gltf.scene --> Group
-			// gltf.scene.children[0] --> Mesh
-			person.material.color.set(getRandomItem(colors));
-			person.scale.set(2, 2, 2);
-			person.rotation.set(-1.5707963267948966, 0, -1.5707963267948966);
-			person.position.set(setPosition(index, arrayPerson).x, setPosition(index, arrayPerson).y, setPosition(index, arrayPerson).z);
-			person.castShadow = true;
-
-			// person.geometry.computeBoundingBox();
-
-			let boundingBox = person.geometry.boundingBox;
-			let objectHeight = boundingBox.max.z - boundingBox.min.z;
-			let objectWidth = boundingBox.max.y - boundingBox.min.y;
-
-			generateTextBubble(`hey ${index}`, objectWidth, person.position.x, objectHeight, person.position.z);
-			scene.add(person);
-			index++;
-		});
-	});
-}
+const gltfLoader = new GLTFLoader();
 
 function getRandomModelLocation() {
 	let randomLocation = getRandomItem(modelLocationArray);
@@ -224,7 +212,7 @@ function getRandomItem(array) {
 	return array[index];
 }
 
-function setPosition(index, array) {
+function setPosition(index, row, array) {
 	if (index === array.length - 1) {
 		const vector0 = new THREE.Vector3(0, alturaSuelo, 0);
 		return vector0;
@@ -234,7 +222,67 @@ function setPosition(index, array) {
 	return vector;
 }
 
-function generateTextBubble(data, objectWidth, objectPositionX, objectHeight, objectPositionZ) {
+function createText(item) {
+	let text = `${item.name}/n${item.country}`
+	return text;
+}
+
+function printAtWordWrap(context, text, x, y, lineHeight, fitWidth) {
+
+	let wordsArray = text.split(' ');
+	let currentLine = 0;
+	let index = 1;
+
+	while (wordsArray.length > 0 && index <= wordsArray.length) {
+		let string = wordsArray.slice(0, index).join(' ');
+		let maxWidth = context.measureText(string).width;
+		if (maxWidth > fitWidth) {
+			if (index == 1) {
+				index = 2;
+			}
+			context.fillText(wordsArray.slice(0, index - 1).join(' '), x, y + (lineHeight * currentLine));
+			currentLine++;
+			wordsArray = wordsArray.splice(index - 1);
+			index = 1;
+		} else {
+			index++;
+		}
+	}
+	if (index > 0)
+		context.fillText(wordsArray.join(' '), x, y + (lineHeight * currentLine));
+}
+
+function addText(item, bubbleMesh) {
+	let canvas = document.createElement('canvas');
+	canvas.width = 400;
+	canvas.height = 400;
+	let context = canvas.getContext("2d");
+	context.font = "21pt Arial";
+	context.fillStyle = "black";
+	context.textAlign = "left";
+
+
+	let lineHeight = context.measureText("M").width * 1.5;
+	let text = createText(item);
+	let lines = text.split('/n');
+
+	printAtWordWrap(context, item.description, 50, 20, lineHeight, 300)
+	// for (var i = 0; i < lines.length; i++) {
+	// 	context.fillText(lines[i], 50, 20 + (i * lineHeight * 5));
+	// }
+
+	let texture = new THREE.Texture(canvas);
+	texture.needsUpdate = true;
+	let spriteMaterial = new THREE.SpriteMaterial({
+		map: texture
+	});
+	let sprite = new THREE.Sprite(spriteMaterial);
+
+	bubbleMesh.add(sprite);
+	scene.add(bubbleMesh);
+}
+
+function generateTextBubble(item, objectWidth, objectPositionX, objectHeight, objectPositionZ) {
 	const bubbleShape = new THREE.Shape();
 	let bubbleWidth = 1;
 	let bubbleHeight = 0.75;
@@ -261,35 +309,46 @@ function generateTextBubble(data, objectWidth, objectPositionX, objectHeight, ob
 	});
 	const bubbleMesh = new THREE.Mesh(bubbleGeometry, bubbleMaterial);
 	bubbleMesh.position.set(objectPositionX, (objectHeight * 2) + 0.15, objectPositionZ);
-	addText(data, bubbleMesh)
+	addText(item, bubbleMesh);
 
 	scene.add(bubbleMesh);
 }
 
+function loadNextModel(item, index, row, arrayPerson, colors) {
+	gltfLoader.load(getRandomModelLocation(), function(gltf) {
+		let group = gltf.scene;
+		let person = group.children[0].clone();
+		let color = new THREE.MeshStandardMaterial();
+		person.material = color;
+		// gltf.scene --> Group
+		// gltf.scene.children[0] --> Mesh
+		person.material.color.set(getRandomItem(colors));
+		person.scale.set(2, 2, 2);
+		person.rotation.set(-1.5707963267948966, 0, -1.5707963267948966);
+		person.position.set(setPosition(index, row, arrayPerson).x, setPosition(index, row, arrayPerson).y, setPosition(index, row, arrayPerson).z);
+		person.castShadow = true;
 
-function addText(data, bubbleMesh) {
-	let canvas = document.createElement('canvas');
-	canvas.width = 256;
-	canvas.height = 256;
-	let ctx = canvas.getContext("2d");
-	ctx.font = "44pt Arial";
-	ctx.fillStyle = "white";
-	ctx.textAlign = "center";
-	ctx.fillText(data, 128, 44);
+		let boundingBox = person.geometry.boundingBox;
+		let objectHeight = boundingBox.max.z - boundingBox.min.z;
+		let objectWidth = boundingBox.max.y - boundingBox.min.y;
 
-	let tex = new THREE.Texture(canvas);
-	tex.needsUpdate = true;
-	let spriteMat = new THREE.SpriteMaterial({
-		map: tex
+		generateTextBubble(item, objectWidth, person.position.x, objectHeight, person.position.z);
+		scene.add(person);
+
 	});
-	let sprite = new THREE.Sprite(spriteMat);
-
-	bubbleMesh.add(sprite);
-	scene.add(bubbleMesh);
-
-};
+}
 
 
+function generateElements(arrayPerson, colors) {
+	let row = 0;
+	arrayPerson.forEach((item, index) => {
+		if (index % 5 == 0) {
+			row++
+		}
+		loadNextModel(item, index, row, arrayPerson, colors);
+
+	});
+}
 
 
 
