@@ -1,18 +1,21 @@
 import * as THREE from "three"
+
 import {
 	GLTFLoader
 } from "three/examples/jsm/loaders/GLTFLoader";
 
 import {
-	OrbitControls
-} from "./node_modules/three/examples/jsm/controls/OrbitControls.js"
+	boxes
+} from "./people.js";
+// var parsedJSON = require('./people.json');
+// var result = parsedJSON.people
 
 //////////////////// GLOBAL VARIABLES ////////////////////
 let alturaSuelo = 0.01;
-let row = 0;
-let distancia = 1.25;
+let distancia = 1.2;
 let rowLength = 4 * distancia;
 let groundLength = 1;
+let distanceBetweenRows = 8;
 
 //////////////////// ESCENA ////////////////////
 const scene = new THREE.Scene();
@@ -62,110 +65,6 @@ renderer.shadowMap.enabled = true;
 
 renderer.render(scene, camera);
 
-//////////////////// DATA ////////////////////
-let colors = [0xc4ec6e, 0x7089fa, 0xef86f7, 0xb681eb];
-let boxes = [{
-		name: "Mei",
-		description: "I'm remarkable because I decided to follow my dreams and becore and artist.",
-		country: "China"
-	},
-	{
-		name: "Sam",
-		description: "I'm remarkable because I'm self confident after facing years and years of bullying.",
-		country: "Holand"
-	},
-	{
-		name: "Zara",
-		description: "I'm remarkable because I was the first girl in my neightbourhood to go to college.",
-		country: "India"
-	},
-	{
-		name: "Mayra",
-		description: "I'm remarkable because I help my parents at work.",
-		country: "India"
-	},
-	{
-		name: "Leon",
-		description: "I'm remarkable because I look after my little sister more than my parents.",
-		country: "Greek"
-	},
-	{
-		name: "Anna",
-		description: "I'm remarkable because I don't drink alcohol",
-		country: "USA"
-	},
-	{
-		name: "Irma",
-		description: "I'm remarkable because I'm finishing my Bachelors in a couple of months while having depression.",
-		country: "Latvia"
-	},
-	{
-		name: "Velvet",
-		description: "I'm remarkable because I'm queer.",
-		country: "Russia"
-	},
-	{
-		name: "Julie",
-		description: "I'm remarkable because I love to play basketball and noone else does.",
-		country: "France"
-	},
-	{
-		name: "Lucia",
-		description: "I'm remarkable because I take care of my disabled cousine.",
-		country: "Spain"
-	},
-	{
-		name: "Mark",
-		description: "I'm remarkable because I git A+ in Maths.",
-		country: "Europe"
-	},
-	{
-		name: "David",
-		description: "I'm remarkable because I work since 15yo.",
-		country: "Spain"
-	}
-];
-
-
-
-const geometryBox = new THREE.BoxGeometry(1, 2, 1);
-const materialBox = new THREE.MeshStandardMaterial({
-	color: 0xffffff
-});
-// const geometrySpehere = new THREE.SphereGeometry(0.5, 8, 6);
-// const materialSpehere = new THREE.MeshStandardMaterial();
-//
-const box01 = new THREE.Mesh(geometryBox, materialBox);
-// const box02 = new THREE.Mesh(geometryBox, materialBox);
-// const spehere03 = new THREE.Mesh(geometrySpehere, materialSpehere);
-// const box04 = new THREE.Mesh(geometryBox, materialBox);
-
-
-
-let modelsArray = [];
-let modelLocationArray = ["models3D/model01.glb", "models3D/model02.glb", "models3D/model03.glb", "models3D/model04.glb", "models3D/model05.glb", "models3D/model06.glb", "models3D/model07.glb", "models3D/model08.glb"]
-
-
-//
-// function loadModel(randomLocation) {
-// 	const gltfLoader = new GLTFLoader();
-// 	gltfLoader.load(randomLocation, function(gltf), onLoad) {
-// 		// gltf.scene --> Group
-// 		// gltf.scene.children[0] --> Mesh
-//
-// 		// modelsArray.push(gltf.scene.children[0]);
-// 		// console.log(modelsArray)
-//
-//
-// 		let clone = gltf.scene.children[0].clone();
-// 		console.log(gltf.scene.children[0])
-// 		console.log("here");
-//
-// 		// scene.add(clone)
-// 	}
-// }
-
-
 //////////////////// LOOP ////////////////////
 function animate() {
 	requestAnimationFrame(animate);
@@ -177,6 +76,10 @@ function animate() {
 	// controls.update();
 	renderer.render(scene, camera);
 }
+
+//////////////////// DATA ////////////////////
+let colors = [0xc4ec6e, 0x7089fa, 0xef86f7, 0xb681eb];
+
 
 //////////////////// FUNCTIONS ////////////////////
 
@@ -200,7 +103,11 @@ function animate() {
 //
 // }
 
-const gltfLoader = new GLTFLoader();
+
+
+
+
+
 
 function getRandomModelLocation() {
 	let randomLocation = getRandomItem(modelLocationArray);
@@ -217,8 +124,7 @@ function setPosition(index, row, array) {
 		const vector0 = new THREE.Vector3(0, alturaSuelo, 0);
 		return vector0;
 	}
-
-	let vector = new THREE.Vector3(index * distancia - (rowLength / 2) - ((rowLength + distancia) * (row - 1)), alturaSuelo, -(6 + row * 6));
+	let vector = new THREE.Vector3(index * distancia - (rowLength / 2) - ((rowLength + distancia) * (row - 1)), alturaSuelo, -(distanceBetweenRows + row * distanceBetweenRows));
 	return vector;
 }
 
@@ -227,20 +133,18 @@ function createText(item) {
 	return text;
 }
 
-function printAtWordWrap(context, text, x, y, lineHeight, fitWidth) {
-
+function printDescriptionWithWordWrap(context, text, x, y, lineHeight, fitWidth) {
 	let wordsArray = text.split(' ');
 	let currentLine = 0;
 	let index = 1;
 
-	while (wordsArray.length > 0 && index <= wordsArray.length) {
+	while (index <= wordsArray.length) {
 		let string = wordsArray.slice(0, index).join(' ');
-		let maxWidth = context.measureText(string).width;
-		if (maxWidth > fitWidth) {
-			if (index == 1) {
-				index = 2;
-			}
-			context.fillText(wordsArray.slice(0, index - 1).join(' '), x, y + (lineHeight * currentLine));
+		let stringWidth = context.measureText(string).width;
+
+		if (stringWidth > fitWidth) {
+			let finalText = wordsArray.slice(0, index - 1).join(' ');
+			context.fillText(finalText, x, y + (lineHeight * currentLine));
 			currentLine++;
 			wordsArray = wordsArray.splice(index - 1);
 			index = 1;
@@ -248,8 +152,9 @@ function printAtWordWrap(context, text, x, y, lineHeight, fitWidth) {
 			index++;
 		}
 	}
-	if (index > 0)
-		context.fillText(wordsArray.join(' '), x, y + (lineHeight * currentLine));
+	// Last line :
+	context.fillText(wordsArray.join(' '), x, y + (lineHeight * currentLine));
+	return currentLine;
 }
 
 function addText(item, bubbleMesh) {
@@ -257,27 +162,30 @@ function addText(item, bubbleMesh) {
 	canvas.width = 400;
 	canvas.height = 400;
 	let context = canvas.getContext("2d");
-	context.font = "21pt Arial";
+	context.font = "24pt Arial";
 	context.fillStyle = "black";
 	context.textAlign = "left";
-
+	// context.fillRect(0, 0, canvas.width, canvas.height)
 
 	let lineHeight = context.measureText("M").width * 1.5;
 	let text = createText(item);
 	let lines = text.split('/n');
-
-	printAtWordWrap(context, item.description, 50, 20, lineHeight, 300)
-	// for (var i = 0; i < lines.length; i++) {
-	// 	context.fillText(lines[i], 50, 20 + (i * lineHeight * 5));
-	// }
+	let rowsText = printDescriptionWithWordWrap(context, item.description, 50, 24 + lineHeight, lineHeight, 300) + 1;
+	for (var i = 0; i < lines.length; i++) {
+		context.fillText(lines[i], 50, 24 + (i * lineHeight * (rowsText + 1)));
+	}
 
 	let texture = new THREE.Texture(canvas);
 	texture.needsUpdate = true;
+
 	let spriteMaterial = new THREE.SpriteMaterial({
 		map: texture
 	});
-	let sprite = new THREE.Sprite(spriteMaterial);
 
+	let sprite = new THREE.Sprite(spriteMaterial);
+	sprite.position.set(0, 0.50 - 0.15, 0);
+	// let centerPositionY = 1 / (rowsText + (rowsText / 2));
+	// MAYBE FIX?? CENTER THIS
 	bubbleMesh.add(sprite);
 	scene.add(bubbleMesh);
 }
@@ -285,7 +193,7 @@ function addText(item, bubbleMesh) {
 function generateTextBubble(item, objectWidth, objectPositionX, objectHeight, objectPositionZ) {
 	const bubbleShape = new THREE.Shape();
 	let bubbleWidth = 1;
-	let bubbleHeight = 0.75;
+	let bubbleHeight = 1;
 	let bubbleBorderRadius = 0.2;
 	let bubblePositionX = -0.5;
 	let bubblePositionY = 0;
@@ -305,7 +213,7 @@ function generateTextBubble(item, objectWidth, objectPositionX, objectHeight, ob
 
 	let bubbleGeometry = new THREE.ShapeGeometry(bubbleShape);
 	let bubbleMaterial = new THREE.MeshBasicMaterial({
-		color: 0x699c99
+		color: 0xf1f1f1
 	});
 	const bubbleMesh = new THREE.Mesh(bubbleGeometry, bubbleMaterial);
 	bubbleMesh.position.set(objectPositionX, (objectHeight * 2) + 0.15, objectPositionZ);
@@ -314,10 +222,32 @@ function generateTextBubble(item, objectWidth, objectPositionX, objectHeight, ob
 	scene.add(bubbleMesh);
 }
 
-function loadNextModel(item, index, row, arrayPerson, colors) {
-	gltfLoader.load(getRandomModelLocation(), function(gltf) {
-		let group = gltf.scene;
-		let person = group.children[0].clone();
+
+let modelLocationArray = ["models3D/model01.glb", "models3D/model02.glb", "models3D/model03.glb", "models3D/model04.glb", "models3D/model05.glb", "models3D/model06.glb", "models3D/model07.glb", "models3D/model08.glb"]
+const gltfLoader = new GLTFLoader();
+let index = 0;
+let modelsArray = [];
+
+function loadNextModel() {
+	if (index > modelLocationArray.length - 1) {
+		generateElements(boxes, colors);
+		return;
+	};
+	gltfLoader.load(modelLocationArray[index], function(object) {
+		modelsArray.push(object.scene.children[0])
+		index++;
+		loadNextModel();
+	});
+}
+
+
+function generateElements(arrayPerson, colors) {
+	let row = 0;
+	arrayPerson.forEach((item, index) => {
+		if (index % 5 == 0) {
+			row++
+		}
+		let person = getRandomItem(modelsArray).clone();
 		let color = new THREE.MeshStandardMaterial();
 		person.material = color;
 		// gltf.scene --> Group
@@ -338,22 +268,6 @@ function loadNextModel(item, index, row, arrayPerson, colors) {
 	});
 }
 
-
-function generateElements(arrayPerson, colors) {
-	let row = 0;
-	arrayPerson.forEach((item, index) => {
-		if (index % 5 == 0) {
-			row++
-		}
-		loadNextModel(item, index, row, arrayPerson, colors);
-
-	});
-}
-
-
-
-
-
 // SCROLL MOVEMENT
 let wheelCount = camera.position.z;
 
@@ -362,14 +276,12 @@ canvas.addEventListener("wheel", function(e) {
 	pointLight.position.set(pointLight.position.x, pointLight.position.y, camera.position.z + 10);
 	camera.position.z = getWheelCount(e);
 	console.log()
-
 	longerGround(e);
-
 	if (camera.position.z > maxZoomOutValue) {
 		stopZoomOut(maxZoomOutValue);
-	} else if (camera.position.y < 3.5)
+	} else if (camera.position.y < 3.5) {
 		moveCameraY(e)
-
+	}
 });
 
 function moveCameraY(e) {
@@ -400,56 +312,8 @@ function stopZoomOut(maxZoomOutValue) {
 	groundLength = 1;
 }
 
-
-//CARGAR PERSONAJE//
-
-// const gltfLoader = new GLTFLoader();
-// const model = 'models3D/persona.glb';
-//
-// gltfLoader.load(url, (gltf) => {
-// 	let model = gltf.scene;
-// 	model.position.set(0, 0, 0)
-//
-// 	scene.add(model);
-// });
-
-
-// const gltfLoader = new GLTFLoader();
-//
-// let models = [box01, box02];
-//
-// let modelLocationArray = ["models3D/model01.glb", "models3D/persona.glb"]
-// modelLocationArray.forEach((modelLocation, i) => {
-// 	loadModels(modelLocation, i);
-//
-// });
-//
-// function loadModels(modelLocation, i) {
-// 	gltfLoader.load(modelLocation, function(gltf) {
-// 		let model = gltf.scene;
-// 		// gltf.scene --> Group
-// 		models.push(model);
-// 		model.position.set(0, i, 0);
-//
-// 		console.log(models);
-// 		scene.add(model);
-// 	});
-// }
-
-
-
-
-
-
 animate();
-generateElements(boxes, colors);
-
-
-
-
-
-
-
+loadNextModel()
 
 // GENERACIÓN RANDOM
 // let x = Math.floor(Math.random() * (ground.geometry.parameters.width / 2));
