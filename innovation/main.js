@@ -37,6 +37,7 @@ let distancia = 1.2;
 let rowLength = 4 * distancia;
 let groundLength = 1;
 let distanceBetweenRows = 8;
+let isPressedMe = false;
 
 //////////////////// ESCENA ////////////////////
 const scene = new Scene();
@@ -326,24 +327,41 @@ function stopZoomOut(maxZoomOutValue) {
 	groundLength = 1;
 }
 
-document.querySelector(".forwards").addEventListener("click", function() {
-	moveToTheNextRow();
+/*function phoneMove() {
+	while (isPressedMe) {
+		console.log("Violacion", camera.position.z);
+		if (isPressedMe == false){
+			break;
+		}
+	
+	}
+}*/
+
+document.querySelector(".forwards").addEventListener("touchstart", function() {
+	isPressedMe = true;
+	console.log(isPressedMe)
+})
+document.querySelector(".forwards").addEventListener("touchend", function() {
+	isPressedMe = false;
+	console.log(isPressedMe)
 })
 
 document.querySelector(".backwards").addEventListener("click", function() {
-	moveToThePreviousRow();
+	moveForBackwards();
 })
 
-function moveToTheNextRow() {
+function moveForwards() {
+	console.log(camera.position.z)
 	camera.position.z -= 1;
 	let maxZoomOutValue = 7;
 	if (camera.position.z > maxZoomOutValue) { // camera zoom out limit
 		stopZoomOut(maxZoomOutValue);
 	}
 	moveCameraYForwards()
+	
 }
 
-function moveToThePreviousRow() {
+function moveForBackwards() {
 	let maxZoomOutValue = 7;
 	camera.position.z += 1;
 	if (camera.position.z > maxZoomOutValue) { // camera zoom out limit
