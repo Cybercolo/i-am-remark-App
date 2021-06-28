@@ -42,11 +42,29 @@ let arrayPrueba = [ //////////se crean objetos dentro del array//////////
         logro: "I am Remarkable"
     }];
  
-//let otroarray = [];
+let otroArray = [];
+
+    let url = 'https://fakerapi.it/api/v1/persons?_quantity=10/'
+
+
+async function newApi(){
+    const response = await fetch(url);
+    const users = await response.json();
+    return users;
+}
+
+newApi().then (users =>{
+    users;
+    otroArray = users;
+    console.log (otroArray)
+});
+
+//newApi();
 
 //  getData ////////////captura la data (informacion del array)//////////////
     function getData(){
-        let arrayInfo = arrayPrueba;
+        let arrayInfo = otroArray;
+        console.log(otroArray)
         return arrayInfo;
     };
 // loadEachData ///////////Leer objetos del array y los muestra////////////
@@ -57,7 +75,6 @@ let arrayPrueba = [ //////////se crean objetos dentro del array//////////
 //////////////////////////////imprime la data del array/////////////////////////
 
     function printItem(itemToPrint){
-        console.log(itemToPrint);
         let lista = document.getElementById("ulListado"); 
         let line = document.createElement("div");    
             let contenido = document.createTextNode(itemToPrint.id+' '+itemToPrint.name+' '+itemToPrint.pais+" "+itemToPrint.logro+" ");
@@ -101,3 +118,11 @@ let arrayPrueba = [ //////////se crean objetos dentro del array//////////
                     document.getElementById("imprimeaqui2").innerHTML = apellido; 
                 });   
             });
+
+            
+                const getDatos = () => {
+                    return new Promise((resolve, reject) =>{
+                        setTimeout(() =>{
+                            resolve(url);
+                        }, 1000);
+                    });
