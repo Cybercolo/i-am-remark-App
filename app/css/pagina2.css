@@ -74,8 +74,6 @@ margin:0px;
     font-style: italic;
     border-radius: 30px;
     opacity: 0.9;
-    width: 25vw;
-    height: 10vh;
     padding: 5px; 
     border:none;    
 }
@@ -84,12 +82,12 @@ margin:0px;
     box-shadow: inset 0px 4px 6px 0px grey;
     font-family:Arial, Helvetica, sans-serif;
     font-style: italic;
-    border-radius: 30px;
+    width:150px;
+    height: 25px;
+    border-radius: 40px;
     opacity: 0.9;
-    width: 25vw;
-    height: 10vh;
     border:none; 
-    padding: 5px; 
+ 
   
 }
 
