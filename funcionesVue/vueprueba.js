@@ -43,12 +43,18 @@ let arrayPrueba = [ //////////se crean objetos dentro del array//////////
     }];
  
 let otroArray = [];
+<<<<<<< HEAD
 let url = `http://jsonplaceholder.typicode.com/users`
 
+=======
+
+    let url = 'https://fakerapi.it/api/v1/persons?_quantity=10/'
+>>>>>>> f5c299c5c495289c1df7489ec0a521c1f907c309
 
 
 async function newApi(){
     const response = await fetch(url);
+<<<<<<< HEAD
     const user = await response.json();
     return user;
 }
@@ -62,6 +68,25 @@ async function newApi(){
         })
        
        console.log(userData)
+=======
+    const users = await response.json();
+    return users;
+}
+
+newApi().then (users =>{
+    users;
+    otroArray = users;
+    console.log (otroArray)
+});
+
+//newApi();
+
+//  getData ////////////captura la data (informacion del array)//////////////
+    function getData(){
+        let arrayInfo = otroArray;
+        console.log(otroArray)
+        return arrayInfo;
+>>>>>>> f5c299c5c495289c1df7489ec0a521c1f907c309
     };
     getData()
    
@@ -73,7 +98,6 @@ async function newApi(){
 //////////////////////////////imprime la data del array/////////////////////////
 
     function printItem(itemToPrint){
-        console.log(itemToPrint);
         let lista = document.getElementById("ulListado"); 
         let line = document.createElement("div");    
             let contenido = document.createTextNode(itemToPrint.id+' '+itemToPrint.name+' '+itemToPrint.pais+" "+itemToPrint.logro+" ");
@@ -117,3 +141,12 @@ async function newApi(){
                     document.getElementById("imprimeaqui2").innerHTML = apellido; 
                 });   
             });
+
+            
+                const getDatos = () => {
+                    return new Promise((resolve, reject) =>{
+                        setTimeout(() =>{
+                            resolve(url);
+                        }, 1000);
+                    });
+                }
