@@ -13,8 +13,16 @@ html, body {
   height: 100%;
 }
 
-.text-box {
+button {
   position: absolute;
-  top: 0;
-  left: 0;
+}
+
+.backwards {
+  bottom: 20px;
+  right: 20px
+}
+
+.forwards {
+  right: 20px;
+  top: 20px;
 }

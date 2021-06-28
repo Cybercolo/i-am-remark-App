@@ -1,8 +1,29 @@
-import * as THREE from "three"
+import {
+	Scene,
+	Color,
+	PerspectiveCamera,
+	OrthographicCamera,
+	Fog,
+	WebGLRenderer,
+	HemisphereLight,
+	PointLight,
+	Shape,
+	Mesh,
+	Sprite,
+	Texture,
+	PlaneGeometry,
+	ShapeGeometry,
+	SpriteMaterial,
+	MeshStandardMaterial,
+	MeshBasicMaterial,
+	Vector3,
+	PointLightHelper,
+	GridHelper,
+} from "./source/three.module.js"
 
 import {
 	GLTFLoader
-} from "three/examples/jsm/loaders/GLTFLoader";
+} from "./source/GLTFLoader.js";
 
 import {
 	boxes
@@ -18,18 +39,21 @@ let groundLength = 1;
 let distanceBetweenRows = 8;
 
 //////////////////// ESCENA ////////////////////
-const scene = new THREE.Scene();
-scene.background = new THREE.Color("white");
-scene.fog = new THREE.Fog("white", 0.1, 35);
+const scene = new Scene();
+scene.background = new Color("white");
+scene.fog = new Fog("white", 10, 25);
 
 //////////////////// CAMARAS ////////////////////
-const camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.1, 1000);
+const camera = new PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.1, 25);
+// const camera = new OrthographicCamera(window.innerWidth / -2, window.innerWidth / 2, window.innerHeight / 2, window.innerHeight / -2, 1, 1000);
+camera.lookAt(getCameraTargetVector());
+
 camera.position.set(0, 1, 4);
 
 //////////////////// LIGHT ////////////////////
-const hemisphereLight = new THREE.HemisphereLight(0xb5b5b5, 0x474747, 1);
+const hemisphereLight = new HemisphereLight(0xb5b5b5, 0x6f6f6f, 1);
 
-const pointLight = new THREE.PointLight(0xffffff);
+const pointLight = new PointLight(0xffffff);
 pointLight.intensity = 0.7;
 pointLight.position.set(5, 10, 15);
 pointLight.castShadow = true;
@@ -37,12 +61,12 @@ pointLight.castShadow = true;
 
 scene.add(hemisphereLight, pointLight);
 //////////////////// GROUND ////////////////////
-const geometryGround = new THREE.PlaneGeometry(50, 50);
-const materialGround = new THREE.MeshStandardMaterial({
+const geometryGround = new PlaneGeometry(50, 50);
+const materialGround = new MeshStandardMaterial({
 	color: "white"
 });
 
-const ground = new THREE.Mesh(geometryGround, materialGround);
+const ground = new Mesh(geometryGround, materialGround);
 ground.rotation.x = (Math.PI * -0.5);
 
 ground.receiveShadow = true;
@@ -50,14 +74,14 @@ ground.receiveShadow = true;
 
 scene.add(ground);
 //////////////////// HELPERS ////////////////////
-const gridHelper = new THREE.GridHelper(20, 20);
-const pointLightHelper = new THREE.PointLightHelper(pointLight);
+const gridHelper = new GridHelper(20, 20);
+const pointLightHelper = new PointLightHelper(pointLight);
 scene.add(pointLightHelper);
 
 
 //////////////////// RENDERER ////////////////////
 const canvas = document.querySelector("#canvas");
-const renderer = new THREE.WebGLRenderer({
+const renderer = new WebGLRenderer({
 	canvas
 });
 
@@ -83,32 +107,6 @@ let colors = [0xc4ec6e, 0x7089fa, 0xef86f7, 0xb681eb];
 
 //////////////////// FUNCTIONS ////////////////////
 
-// function generateElements(modelsArray, arrayPerson, colors) {
-// 	arrayPerson.forEach((item, i) => {
-// 		if (i % 5 == 0) {
-// 			row++;
-// 		}
-//
-// 		let person = getRandomItem(modelsArray).clone();
-// 		let color = new THREE.MeshStandardMaterial();
-// 		person.material = color;
-// 		person.castShadow = true;
-// 		person.material.color.set(getRandomItem(colors));
-//
-// 		person.position.set(setPosition(i, arrayPerson).x, setPosition(i, arrayPerson).y, setPosition(i, arrayPerson).z);
-//
-// 		scene.add(person);
-//
-// 	});
-//
-// }
-
-
-
-
-
-
-
 function getRandomModelLocation() {
 	let randomLocation = getRandomItem(modelLocationArray);
 	return randomLocation;
@@ -121,10 +119,10 @@ function getRandomItem(array) {
 
 function setPosition(index, row, array) {
 	if (index === array.length - 1) {
-		const vector0 = new THREE.Vector3(0, alturaSuelo, 0);
+		const vector0 = new Vector3(0, alturaSuelo, 0);
 		return vector0;
 	}
-	let vector = new THREE.Vector3(index * distancia - (rowLength / 2) - ((rowLength + distancia) * (row - 1)), alturaSuelo, -(distanceBetweenRows + row * distanceBetweenRows));
+	let vector = new Vector3(index * distancia - (rowLength / 2) - ((rowLength + distancia) * (row - 1)), alturaSuelo, -(distanceBetweenRows + row * distanceBetweenRows));
 	return vector;
 }
 
@@ -138,7 +136,7 @@ function printDescriptionWithWordWrap(context, text, x, y, lineHeight, fitWidth)
 	let currentLine = 0;
 	let index = 1;
 
-	while (index <= wordsArray.length) {
+	while (index <= wordsArray.length && index <= wordsArray.length) {
 		let string = wordsArray.slice(0, index).join(' ');
 		let stringWidth = context.measureText(string).width;
 
@@ -148,6 +146,7 @@ function printDescriptionWithWordWrap(context, text, x, y, lineHeight, fitWidth)
 			currentLine++;
 			wordsArray = wordsArray.splice(index - 1);
 			index = 1;
+
 		} else {
 			index++;
 		}
@@ -163,27 +162,33 @@ function addText(item, bubbleMesh) {
 	canvas.height = 400;
 	let context = canvas.getContext("2d");
 	context.font = "24pt Arial";
+	// context.fillRect(0, 0, canvas.width, canvas.height)
 	context.fillStyle = "black";
 	context.textAlign = "left";
-	// context.fillRect(0, 0, canvas.width, canvas.height)
+
 
 	let lineHeight = context.measureText("M").width * 1.5;
 	let text = createText(item);
 	let lines = text.split('/n');
 	let rowsText = printDescriptionWithWordWrap(context, item.description, 50, 24 + lineHeight, lineHeight, 300) + 1;
+
 	for (var i = 0; i < lines.length; i++) {
 		context.fillText(lines[i], 50, 24 + (i * lineHeight * (rowsText + 1)));
 	}
 
-	let texture = new THREE.Texture(canvas);
+	let texture = new Texture(canvas);
 	texture.needsUpdate = true;
 
-	let spriteMaterial = new THREE.SpriteMaterial({
+	let spriteMaterial = new SpriteMaterial({
 		map: texture
 	});
 
-	let sprite = new THREE.Sprite(spriteMaterial);
-	sprite.position.set(0, 0.50 - 0.15, 0);
+	// let sprite = new Mesh(plane, spriteMaterial);
+	let sprite = new Sprite(spriteMaterial);
+
+	sprite.position.set(0, 0.50 - 0.15, 0.15);
+
+
 	// let centerPositionY = 1 / (rowsText + (rowsText / 2));
 	// MAYBE FIX?? CENTER THIS
 	bubbleMesh.add(sprite);
@@ -191,7 +196,7 @@ function addText(item, bubbleMesh) {
 }
 
 function generateTextBubble(item, objectWidth, objectPositionX, objectHeight, objectPositionZ) {
-	const bubbleShape = new THREE.Shape();
+	const bubbleShape = new Shape();
 	let bubbleWidth = 1;
 	let bubbleHeight = 1;
 	let bubbleBorderRadius = 0.2;
@@ -211,35 +216,34 @@ function generateTextBubble(item, objectWidth, objectPositionX, objectHeight, ob
 	}
 	roundedRect(bubbleShape, bubblePositionX, bubblePositionY, bubbleWidth, bubbleHeight, bubbleBorderRadius);
 
-	let bubbleGeometry = new THREE.ShapeGeometry(bubbleShape);
-	let bubbleMaterial = new THREE.MeshBasicMaterial({
+	let bubbleGeometry = new ShapeGeometry(bubbleShape);
+	let bubbleMaterial = new MeshBasicMaterial({
 		color: 0xf1f1f1
 	});
-	const bubbleMesh = new THREE.Mesh(bubbleGeometry, bubbleMaterial);
+	const bubbleMesh = new Mesh(bubbleGeometry, bubbleMaterial);
 	bubbleMesh.position.set(objectPositionX, (objectHeight * 2) + 0.15, objectPositionZ);
+	bubbleMesh.rotation.set(0, 0, 0)
 	addText(item, bubbleMesh);
 
 	scene.add(bubbleMesh);
 }
 
-
 let modelLocationArray = ["models3D/model01.glb", "models3D/model02.glb", "models3D/model03.glb", "models3D/model04.glb", "models3D/model05.glb", "models3D/model06.glb", "models3D/model07.glb", "models3D/model08.glb"]
 const gltfLoader = new GLTFLoader();
-let index = 0;
+let loadedModels = 0;
 let modelsArray = [];
 
 function loadNextModel() {
-	if (index > modelLocationArray.length - 1) {
+	if (loadedModels > modelLocationArray.length - 1) {
 		generateElements(boxes, colors);
 		return;
 	};
-	gltfLoader.load(modelLocationArray[index], function(object) {
+	gltfLoader.load(modelLocationArray[loadedModels], function(object) {
 		modelsArray.push(object.scene.children[0])
-		index++;
+		loadedModels++;
 		loadNextModel();
 	});
 }
-
 
 function generateElements(arrayPerson, colors) {
 	let row = 0;
@@ -248,7 +252,7 @@ function generateElements(arrayPerson, colors) {
 			row++
 		}
 		let person = getRandomItem(modelsArray).clone();
-		let color = new THREE.MeshStandardMaterial();
+		let color = new MeshStandardMaterial();
 		person.material = color;
 		// gltf.scene --> Group
 		// gltf.scene.children[0] --> Mesh
@@ -268,32 +272,43 @@ function generateElements(arrayPerson, colors) {
 	});
 }
 
-// SCROLL MOVEMENT
-let wheelCount = camera.position.z;
+// CAMERA MOVEMENT
 
+// SCROLL
+let wheelCount = camera.position.z;
 canvas.addEventListener("wheel", function(e) {
 	let maxZoomOutValue = 7;
-	pointLight.position.set(pointLight.position.x, pointLight.position.y, camera.position.z + 10);
+	console.log(camera.position.z)
+	let cameraTargetVector = getCameraTargetVector();
+	camera.lookAt(cameraTargetVector);
+
+	pointLight.position.set(pointLight.position.x, pointLight.position.y, camera.position.z + 10); // pointlight following camera
 	camera.position.z = getWheelCount(e);
-	console.log()
+
 	longerGround(e);
-	if (camera.position.z > maxZoomOutValue) {
+	if (camera.position.z > maxZoomOutValue) { // camera zoom out limit
 		stopZoomOut(maxZoomOutValue);
 	} else if (camera.position.y < 3.5) {
-		moveCameraY(e)
+		moveCameraYScroll(e);
 	}
 });
 
-function moveCameraY(e) {
-	if (camera.position.y < 3.5) {
-		if (e.deltaY < 0) {
-			camera.position.y++
-		} else if (camera.position.y <= 1) { // para que la cam no atraviese el suelo
-			camera.position.y = 1;
-		} else {
-			camera.position.y--
-		}
+function moveCameraYScroll(e) {
+	if (e.deltaY < 0) { // if moves to the front
+		camera.position.y++
 	}
+
+	if (e.deltaY > 0) { // if moves backwards
+		if (camera.position.y <= 1) {
+			return;
+		}
+		camera.position.y--
+	}
+}
+
+function getCameraTargetVector() {
+	let cameraTargetVector = new Vector3(0, 1, camera.position.z - 15);
+	return cameraTargetVector;
 }
 
 function getWheelCount(e) {
@@ -312,12 +327,61 @@ function stopZoomOut(maxZoomOutValue) {
 	groundLength = 1;
 }
 
+document.querySelector(".forwards").addEventListener("click", function() {
+	moveToTheNextRow();
+})
+
+document.querySelector(".backwards").addEventListener("click", function() {
+	moveToThePreviousRow();
+})
+
+function moveToTheNextRow() {
+	console.log(camera.position.z)
+	camera.position.z -= 1;
+	let maxZoomOutValue = 7;
+	if (camera.position.z > maxZoomOutValue) { // camera zoom out limit
+		stopZoomOut(maxZoomOutValue);
+	}
+	moveCameraYForwards()
+}
+
+
+
+
+
+function moveToThePreviousRow() {
+
+	console.log(camera.position.z)
+	let maxZoomOutValue = 7;
+	camera.position.z += 1;
+	if (camera.position.z > maxZoomOutValue) { // camera zoom out limit
+		stopZoomOut(maxZoomOutValue);
+	}
+}
+
+function moveCameraYForwards() {
+	let cameraTargetVector = getCameraTargetVector();
+	camera.lookAt(cameraTargetVector);
+
+	pointLight.position.set(pointLight.position.x, pointLight.position.y, camera.position.z + 10); // pointlight following camera
+	console.log("this")
+	if (camera.position.z < 4 && camera.position.z > 0) { // if moves to the front
+		camera.position.y++
+	}
+}
+
+function moveCameraYBackwards() {
+	let cameraTargetVector = getCameraTargetVector();
+	camera.lookAt(cameraTargetVector);
+
+	pointLight.position.set(pointLight.position.x, pointLight.position.y, camera.position.z + 10); // pointlight following camera
+	if (e.deltaY > 0) { // if moves backwards
+		if (camera.position.y <= 1) {
+			return;
+		}
+		camera.position.y--
+	}
+}
+
 animate();
 loadNextModel()
-
-// GENERACIÓN RANDOM
-// let x = Math.floor(Math.random() * (ground.geometry.parameters.width / 2));
-// x *= Math.round(Math.random()) ? 1 : -1;
-// let z = Math.floor(Math.random() * (ground.geometry.parameters.height / 2));
-// z *= Math.round(Math.random()) ? 1 : -1;
-// caja.position.set(x, 0.49, z)
