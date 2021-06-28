@@ -82,7 +82,8 @@ scene.add(pointLightHelper);
 //////////////////// RENDERER ////////////////////
 const canvas = document.querySelector("#canvas");
 const renderer = new WebGLRenderer({
-	canvas
+	canvas,
+	antialias: true
 });
 
 renderer.shadowMap.enabled = true;
@@ -166,7 +167,6 @@ function addText(item, bubbleMesh) {
 	context.fillStyle = "black";
 	context.textAlign = "left";
 
-
 	let lineHeight = context.measureText("M").width * 1.5;
 	let text = createText(item);
 	let lines = text.split('/n');
@@ -187,7 +187,6 @@ function addText(item, bubbleMesh) {
 	let sprite = new Sprite(spriteMaterial);
 
 	sprite.position.set(0, 0.50 - 0.15, 0.15);
-
 
 	// let centerPositionY = 1 / (rowsText + (rowsText / 2));
 	// MAYBE FIX?? CENTER THIS
@@ -278,7 +277,6 @@ function generateElements(arrayPerson, colors) {
 let wheelCount = camera.position.z;
 canvas.addEventListener("wheel", function(e) {
 	let maxZoomOutValue = 7;
-	console.log(camera.position.z)
 	let cameraTargetVector = getCameraTargetVector();
 	camera.lookAt(cameraTargetVector);
 
@@ -335,6 +333,9 @@ document.querySelector(".backwards").addEventListener("click", function() {
 	moveToThePreviousRow();
 })
 
+
+
+
 function moveToTheNextRow() {
 	console.log(camera.position.z)
 	camera.position.z -= 1;
@@ -344,9 +345,6 @@ function moveToTheNextRow() {
 	}
 	moveCameraYForwards()
 }
-
-
-
 
 
 function moveToThePreviousRow() {
