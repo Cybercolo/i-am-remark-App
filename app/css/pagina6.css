@@ -1,6 +1,8 @@
 
 body {
-    position: relative;
+    display: flex;
+    position: absolute;
+    margin:0px;
 }
 
 header {
