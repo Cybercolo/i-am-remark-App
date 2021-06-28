@@ -42,13 +42,29 @@ let arrayPrueba = [ //////////se crean objetos dentro del array//////////
         logro: "I am Remarkable"
     }];
  
-//let otroarray = [];
+let otroArray = [];
+let url = `http://jsonplaceholder.typicode.com/users`
+
+
+
+async function newApi(){
+    const response = await fetch(url);
+    const user = await response.json();
+    return user;
+}
+
 
 //  getData ////////////captura la data (informacion del array)//////////////
-    function getData(){
-        let arrayInfo = arrayPrueba;
-        return arrayInfo;
+    async function getData(){
+        let userData = arrayPrueba
+        newApi().then(users => {
+           usersData=users;
+        })
+       
+       console.log(userData)
     };
+    getData()
+   
 // loadEachData ///////////Leer objetos del array y los muestra////////////
     function loadEachData(dataList){
         dataList.forEach(element => printItem(element));   
