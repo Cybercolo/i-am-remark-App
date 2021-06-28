@@ -1,3 +1,10 @@
+@media screen 
+  and (device-width: 360px) 
+  and (device-height: 640px) 
+  and (-webkit-device-pixel-ratio: 4) {
+
+}
+
 .container4{
 
 display: flex;
@@ -14,3 +21,77 @@ align-items: center;}
     font-family: 'Raleway', sans-serif;
     font-family: 'Roboto', sans-serif;
 }
+
+/*** ESTILOS BOTÓN  ***/
+.botonnext {
+    background: #fff; /* color de fondo */
+    color: #0D0C2F; /* color de fuente */
+    border: 2px solid #0D0C2F; /* tamaño y color de borde */
+    padding: 16px 20px;
+    border-radius: 3px; /* redondear bordes */
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    display: inline-block;
+    text-decoration:none;
+    
+}
+  .botonnext:hover {
+    color: #fff;/* color de fuente hover */
+  }
+  .botonnext::after {
+    content: "";
+    background: #0D0C2F; /* color de fondo hover */
+    position: absolute;
+    z-index: -1;
+    padding: 16px 20px;
+    display: block;
+    left: -20%;
+    right: -20%;
+    top: 0;
+    bottom: 0;
+    transform: skewX(-45deg) scale(0, 1);
+    transition: all 0.3s ease;
+  }
+  .botonnext:hover::after {
+    transition: all 0.3s ease-out;
+    transform: skewX(-45deg) scale(1, 1);
+  }
+
+  /*** ESTILOS BOTÓN  ***/
+.botonhome {
+    background: #fff; /* color de fondo */
+    color: #0D0C2F; /* color de fuente */
+    border: 2px solid #0D0C2F; /* tamaño y color de borde */
+    padding: 16px 20px;
+    border-radius: 3px; /* redondear bordes */
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    display: inline-block;
+    text-decoration:none;
+    
+}
+  .botonhome:hover {
+    color: #fff;/* color de fuente hover */
+  }
+  .botonhome::after {
+    content: "";
+    background: #0D0C2F; /* color de fondo hover */
+    position: absolute;
+    z-index: -1;
+    padding: 16px 20px;
+    display: block;
+    left: -20%;
+    right: -20%;
+    top: 0;
+    bottom: 0;
+    transform: skewX(-45deg) scale(0, 1);
+    transition: all 0.3s ease;
+  }
+  .botonhome:hover::after {
+    transition: all 0.3s ease-out;
+    transform: skewX(-45deg) scale(1, 1);
+  }
+
+
