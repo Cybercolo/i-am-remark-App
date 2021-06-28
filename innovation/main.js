@@ -37,6 +37,7 @@ let distancia = 1.2;
 let rowLength = 4 * distancia;
 let groundLength = 1;
 let distanceBetweenRows = 8;
+let isPressedMe = false;
 
 //////////////////// ESCENA ////////////////////
 const scene = new Scene();
@@ -325,18 +326,37 @@ function stopZoomOut(maxZoomOutValue) {
 	groundLength = 1;
 }
 
-document.querySelector(".forwards").addEventListener("click", function() {
-	moveToTheNextRow();
+/*function phoneMove() {
+	while (isPressedMe) {
+		console.log("Violacion", camera.position.z);
+		if (isPressedMe == false){
+			break;
+		}
+	
+	}
+}*/
+
+document.querySelector(".forwards").addEventListener("touchstart", function() {
+	isPressedMe = true;
+	console.log(isPressedMe)
+})
+document.querySelector(".forwards").addEventListener("touchend", function() {
+	isPressedMe = false;
+	console.log(isPressedMe)
 })
 
 document.querySelector(".backwards").addEventListener("click", function() {
-	moveToThePreviousRow();
+	moveForBackwards();
 })
 
+<<<<<<< HEAD
 
 
 
 function moveToTheNextRow() {
+=======
+function moveForwards() {
+>>>>>>> 1ba271902e000e7ffc7235ea8d6ebb82550344ad
 	console.log(camera.position.z)
 	camera.position.z -= 1;
 	let maxZoomOutValue = 7;
@@ -344,17 +364,24 @@ function moveToTheNextRow() {
 		stopZoomOut(maxZoomOutValue);
 	}
 	moveCameraYForwards()
+	
 }
 
+<<<<<<< HEAD
 
 function moveToThePreviousRow() {
 
 	console.log(camera.position.z)
+=======
+function moveForBackwards() {
+>>>>>>> 1ba271902e000e7ffc7235ea8d6ebb82550344ad
 	let maxZoomOutValue = 7;
 	camera.position.z += 1;
 	if (camera.position.z > maxZoomOutValue) { // camera zoom out limit
 		stopZoomOut(maxZoomOutValue);
 	}
+
+	moveCameraYBackwards()
 }
 
 function moveCameraYForwards() {
@@ -362,7 +389,6 @@ function moveCameraYForwards() {
 	camera.lookAt(cameraTargetVector);
 
 	pointLight.position.set(pointLight.position.x, pointLight.position.y, camera.position.z + 10); // pointlight following camera
-	console.log("this")
 	if (camera.position.z < 4 && camera.position.z > 0) { // if moves to the front
 		camera.position.y++
 	}
@@ -373,10 +399,9 @@ function moveCameraYBackwards() {
 	camera.lookAt(cameraTargetVector);
 
 	pointLight.position.set(pointLight.position.x, pointLight.position.y, camera.position.z + 10); // pointlight following camera
-	if (e.deltaY > 0) { // if moves backwards
-		if (camera.position.y <= 1) {
-			return;
-		}
+	console.log("AtrasZ", camera.position.z)
+	if (camera.position.z > 1 && camera.position.z < 5 ) { // pa tras
+		console.log("atras")
 		camera.position.y--
 	}
 }

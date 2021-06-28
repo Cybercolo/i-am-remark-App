@@ -16,7 +16,7 @@ export let boxes = [{
 	"country": "India"
 }, {
 	"name": "Leon",
-	"description": "I'm remarkable because I look after my little sister more than my parents.",
+	"description": "I'm remarkable because soy un gato persa y solo como y duermo :3 .",
 	"country": "Greek"
 }, {
 	"name": "Anna",

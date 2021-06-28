@@ -13,8 +13,11 @@ html, body {
   height: 100%;
 }
 
-button {
+div {
   position: absolute;
+  width:20px;
+  height: 20px;
+  background-color: red;
 }
 
 .backwards {
