@@ -278,7 +278,6 @@ function generateElements(arrayPerson, colors) {
 let wheelCount = camera.position.z;
 canvas.addEventListener("wheel", function(e) {
 	let maxZoomOutValue = 7;
-	console.log(camera.position.z)
 	let cameraTargetVector = getCameraTargetVector();
 	camera.lookAt(cameraTargetVector);
 
@@ -336,7 +335,6 @@ document.querySelector(".backwards").addEventListener("click", function() {
 })
 
 function moveToTheNextRow() {
-	console.log(camera.position.z)
 	camera.position.z -= 1;
 	let maxZoomOutValue = 7;
 	if (camera.position.z > maxZoomOutValue) { // camera zoom out limit
@@ -345,18 +343,14 @@ function moveToTheNextRow() {
 	moveCameraYForwards()
 }
 
-
-
-
-
 function moveToThePreviousRow() {
-
-	console.log(camera.position.z)
 	let maxZoomOutValue = 7;
 	camera.position.z += 1;
 	if (camera.position.z > maxZoomOutValue) { // camera zoom out limit
 		stopZoomOut(maxZoomOutValue);
 	}
+
+	moveCameraYBackwards()
 }
 
 function moveCameraYForwards() {
@@ -364,7 +358,6 @@ function moveCameraYForwards() {
 	camera.lookAt(cameraTargetVector);
 
 	pointLight.position.set(pointLight.position.x, pointLight.position.y, camera.position.z + 10); // pointlight following camera
-	console.log("this")
 	if (camera.position.z < 4 && camera.position.z > 0) { // if moves to the front
 		camera.position.y++
 	}
@@ -375,10 +368,9 @@ function moveCameraYBackwards() {
 	camera.lookAt(cameraTargetVector);
 
 	pointLight.position.set(pointLight.position.x, pointLight.position.y, camera.position.z + 10); // pointlight following camera
-	if (e.deltaY > 0) { // if moves backwards
-		if (camera.position.y <= 1) {
-			return;
-		}
+	console.log("AtrasZ", camera.position.z)
+	if (camera.position.z > 1 && camera.position.z < 5 ) { // pa tras
+		console.log("atras")
 		camera.position.y--
 	}
 }
