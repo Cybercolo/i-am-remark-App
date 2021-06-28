@@ -12,9 +12,14 @@ and (-webkit-device-pixel-ratio: 4) {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 0;
+    margin: 30px 50px 50px 30px;
     padding:0;
     box-sizing: border-box;
+    
+ font-family: 'Homemade Apple', cursive;
+ font-family: 'Open Sans', sans-serif;
+ font-family: 'Raleway', sans-serif;
+ font-family: 'Roboto', sans-serif;
 }
 
 .mision{
@@ -22,7 +27,7 @@ and (-webkit-device-pixel-ratio: 4) {
     font-family: 'Raleway', sans-serif;
     font-size: 32px;
     line-height: 40px;
-    margin: 0;
+    margin: 40px;
 }
 
 .video1
@@ -30,6 +35,7 @@ and (-webkit-device-pixel-ratio: 4) {
 display: flex;
 flex-direction: column;
 align-items: center;
+margin: 40px;
 }
 
 /*** ESTILOS BOTÓN  ***/
@@ -44,6 +50,7 @@ align-items: center;
   overflow: hidden;
   display: inline-block;
   text-decoration:none;
+  margin: 40px;
 
 }
 .boton:hover {
@@ -68,11 +75,28 @@ align-items: center;
   transform: skewX(-45deg) scale(1, 1);
 }
 
-/*font-family: 'Homemade Apple', cursive;
-font-family: 'Open Sans', sans-serif;
-font-family: 'Raleway', sans-serif;
-font-family: 'Roboto', sans-serif;/*
+h1{
 
+  text-align: center;
+  margin-left: 50px;
+  margin-right:  50px;
+  margin: 40px;
+
+}
+
+.video2{
+
+    margin-bottom: 40px;
+
+}
+
+img{
+    margin: 40px;
+
+}
+
+/* 
 .todo
-@media screen and (device-aspect-ratio: 16/9), screen and (device-aspect-ratio: 16/10) { ... }*/
+@media screen and (device-aspect-ratio: 16/9), screen and 
+(device-aspect-ratio: 16/10) { ... }*/
 
