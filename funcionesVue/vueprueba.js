@@ -126,3 +126,4 @@ newApi().then (users =>{
                             resolve(url);
                         }, 1000);
                     });
+                }
