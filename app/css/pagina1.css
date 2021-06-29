@@ -31,29 +31,21 @@ and (device-height: 640px)
     display: flex;
     flex-direction: column;
     align-items: center;
-
     margin: 30px 30px 30px 30px;
     padding:0;
     box-sizing: border-box;
+    padding:0;    
     
- font-family: 'Homemade Apple';
- font-family: 'Open Sans', sans-serif;
- font-family: 'Raleway', sans-serif;
- font-family: 'Roboto', sans-serif;
-
-
-  
-    padding:0;
-    box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
 }
 
 
 .mision{
   color: #61646e;
-  font-family: 'Raleway', sans-serif;
-  font-size: 28px;
-  line-height: 40px;
+  font-family: 'Roboto';
+  font-style: 'Regular';
+  font-size: 16px;
+  line-height: 15px;
   margin: 60;
   display: flex;
   flex-direction: column;
@@ -66,13 +58,6 @@ and (device-height: 640px)
   height: 100%;
   
 
-    color: #61646e;
-    font-family: 'Raleway', sans-serif;
-    font-size: 28px;
-    line-height: 40px;
-    margin: 40px;
-    width: 40vw;
-    height: 30vh;
 }
 
 .video1
@@ -120,7 +105,7 @@ margin: 40px;
   transform: skewX(-45deg) scale(1, 1);
 }
 
-h2{
+p{
   
   text-align: center;
   margin-left: 50px;

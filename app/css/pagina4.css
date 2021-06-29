@@ -5,6 +5,18 @@
 
 }
 
+
+*{
+  margin: 0px;
+  padding: 0px;
+  color: #202124;
+  font-size: 9px;
+  font-family: 'Roboto', sans-serif;
+  box-sizing: border-box;
+  
+}
+
+
 .logo{
   margin-top: 20px;
 }
@@ -107,15 +119,6 @@ linear-gradient(0deg, #AEC8CF, #AEC8CF);
 
 }
 
-*{
-    margin: 0px;
-    padding: 0px;
-    color: #202124;
-    font-size: 9px;
-    font-family: 'Roboto', sans-serif;
-    box-sizing: border-box;
-    
-}
 
 
 /*** ESTILOS BOTÓN  ***/
