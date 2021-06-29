@@ -12,13 +12,11 @@
    }
 
 .brand{
-
     margin: 40px;
 
 }
 
 .gei{
-
     margin: 20px;
 
 }
@@ -34,64 +32,95 @@
     margin-bottom: 4px;
     border:none; 
     margin: 50px;
-
 }
 
-.container{
-   
+.container{   
     display: flex;
     flex-direction: column;
-    align-items: center;}
+    align-items: center;
+}
 
 .animacion3d{
     width: 90px;
     height: 90px;
     border-radius: 25%;
     opacity: 0.9;
-   
-}
-
+   }
 
 .usuario{
     padding: 30px 20px;
     border-radius: 40px;
-    background-color: rgb(254, 255, 255) ;
-    box-shadow: 4px 4px 2px 2px rgba(120, 120, 120, 0.2);
+    background-color: rgb(254, 255, 255, 75) ;
+    box-shadow: 4px 4px 2px 20 rgba(120, 120, 120, 15);
     margin: 40px;
 }
-
+.botones2{
+    display: flex;
+    align-items: center;
+}
 .view{
     background-color: white;    
-     border-radius: 30px;
-     padding: 20px;     
+    border-radius: 50px;
+    padding: 20px;     
     text-decoration: none;
-    margin: 30px;
+    margin: 35px;
+    z-index: 1;
+    box-shadow: 
+    3px 3px 7px 0 rgb(255, 255, 255) inset,
+    -3px -3px 5px 0 rgba(0, 0, 0, .2) inset;
+    position: absolute;
 }
+.view1{
+    z-index: 2;
+    padding: 15px;
+    box-shadow: 
+    3px 3px 7px 0 rgb(255, 255, 255) ,
+    -3px -3px 5px 0 rgba(0, 0, 0, .2) ;
+    margin:20px ;
+    margin-left:40px;
+ 
+}
+.botones{
+    display: flex;
+    align-items: center;
+
+}
+
 
 .lupita{
     background-color: #FAFCFB;
-    border-radius: 5px;
-    padding: 10px;
-    display: flex;
-    flex-direction:row; 
-    align-content: flex-end;
+    border-radius: 50px;
+    padding: 20px;    
     text-decoration: none;
-    text-decoration-color: rgb(30, 210, 201);
-    margin: 50px;
-    box-shadow: 3px 3px 7px 0 rgb(255, 255, 255) inset,
-    -3px -3px 7px 0 rgba(0, 0, 0, .2) inset;
-
+    position: absolute;
+    z-index: 2;
+    margin-left: 5px;
+   
+    box-shadow: 
+    3px 3px 7px 0 rgb(255, 255, 255) inset,
+    -3px -3px 5px 0 rgba(0, 0, 0, .2) inset;
+    
+}
+.lupita1{
+    z-index: 1;
+    background-color: #FAFCFB;
+    border-radius: 50px;
+    padding: 25px;    
+    text-decoration: none;    
+    box-shadow: 
+    3px 3px 7px 0 rgb(255, 255, 255) ,
+    -3px -3px 5px 0 rgba(0, 0, 0, .2) ;   
 }
 
 .imglupita{
-
-    width: 20px;
-    height: 20px;
-
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    z-index: 3;
+    margin-left: 17px;
 }
 
 button {
-
     background-color:linear-gradient(rgb(255, 255, 255) rgb(199, 199, 199))   ;
     border-radius: 50px;
     padding: 20px;
@@ -121,7 +150,6 @@ button {
 } */
 
 .animacion3d {
-
     padding: 50px 80px;
     border-radius: 40px;
     background-color: rgb(255, 255, 255) ;
@@ -129,20 +157,15 @@ button {
     margin: 40px;
 }
 .flechita{
-
     width: 15px;
     height: 15px;
     margin-left: 3px;
-
-
 }
 .final{
-
     background-color: #FAFCFB;
     border-radius: 10px;
     padding: 20px;
-    display: flex;
-    
+    display: flex;    
     text-decoration: none;
     text-decoration-color: rgb(30, 210, 201);
     margin: 50px;
