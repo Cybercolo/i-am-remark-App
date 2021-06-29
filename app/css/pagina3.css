@@ -5,11 +5,10 @@
 
 }
 
-*{
-    background-color: #FAFCFB;
-    font-family: 'Open Sans', sans-serif;
-   
-   }
+
+.body{
+    background-color:radial-gradient(rgb(224, 234, 255) rgb(255, 255, 255));
+}
 
 .brand{
     margin: 40px;
@@ -34,20 +33,11 @@
     margin: 50px;
 }
 
-.container{   
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
 
-.animacion3d{
-    width: 90px;
-    height: 90px;
-    border-radius: 25%;
-    opacity: 0.9;
-   }
+
 
 .usuario{
+    align-items: center;
     padding: 30px 20px;
     border-radius: 40px;
     background-color: rgb(254, 255, 255, 75) ;
@@ -57,6 +47,7 @@
 .botones2{
     display: flex;
     align-items: center;
+    background-color: ;
 }
 .view{
     background-color: white;    
@@ -120,7 +111,7 @@
     margin-left: 17px;
 }
 
-button {
+button  {
     background-color:linear-gradient(rgb(255, 255, 255) rgb(199, 199, 199))   ;
     border-radius: 50px;
     padding: 20px;
