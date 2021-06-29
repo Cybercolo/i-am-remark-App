@@ -1,9 +1,9 @@
 
-@media screen {
+@media screen 
 and (device-width: 360px) 
 and (device-height: 640px) 
 and (-webkit-device-pixel-ratio: 4) 
-}
+{}
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
 
@@ -18,6 +18,7 @@ margin:0px;
     height: 100vh;
     position:fixed;
     border:solid darkgoldenrod 2px;
+    /* margin:10px; */
     }
 .containerpg_02 {
 

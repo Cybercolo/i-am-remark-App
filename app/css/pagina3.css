@@ -5,11 +5,9 @@
 
 }
 
-*{
-    background-color: #FAFCFB;
-    font-family: 'Open Sans', sans-serif;
-   
-   }
+.container{
+    background-color:radial-gradient(rgb(224, 234, 255) rgb(255, 255, 255));
+}
 
 .brand{
     margin: 40px;
@@ -20,7 +18,7 @@
     margin: 20px;
 
 }
-.popup {
+/* .popup {
 
     background-color:snow;
     font-family:Arial, Helvetica, sans-serif;
@@ -32,32 +30,33 @@
     margin-bottom: 4px;
     border:none; 
     margin: 50px;
-}
+} */
 
-.container{   
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
 
-.animacion3d{
-    width: 90px;
-    height: 90px;
-    border-radius: 25%;
-    opacity: 0.9;
-   }
+
 
 .usuario{
-    padding: 30px 20px;
+    padding: 100px;
     border-radius: 40px;
     background-color: rgb(254, 255, 255, 75) ;
-    box-shadow: 4px 4px 2px 20 rgba(120, 120, 120, 15);
-    margin: 40px;
+    box-shadow:  
+    3px 3px 7px 0 rgb(255, 255, 255) inset,
+    -3px -3px 5px 0 rgba(0, 0, 0, .2) inset;
+    margin: 40px;   
+
 }
+
+.texto{
+    margin-bottom: 100px;
+
+}
+
 .botones2{
     display: flex;
     align-items: center;
+    background-color: rgb(14, 13, 47);
 }
+
 .view{
     background-color: white;    
     border-radius: 50px;
@@ -70,6 +69,7 @@
     -3px -3px 5px 0 rgba(0, 0, 0, .2) inset;
     position: absolute;
 }
+
 .view1{
     z-index: 2;
     padding: 15px;
@@ -78,12 +78,11 @@
     -3px -3px 5px 0 rgba(0, 0, 0, .2) ;
     margin:20px ;
     margin-left:40px;
- 
-}
+ }
+
 .botones{
     display: flex;
     align-items: center;
-
 }
 
 
@@ -94,13 +93,13 @@
     text-decoration: none;
     position: absolute;
     z-index: 2;
-    margin-left: 5px;
-   
+    margin-left: 5px;   
     box-shadow: 
     3px 3px 7px 0 rgb(255, 255, 255) inset,
     -3px -3px 5px 0 rgba(0, 0, 0, .2) inset;
     
 }
+
 .lupita1{
     z-index: 1;
     background-color: #FAFCFB;
@@ -118,9 +117,94 @@
     position: absolute;
     z-index: 3;
     margin-left: 17px;
+
+}
+.enlaces{
+    display: flex;
+    justify-content:flex-end;
+    margin-right: 15px;
 }
 
-button {
+.corazon{
+    display: flex;
+    align-items: center;
+}
+
+.imgCorazon{
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    z-index: 3;
+    margin-left: 17px;
+
+}
+.cor{
+    background-color:  #FAFCFB;
+    border-radius: 50px;
+    padding: 20px;    
+    text-decoration: none;
+    position: absolute;
+    z-index: 2;
+    margin-left: 5px;
+    margin-top: 0.75px;
+    box-shadow: 
+    3px 3px 7px 0 rgb(255, 255, 255) inset,
+    -3px -3px 5px 0 rgba(0, 0, 0, .2) inset;
+    
+}
+
+.cora1{
+    z-index: 1;
+    background-color:  #FAFCFB;
+    border-radius: 50px;
+    padding: 25px;    
+    text-decoration: none;    
+    box-shadow: 
+    3px 3px 7px 0 rgb(255, 255, 255) ,
+    -3px -3px 5px 0 rgba(0, 0, 0, .2) ; 
+
+}
+.imgCompartir{
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    z-index: 3;
+    margin-left: 17px;
+}
+
+.compartir{
+    display: flex;
+    align-items: center;
+    margin-right: 5px;
+    
+}
+.com{
+    background-color:  #FAFCFB;
+    border-radius: 50px;
+    padding: 20px;    
+    text-decoration: none;
+    position: absolute;
+    z-index: 2;
+    margin-left: 5px;
+    margin-top: 0.75px;
+    box-shadow: 
+    3px 3px 7px 0 rgb(255, 255, 255) inset,
+    -3px -3px 5px 0 rgba(0, 0, 0, .2) inset;
+    
+}
+
+.comp1{
+    z-index: 1;
+    background-color:  #FAFCFB;
+    border-radius: 50px;
+    padding: 25px;    
+    text-decoration: none;    
+    box-shadow: 
+    3px 3px 7px 0 rgb(255, 255, 255) ,
+    -3px -3px 5px 0 rgba(0, 0, 0, .2) ; 
+}
+
+button  {
     background-color:linear-gradient(rgb(255, 255, 255) rgb(199, 199, 199))   ;
     border-radius: 50px;
     padding: 20px;
@@ -134,6 +218,20 @@ button {
     -4px -4px 10px 0 rgba(0, 0, 0, .2) ; */
   
 }
+
+
+.usuario{
+    z-index: 1;
+    background-color: #FAFCFB;
+    border-radius: 50px;
+    padding: 25px;    
+    text-decoration: none;    
+    box-shadow: 
+    3px 3px 7px 0 rgb(255, 255, 255) ,
+    -3px -3px 5px 0 rgba(0, 0, 0, .2) ;   
+}
+
+
 
 /* a{
     background-color: #FAFCFB;
