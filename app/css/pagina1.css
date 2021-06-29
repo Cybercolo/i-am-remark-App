@@ -1,12 +1,3 @@
-@media screen 
-and (device-width: 360px) 
-and (device-height: 640px) 
-and (-webkit-device-pixel-ratio: 4) {}
-
-/* @media screen {
-/* and (device-width: 360px) */
-/* and (device-height: 640px) */ 
-
 
 
 .all{
@@ -31,12 +22,10 @@ and (-webkit-device-pixel-ratio: 4) {}
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 30px 30px 30px 30px;
     padding:0;
     box-sizing: border-box;
-    padding:0;    
-    
-    font-size: 12px;
+    font-family: 'Roboto', sans-serif;
+
 }
 
 
@@ -73,14 +62,18 @@ margin: 40px;
   background: #fff; /* color de fondo */
   color: #0D0C2F; /* color de fuente */
   border: 2px solid #0D0C2F; /* tamaño y color de borde */
-  padding: 16px 20px;
-  border-radius: 3px; /* redondear bordes */
+  padding: 12px;
+  border-radius: 30px; /* redondear bordes */
   position: relative;
   z-index: 1;
   overflow: hidden;
   display: inline-block;
   text-decoration:none;
-  margin: 40px;
+  font-family:Arial, Helvetica, sans-serif;
+  font-style: italic;
+  height: 51px;
+  font-size: 20px;
+  box-shadow: 0px 4px 6px 0px rgb(64, 73, 106);
 
 }
 .boton:hover {
@@ -91,7 +84,7 @@ margin: 40px;
   background: #0D0C2F; /* color de fondo hover */
   position: absolute;
   z-index: -1;
-  padding: 16px 20px;
+  padding: 12px;
   display: block;
   left: -20%;
   right: -20%;
@@ -112,6 +105,7 @@ p{
   margin-right:  50px;
   margin: 40px;
 
+
 }
 
 .video2{
@@ -125,9 +119,6 @@ img{
 
 
 }
-/* 
-.todo
-@media screen and (device-aspect-ratio: 16/9), screen and 
-(device-aspect-ratio: 16/10) { ... }*/
+
 
 
