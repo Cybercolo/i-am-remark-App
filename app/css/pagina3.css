@@ -5,8 +5,7 @@
 
 }
 
-
-.body{
+.container{
     background-color:radial-gradient(rgb(224, 234, 255) rgb(255, 255, 255));
 }
 
@@ -277,4 +276,9 @@ button  {
     display: flex;
     align-self: center;
 
+}
+
+.brand{
+    display: flex;
+    align-items: center;
 }
