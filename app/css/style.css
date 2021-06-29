@@ -13,35 +13,33 @@
   padding: 0px;
  
 }
-
 body {
   color: #202124;
   font-family: 'Roboto', sans-serif;
 }
-
 header {
   width: 100%;
   max-width: 1024px;
   display: flex;
   justify-content: center; 
 }
-
 header img {
   width: 100%;
   max-width: 250px;
   margin-top: 90px;
 }
-
 .container {
   width: 100%;
- 
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   background: radial-gradient(112.66% 58.05% at 48.31% -1.3%, rgba(255, 255, 255, 0.54) 16.78%, rgba(135, 237, 255, 0) 82.33%),
   linear-gradient(0deg, #AEC8CF, #AEC8CF);
-  
+  border:solid #9C895D 4px;
+  stroke:#9C895D;
+  stroke-dasharray:0.25em;
+  padding:3px 3px 3px 3px;
 }
 .message-hero {
 
@@ -65,10 +63,10 @@ header img {
 .message  {
   display: flex;
   justify-content: center;
-  color: darkgoldenrod;
+  color:#9C895D;
   font-size: 24px;
   text-align: center;
-  letter-spacing: 2px;   
+  letter-spacing: 1.5px;   
 }
 .message02 {
 
@@ -87,18 +85,17 @@ header img {
   font-style: italic;
   border-radius: 30px;
   height: 51px;
-  padding: 5px;  
+  padding: 18px;  
+  margin-top: -23px;
  }
  
-@media screen and (max-width: 360px) {
- 
-}
+@media screen and (max-width: 360px) {}
 
 .frame {
   width: 100%;
   height: 100vh;
   position:fixed;
-  border:solid darkgoldenrod 2px;
+  border:solid #9C895D 2px;
 }
 .allPeople {
   width:100%;
@@ -107,10 +104,9 @@ header img {
   
 }
 .flecha {
-  Width:60.06px;
-  Height:50.82px;
-  margin-top: 260px;
-  margin-left:325px;
-
+  Width:61px;
+  Height:51px;
+  margin-top: -27px;
+  margin-left: 264px;
   
 }
