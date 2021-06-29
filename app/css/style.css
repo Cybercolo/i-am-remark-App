@@ -89,9 +89,9 @@ header img {
   height: 51px;
   padding: 0px;   
  
-@media screen {
-  and (max-width: 360px) 
+
 }
+
 
 
 .frame {
@@ -100,8 +100,17 @@ header img {
   position:fixed;
   border:solid darkgoldenrod 2px;
 }
-img.allPeople {
+
+.allPeople {
+  width: 100%;
   max-width: 996px;
-  max-height: 980px;
-  
+
+}
+
+
+
+@media screen and (max-width: 360px ) {
+
+
+
 }
