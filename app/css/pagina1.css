@@ -5,21 +5,15 @@ and (-webkit-device-pixel-ratio: 4) {
 
 }
 
-.container{
+.container {
     width: 100vw;
-    height: 100vh;
+    height: 100vw;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 30px 50px 50px 30px;
-    margin: 30px 30px 30px 30px;
     padding:0;
     box-sizing: border-box;
-    
- font-family: 'Homemade Apple', cursive;
- font-family: 'Open Sans', sans-serif;
- font-family: 'Raleway', sans-serif;
- font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 .mision{
@@ -28,6 +22,8 @@ and (-webkit-device-pixel-ratio: 4) {
     font-size: 28px;
     line-height: 40px;
     margin: 40px;
+    width: 40vw;
+    height: 30vh;
 }
 
 .video1
