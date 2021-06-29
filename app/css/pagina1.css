@@ -1,8 +1,28 @@
 @media screen 
 and (device-width: 360px) 
 and (device-height: 640px) 
-and (-webkit-device-pixel-ratio: 4) {
+and (-webkit-device-pixel-ratio: 4) {}
 
+@media screen {
+and (device-width: 360px)
+and (device-height: 640px)
+
+}
+
+.all{
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 40px;
+  padding: 40px;;
+  width: 375px;
+  max-width: 375px;
+  background-color: white;
+  margin: auto;
+  height: 664px;
+  max-height: 664px;
+  box-shadow: 0px 0px 20px 20px rgba(0, 0, 0, 0.2);
 }
 
 .container {
@@ -11,16 +31,41 @@ and (-webkit-device-pixel-ratio: 4) {
     display: flex;
     flex-direction: column;
     align-items: center;
-<<<<<<< HEAD
+
+    margin: 30px 30px 30px 30px;
+    padding:0;
+    box-sizing: border-box;
+    
+ font-family: 'Homemade Apple';
+ font-family: 'Open Sans', sans-serif;
+ font-family: 'Raleway', sans-serif;
+ font-family: 'Roboto', sans-serif;
+
+
   
-=======
->>>>>>> 5add1cb599f87578783c2e7c6b487bd4f6c39f96
     padding:0;
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
 }
 
+
 .mision{
+  color: #61646e;
+  font-family: 'Raleway', sans-serif;
+  font-size: 28px;
+  line-height: 40px;
+  margin: 60;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.video{
+  width: 100%;
+  margin: auto;
+  height: 100%;
+  
+
     color: #61646e;
     font-family: 'Raleway', sans-serif;
     font-size: 28px;
@@ -75,8 +120,8 @@ margin: 40px;
   transform: skewX(-45deg) scale(1, 1);
 }
 
-h1{
-
+h2{
+  
   text-align: center;
   margin-left: 50px;
   margin-right:  50px;
@@ -100,7 +145,6 @@ img{
 @media screen and (device-aspect-ratio: 16/9), screen and 
 (device-aspect-ratio: 16/10) { ... }*/
 
-<<<<<<< HEAD
+
 /* @media screen and (device-aspect-ratio: 16/9), screen and (device-aspect-ratio: 16/10) { ... } */
-=======
->>>>>>> 5add1cb599f87578783c2e7c6b487bd4f6c39f96
+

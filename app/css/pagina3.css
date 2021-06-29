@@ -5,11 +5,9 @@
 
 }
 
-*{
-    background-color: #FAFCFB;
-    font-family: 'Open Sans', sans-serif;
-   
- }
+.container{
+    background-color:radial-gradient(rgb(224, 234, 255) rgb(255, 255, 255));
+}
 
 .brand{
     margin: 40px;
@@ -34,18 +32,8 @@
     margin: 50px;
 } */
 
-.container{   
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
 
-.animacion3d{
-    width: 90px;
-    height: 90px;
-    border-radius: 25%;
-    opacity: 0.9;
-   }
+
 
 .usuario{
     padding: 100px;
@@ -66,6 +54,7 @@
 .botones2{
     display: flex;
     align-items: center;
+    background-color: rgb(14, 13, 47);
 }
 
 .view{
@@ -179,7 +168,7 @@
     -3px -3px 5px 0 rgba(0, 0, 0, .2) ; 
 }
 
-button {
+button  {
     background-color:linear-gradient(rgb(255, 255, 255) rgb(199, 199, 199))   ;
     border-radius: 50px;
     padding: 20px;
@@ -251,4 +240,9 @@ button {
     display: flex;
     align-self: center;
 
+}
+
+.brand{
+    display: flex;
+    align-items: center;
 }
