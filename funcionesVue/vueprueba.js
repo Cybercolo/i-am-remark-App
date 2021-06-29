@@ -43,32 +43,12 @@ let arrayPrueba = [ //////////se crean objetos dentro del array//////////
     }];
  
 let otroArray = [];
-<<<<<<< HEAD
 let url = `http://jsonplaceholder.typicode.com/users`
 
-=======
-
-    let url = 'https://fakerapi.it/api/v1/persons?_quantity=10/'
->>>>>>> f5c299c5c495289c1df7489ec0a521c1f907c309
 
 
 async function newApi(){
     const response = await fetch(url);
-<<<<<<< HEAD
-    const user = await response.json();
-    return user;
-}
-
-
-//  getData ////////////captura la data (informacion del array)//////////////
-    async function getData(){
-        let userData = arrayPrueba
-        newApi().then(users => {
-           usersData=users;
-        })
-       
-       console.log(userData)
-=======
     const users = await response.json();
     return users;
 }
@@ -86,7 +66,6 @@ newApi().then (users =>{
         let arrayInfo = otroArray;
         console.log(otroArray)
         return arrayInfo;
->>>>>>> f5c299c5c495289c1df7489ec0a521c1f907c309
     };
     getData()
    
