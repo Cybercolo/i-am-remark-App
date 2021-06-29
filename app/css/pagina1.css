@@ -4,7 +4,7 @@ and (device-height: 640px)
 and (-webkit-device-pixel-ratio: 4) {}
 
 @media screen {
-and (device-width: 360px)
+/* and (device-width: 360px) */
 and (device-height: 640px)
 
 }
@@ -138,13 +138,11 @@ h2{
 img{
     margin: 40px;
 
-}
 
+}
 /* 
 .todo
 @media screen and (device-aspect-ratio: 16/9), screen and 
 (device-aspect-ratio: 16/10) { ... }*/
 
-
-/* @media screen and (device-aspect-ratio: 16/9), screen and (device-aspect-ratio: 16/10) { ... } */
 
