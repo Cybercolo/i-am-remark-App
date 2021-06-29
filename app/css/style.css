@@ -90,8 +90,10 @@ header img {
   padding: 5px;  
  }
  
-@media screen (max-width: 360px) {
+@media screen and (max-width: 360px) {
+ 
 }
+
 .frame {
   width: 100%;
   height: 100vh;
@@ -107,8 +109,8 @@ header img {
 .flecha {
   Width:60.06px;
   Height:50.82px;
-  Top:316.18px;
-  Left:325px,
+  margin-top: 260px;
+  margin-left:325px;
 
   
 }
