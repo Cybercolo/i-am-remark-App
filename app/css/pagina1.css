@@ -5,22 +5,19 @@ and (-webkit-device-pixel-ratio: 4) {
 
 }
 
-
-
-.container{
+.container {
     width: 100vw;
     height: 100vw;
     display: flex;
     flex-direction: column;
     align-items: center;
+<<<<<<< HEAD
   
+=======
+>>>>>>> 5add1cb599f87578783c2e7c6b487bd4f6c39f96
     padding:0;
     box-sizing: border-box;
-    
- font-family: 'Homemade Apple', cursive;
- font-family: 'Open Sans', sans-serif;
- font-family: 'Raleway', sans-serif;
- font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 .mision{
@@ -103,4 +100,7 @@ img{
 @media screen and (device-aspect-ratio: 16/9), screen and 
 (device-aspect-ratio: 16/10) { ... }*/
 
+<<<<<<< HEAD
 /* @media screen and (device-aspect-ratio: 16/9), screen and (device-aspect-ratio: 16/10) { ... } */
+=======
+>>>>>>> 5add1cb599f87578783c2e7c6b487bd4f6c39f96
