@@ -11,11 +11,8 @@ and (-webkit-device-pixel-ratio: 4) {
     display: flex;
     flex-direction: column;
     align-items: center;
-<<<<<<< HEAD
     margin: 30px 50px 50px 30px;
-=======
     margin: 30px 30px 30px 30px;
->>>>>>> 1964c83cf10d76bc5e3a472ae9d97340e4908141
     padding:0;
     box-sizing: border-box;
     
@@ -97,13 +94,3 @@ img{
     margin: 40px;
 
 }
-
-/* 
-.todo
-<<<<<<< HEAD
-@media screen and (device-aspect-ratio: 16/9), screen and 
-(device-aspect-ratio: 16/10) { ... }*/
-
-=======
-@media screen and (device-aspect-ratio: 16/9), screen and (device-aspect-ratio: 16/10) { ... }*/
->>>>>>> 1964c83cf10d76bc5e3a472ae9d97340e4908141
