@@ -1,7 +1,3 @@
-@media screen 
-and (device-width: 360px) 
-and (device-height: 640px) 
-and (-webkit-device-pixel-ratio: 4) {}
 
 
 .all{
@@ -35,9 +31,10 @@ and (-webkit-device-pixel-ratio: 4) {}
 
 .mision{
   color: #61646e;
-  font-family: 'Raleway', sans-serif;
-  font-size: 28px;
-  line-height: 40px;
+  font-family: 'Roboto';
+  font-style: 'Regular';
+  font-size: 16px;
+  line-height: 15px;
   margin: 60;
   display: flex;
   flex-direction: column;
@@ -48,13 +45,8 @@ and (-webkit-device-pixel-ratio: 4) {}
   width: 100%;
   margin: auto;
   height: 100%;
-  color: #61646e;
-  font-family: 'Raleway', sans-serif;
-  font-size: 28px;
-  line-height: 40px;
-  margin: 40px;
-  width: 40vw;
-  height: 30vh;
+  
+
 }
 
 .video1
@@ -106,7 +98,7 @@ margin: 40px;
   transform: skewX(-45deg) scale(1, 1);
 }
 
-h2{
+p{
   
   text-align: center;
   margin-left: 50px;

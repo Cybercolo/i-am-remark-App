@@ -1,9 +1,9 @@
-
-@media screen 
+/* 
+@media screen {
 and (device-width: 360px) 
 and (device-height: 640px) 
 and (-webkit-device-pixel-ratio: 4) 
-{}
+} */
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
 
@@ -11,6 +11,7 @@ body {
 display: flex;
 position: absolute;
 margin:0px;
+font-family: 'Roboto', sans-serif;
 
 }
 .container {
@@ -30,7 +31,7 @@ margin:0px;
     padding:0;
     box-sizing: border-box;     
 }
-.header-message 
+.header-logo-2
 {
     color: #202124;
     font-family: 'Raleway', sans-serif;
@@ -41,7 +42,7 @@ margin:0px;
 .header-message:hover {
     color:royalblue;
 }
-.form-main
+.main-2
 {
     display: flex;
     flex-direction: column;
@@ -52,13 +53,13 @@ margin:0px;
     position:relative;
        
 }
-.form-row
+.main-origen-2
 {
     margin-bottom: 12px;
     justify-content: space-around;
     
 } 
-.depo-pg-02 {
+.main-input-2 {
     box-shadow: 0px 0px 10px 0px silver inset;
     background-color:snow;
     font-family:Arial, Helvetica, sans-serif;
@@ -70,7 +71,7 @@ margin:0px;
     border:none; 
 }
 
-.alias  {
+.main-alias-2  {
     box-shadow: inset 0px 4px 6px 0px grey;
     font-family:Arial, Helvetica, sans-serif;
     font-style: italic;
@@ -80,7 +81,7 @@ margin:0px;
     border:none;    
 }
 
-.country  {
+.main-country-2  {
     box-shadow: inset 0px 4px 6px 0px grey;
     font-family:Arial, Helvetica, sans-serif;
     font-style: italic;
@@ -95,7 +96,7 @@ margin:0px;
 
 /*** ESTILOS BOTÓN  ***/
 
-.button-send{
+.button-send-2{
     
     background: #fff; /* color de fondo */
     color: #0D0C2F; /* color de fuente */
@@ -117,11 +118,11 @@ margin:0px;
 
 }
 
-.button-send:hover {
+.button-send-2:hover {
     color: #fff;/* color de fuente hover */
   }
   
-.button-send::after {
+.button-send-2::after {
     content: "";
     background: #0D0C2F; /* color de fondo hover */
     position: absolute;
@@ -136,7 +137,7 @@ margin:0px;
     transition: all 0.3s ease;
   }
   
-.button-send:hover::after {
+.button-send-2:hover::after {
     transition: all 0.3s ease-out;
     transform: skewX(-45deg) scale(1, 1);
   }
