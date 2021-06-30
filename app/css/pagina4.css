@@ -1,3 +1,5 @@
+/*************** CSS4 ******************/
+
 @media screen 
   and (device-width: 360px) 
   and (device-height: 640px) 
@@ -5,7 +7,7 @@
 
 }
 
-.logo{
+.header-logo-4{
   margin-top: 20px;
 }
 
@@ -14,7 +16,7 @@
 }
 
 
-.container{
+.container-4{
 position:relative;
 display: flex;
 flex-direction: column;
@@ -23,17 +25,17 @@ background:radial-gradient(112.66% 58.05% at 48.31% -1.3%, rgba(255, 255, 255, 0
 linear-gradient(0deg, #AEC8CF, #AEC8CF);
 
 }
-.posicionBoton{
+.main-posicionBoton-4{
 
   display: flex;
   justify-content: flex-end;
 }
-.botones{
+.main-botones-4{
   display: flex;
   align-items:center;
 }
 
-.lupita{
+.main-lupita-4{
   background-color: #FAFCFB;
   border-radius: 50px;
   padding: 20px;    
@@ -47,7 +49,7 @@ linear-gradient(0deg, #AEC8CF, #AEC8CF);
   
 }
 
-.lupita1{
+.main-lupita1-4{
   z-index: 1;
   background-color: #FAFCFB;
   border-radius: 50px;
@@ -58,7 +60,7 @@ linear-gradient(0deg, #AEC8CF, #AEC8CF);
   -3px -3px 5px 0 rgba(0, 0, 0, .2) ;   
 }
 
-.imglupita{
+.main-imglupita-4{
   width: 15px;
   height: 15px;
   position: absolute;
@@ -69,7 +71,7 @@ linear-gradient(0deg, #AEC8CF, #AEC8CF);
 
 
 
-.balon1{
+.main-balon1-4{
 
   padding:  10px 20px;  
   border-radius: 20px;
@@ -78,7 +80,7 @@ linear-gradient(0deg, #AEC8CF, #AEC8CF);
   
 
 }
-.balon2{
+.main-balon2-4{
 
   padding: 10px 10px;
   border-radius: 20px;
@@ -88,7 +90,7 @@ linear-gradient(0deg, #AEC8CF, #AEC8CF);
  
 
 }
-.balon3{
+.main-balon3-4{
 
   padding: 10px 10px;
   border-radius: 20px;
@@ -98,7 +100,7 @@ linear-gradient(0deg, #AEC8CF, #AEC8CF);
  
 
 }
-.balon4{
+.main-balon4-4{
   padding: 10px 10px;
   border-radius: 20px;
   background-color: rgb(250, 250, 250) ;
@@ -107,40 +109,36 @@ linear-gradient(0deg, #AEC8CF, #AEC8CF);
 
 }
 
-*{
-    margin: 0px;
-    padding: 0px;
-    color: #202124;
-    font-size: 9px;
-    font-family: 'Roboto', sans-serif;
-    box-sizing: border-box;
-    
-}
 
 
 /*** ESTILOS BOTÓN  ***/
-.botonnext {
-    background: #fff; /* color de fondo */
-    color: #0D0C2F; /* color de fuente */
-    border: 2px solid #0D0C2F; /* tamaño y color de borde */
-    padding: 16px 20px;
-    border-radius: 3px; /* redondear bordes */
-    position: relative;
-    z-index: 1;
-    overflow: hidden;
-    display: inline-block;
-    text-decoration:none;
+.main-botonnext-4 {
+  background: #fff; /* color de fondo */
+  color: #0D0C2F; /* color de fuente */
+  border: 2px solid #0D0C2F; /* tamaño y color de borde */
+  padding: 12px;
+  border-radius: 30px; /* redondear bordes */
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  display: inline-block;
+  text-decoration:none;
+  font-family:Arial, Helvetica, sans-serif;
+  font-style: italic;
+  height: 51px;
+  font-size: 20px;
+  box-shadow: 0px 4px 6px 0px rgb(64, 73, 106);
     
 }
-  .botonnext:hover {
+  .main-botonnext-4:hover {
     color: #fff;/* color de fuente hover */
   }
-  .botonnext::after {
+  .main-botonnext-4::after {
     content: "";
     background: #0D0C2F; /* color de fondo hover */
     position: absolute;
     z-index: -1;
-    padding: 16px 20px;
+    padding: 12px;
     display: block;
     left: -20%;
     right: -20%;
@@ -149,34 +147,39 @@ linear-gradient(0deg, #AEC8CF, #AEC8CF);
     transform: skewX(-45deg) scale(0, 1);
     transition: all 0.3s ease;
   }
-  .botonnext:hover::after {
+  .main-botonnext-4:hover::after {
     transition: all 0.3s ease-out;
     transform: skewX(-45deg) scale(1, 1);
   }
 
   /*** ESTILOS BOTÓN  ***/
-.botonhome {
-    background: #fff; /* color de fondo */
-    color: #0D0C2F; /* color de fuente */
-    border: 2px solid #0D0C2F; /* tamaño y color de borde */
-    padding: 16px 20px;
-    border-radius: 3px; /* redondear bordes */
-    position: relative;
-    z-index: 1;
-    overflow: hidden;
-    display: inline-block;
-    text-decoration:none;
+.main-botonhome-4 {
+  background: #fff; /* color de fondo */
+  color: #0D0C2F; /* color de fuente */
+  border: 2px solid #0D0C2F; /* tamaño y color de borde */
+  padding: 12px;
+  border-radius: 30px; /* redondear bordes */
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  display: inline-block;
+  text-decoration:none;
+  font-family:Arial, Helvetica, sans-serif;
+  font-style: italic;
+  height: 51px;
+  font-size: 20px;
+  box-shadow: 0px 4px 6px 0px rgb(64, 73, 106);
     
 }
-  .botonhome:hover {
+  .main-botonhome-4:hover {
     color: #fff;/* color de fuente hover */
   }
-  .botonhome::after {
+  .main-botonhome-4::after {
     content: "";
     background: #0D0C2F; /* color de fondo hover */
     position: absolute;
     z-index: -1;
-    padding: 16px 20px;
+    padding: 12px;
     display: block;
     left: -20%;
     right: -20%;
@@ -185,7 +188,7 @@ linear-gradient(0deg, #AEC8CF, #AEC8CF);
     transform: skewX(-45deg) scale(0, 1);
     transition: all 0.3s ease;
   }
-  .botonhome:hover::after {
+  .main-botonhome-4:hover::after {
     transition: all 0.3s ease-out;
     transform: skewX(-45deg) scale(1, 1);
   }
@@ -199,3 +202,5 @@ section{
 
 
 }
+
+/************ CSS4  ************/

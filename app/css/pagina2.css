@@ -1,23 +1,19 @@
-
-@media screen {
-and (device-width: 360px) 
-and (device-height: 640px) 
-and (-webkit-device-pixel-ratio: 4) 
-}
+/************************* PAGINA 02 ***************************************/
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
 
-body {
+body{
 display: flex;
 position: absolute;
 margin:0px;
+font-family: 'Roboto', sans-serif;
 
 }
 .container {
     width: 100%;
     height: 100vh;
     position:fixed;
-    border:solid darkgoldenrod 2px;
+    border:solid #9C895D 2px;
     /* margin:10px; */
     }
 .containerpg_02 {
@@ -30,7 +26,7 @@ margin:0px;
     padding:0;
     box-sizing: border-box;     
 }
-.header-message 
+.header-logo-2
 {
     color: #202124;
     font-family: 'Raleway', sans-serif;
@@ -41,7 +37,7 @@ margin:0px;
 .header-message:hover {
     color:royalblue;
 }
-.form-main
+.main-2
 {
     display: flex;
     flex-direction: column;
@@ -52,13 +48,13 @@ margin:0px;
     position:relative;
        
 }
-.form-row
+.main-origen-2
 {
     margin-bottom: 12px;
     justify-content: space-around;
     
 } 
-.depo-pg-02 {
+.main-input-2 {
     box-shadow: 0px 0px 10px 0px silver inset;
     background-color:snow;
     font-family:Arial, Helvetica, sans-serif;
@@ -70,7 +66,7 @@ margin:0px;
     border:none; 
 }
 
-.alias  {
+.main-alias-2  {
     box-shadow: inset 0px 4px 6px 0px grey;
     font-family:Arial, Helvetica, sans-serif;
     font-style: italic;
@@ -80,7 +76,7 @@ margin:0px;
     border:none;    
 }
 
-.country  {
+.main-country-2  {
     box-shadow: inset 0px 4px 6px 0px grey;
     font-family:Arial, Helvetica, sans-serif;
     font-style: italic;
@@ -93,16 +89,53 @@ margin:0px;
   
 }
 
-.button-send {
-    border: none;
-    padding: 25px;
-    box-shadow: -5px -5px 5px 0px rgba(236, 232, 232, 0.5) inset,
-    5px 5px 5px 0px rgba(228, 224, 224, 0.5)inset ;
-    width: 10vw;
-    height: 5vh;
-    border-radius: 25px;
-    padding-top: 10px;
+/*** ESTILOS BOTÓN  ***/
+
+.button-send-2{
+    
+    background: #fff; /* color de fondo */
+    color: #0D0C2F; /* color de fuente */
+    border: 2px solid #0D0C2F; /* tamaño y color de borde */
+    padding: 12px;
+    border-radius: 30px; /* redondear bordes */
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    display: inline-block;
+    text-decoration:none;
+    font-family:Arial, Helvetica, sans-serif;
+    font-style: italic;
+    height: 51px;
+    font-size: 20px;
+    box-shadow: 0px 4px 6px 0px rgb(64, 73, 106);
+    
+
+
 }
-.button-send:hover {
-    background-color:aliceblue; 
-}
+
+.button-send-2:hover {
+    color: #fff;/* color de fuente hover */
+  }
+  
+.button-send-2::after {
+    content: "";
+    background: #0D0C2F; /* color de fondo hover */
+    position: absolute;
+    z-index: -1;
+    padding: 12px;
+    display: block;
+    left: -20%;
+    right: -20%;
+    top: 0;
+    bottom: 0;
+    transform: skewX(-45deg) scale(0, 1);
+    transition: all 0.3s ease;
+  }
+  
+.button-send-2:hover::after {
+    transition: all 0.3s ease-out;
+    transform: skewX(-45deg) scale(1, 1);
+  }
+
+
+  /************************* PAGINA 02 ***************************************/
