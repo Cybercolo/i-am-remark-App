@@ -37,7 +37,30 @@
 }
 
 
+
 .main_usuario_03{
+
+}
+
+/* .popup {
+
+    background-color:snow;
+    font-family:Arial, Helvetica, sans-serif;
+    font-style: italic;
+    border-radius: 35px;
+    opacity: 0.9;
+    width: 40vw;
+    height: 30vh;
+    margin-bottom: 4px;
+    border:none; 
+    margin: 50px;
+} */
+
+
+
+
+.usuario{
+
     padding: 100px;
     border-radius: 30px;
     background-color: rgb(254, 255, 255, 75) ;

@@ -1,4 +1,10 @@
 
+@media screen 
+/* and (device-width: 360px) */
+and (device-height: 640px){
+
+}
+
 
 .all{
   
@@ -18,14 +24,21 @@
 
 .container {
     width: 100vw;
-    height: 100vw;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: 30px 30px 30px 30px;
     padding:0;
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
-
+    margin: 30px 30px 30px 30px;
+    padding:0;
+    box-sizing: border-box;  
+    font-family: 'Homemade Apple';
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Raleway', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 
@@ -45,11 +58,22 @@
   width: 100%;
   margin: auto;
   height: 100%;
-  
+  color: #61646e;
+  font-family: 'Raleway', sans-serif;
+  font-size: 28px;
+  line-height: 40px;
+  margin: 40px;
+  width: 40vw;
+  height: 30vh;
+  color: #61646e;
+  font-family: 'Raleway', sans-serif;
+  font-size: 28px;
+  line-height: 40px;
+  margin: 40px;
+  width: 40vw;
+  height: 30vh;
 
-}
-
-.video1
+.video01
 {
 display: flex;
 flex-direction: column;
@@ -116,9 +140,4 @@ p{
 
 img{
     margin: 40px;
-
-
-}
-
-
-
+¨{
