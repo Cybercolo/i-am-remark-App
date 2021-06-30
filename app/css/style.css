@@ -141,7 +141,7 @@ header {
 
 
 
-  /***************************************************************
+/***************************************************************
 ****************************************************************
 *************************PAGINA 02******************************
 ****************************************************************
@@ -246,9 +246,7 @@ header {
     height: 51px;
     font-size: 20px;
     box-shadow: 0px 4px 6px 0px rgb(64, 73, 106);
-    
-
-
+  
 }
 
 .button-send-2:hover {
@@ -434,9 +432,6 @@ button  {
 
 }
   
-
-
-
 .main_usuario_03{
     z-index: 1;
     background-color: #FAFCFB;
@@ -486,27 +481,28 @@ button  {
   color: #fff;/* color de fuente hover */
 }
 .main_llevame_03::after {
-
-background: #fff; /* color de fondo */
-color: #0D0C2F; /* color de fuente */
-border: 2px solid #0D0C2F; /* tamaño y color de borde */
-padding: 12px;
-border-radius: 30px; /* redondear bordes */
-position: relative;
-z-index: 1;
-overflow: hidden;
-display: inline-block;
-text-decoration:none;
-font-family:Arial, Helvetica, sans-serif;
-font-style: italic;
-height: 51px;
-font-size: 20px;
-box-shadow: 0px 4px 6px 0px rgb(64, 73, 106);
+  content: "";
+  background: #0D0C2F; /* color de fondo hover */
+  position: absolute;
+  z-index: -1;
+  padding: 12px;
+  display: block;
+  left: -20%;
+  right: -20%;
+  top: 0;
+  bottom: 0;
+  transform: skewX(-45deg) scale(0, 1);
+  transition: all 0.3s ease;
   
 }
 .main_llevame_03:hover::after {
   transition: all 0.3s ease-out;
   transform: skewX(-45deg) scale(1, 1);
+}
+.main_final_03{
+  display: flex;
+  
+
 }
 
 
@@ -525,7 +521,6 @@ box-shadow: 0px 4px 6px 0px rgb(64, 73, 106);
 .botones{
   margin-bottom: 20px;
 }
-
 
 .main-posicionBoton-4{
 
@@ -548,7 +543,6 @@ box-shadow: 0px 4px 6px 0px rgb(64, 73, 106);
   box-shadow: 
   3px 3px 7px 0 rgb(255, 255, 255) inset,
   -3px -3px 5px 0 rgba(0, 0, 0, .2) inset;
-  
 }
 
 section{
@@ -622,6 +616,25 @@ section{
 
 
 
+/*** ESTILOS BOTÓN  ***/
+.main-botonnext-4 {
+  background: #fff; /* color de fondo */
+  color: #0D0C2F; /* color de fuente */
+  border: 2px solid #0D0C2F; /* tamaño y color de borde */
+  padding: 12px;
+  border-radius: 30px; /* redondear bordes */
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  display: inline-block;
+  text-decoration:none;
+  font-family:Arial, Helvetica, sans-serif;
+  font-style: italic;
+  height: 51px;
+  font-size: 20px;
+  box-shadow: 0px 4px 6px 0px rgb(64, 73, 106);
+    
+}
 
 
   .main-botonnext-4:hover {
@@ -681,6 +694,10 @@ section{
     bottom: 0;
     transform: skewX(-45deg) scale(0, 1);
     transition: all 0.3s ease;
+  }
+  .main-botonhome-4:hover::after {
+    transition: all 0.3s ease-out;
+    transform: skewX(-45deg) scale(1, 1);
   }
   /***************************************************************
 ****************************************************************
