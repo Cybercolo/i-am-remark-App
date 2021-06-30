@@ -6,6 +6,10 @@
   color: #2c3e50;
   margin-top: 60px;
 }
+@media screen 
+  and (device-width: 360px) 
+  and (device-height: 640px) 
+  and (-webkit-device-pixel-ratio: 4) 
 
 * {
   margin: 0px;
@@ -111,6 +115,5 @@ header img {
   Height:50.82px;
   margin-top: 260px;
   margin-left:325px;
-
-  
 }
+
