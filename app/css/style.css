@@ -18,24 +18,17 @@
 }
 
 body {
+  box-sizing: content-box;
+  width: 100%;
   color: #202124;
   font-family: 'Roboto', sans-serif;
   margin: 0px;
   box-sizing: border-box;
   padding: 0px;
 }
-header {
-  width: 100%;
-  max-width: 1024px;
-  display: flex;
-  justify-content: center; 
-}
-.header_logo {
-  width: 100%;
-  max-width: 250px;
-  margin-top: 90px;
-}
+
 .container {
+  box-sizing: border-box;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -44,66 +37,81 @@ header {
   background: radial-gradient(112.66% 58.05% at 48.31% -1.3%, rgba(255, 255, 255, 0.54) 16.78%, rgba(135, 237, 255, 0) 82.33%),
   linear-gradient(0deg, #AEC8CF, #AEC8CF);
   border:solid #9C895D 4px;
-  stroke:#9C895D;
+  border-radius: 3%;
   stroke-dasharray:0.25em;
-  padding:3px 3px 3px 3px;
+  padding:15% 5% 0% 5%;
+}
+
+header {
+  width: 100%;
+  max-width: 1024px;
+  display: flex;
+  justify-content: center; 
+  margin-bottom: 10%;
+}
+.header_logo {
+  width: 100%;
+  max-width: 250px;
 }
 .main_title_pg_01 {
-
+  width: 80%;
+  max-width: 1024px;
+  padding-left: 10%;
+  padding-right: 10%; 
   color: rgb(35, 35, 34);
   text-align: center;
   letter-spacing: 2px;
-  width: 100%;
-  margin-top: 76px;
   font-family: 'Roboto';
   font-style: 'Regular';
-  font-size: 16px;
-  line-height: 15px;
-  color: rgb(35, 35, 34);
-  text-align: center;
-  letter-spacing: 2px;
-  max-width: 1024px;
-  padding-left: 30px;
-  padding-right: 30px; 
+  font-size: 1em;
+  line-height: auto;
+
 }
 
-.main_text_pg_01 p {
-
+.main_text_pg_01{
   display: flex;
+  flex-direction: row;
   justify-content: center;
-  color:#9C895D;
-  font-size: 24px;
-  text-align: center;
   letter-spacing: 1.5px; 
-  margin-top: 65px;  
+  margin-top: 10%; 
+  z-index: 1;
   
 }
 .main_message_pg_01 {
-
-  display: flex;
-    width: 100%;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 60px;
+  width: 100%;
+  color:#9C895D;
+  font-size: 1.8em;
+  text-align: center;
+  margin-right: 10px;
 }
+
+.main_pic_flecha_pg_01 {
+  Width: 55px;
+  Height: 45px;
+  margin-top: 18%;
+}
+
 .main_button_why_you_pg_01 {
-  box-shadow: 0px 4px 6px 0px rgb(64, 73, 106);
   background: rgba(26, 33, 58, 1);   
-  font-size: 19px;
-  font-family:Arial, Helvetica, sans-serif;
-  font-style: italic;
-  border-radius: 30px;
+  box-shadow: 0px 4px 6px 0px rgb(64, 73, 106);
+  border-radius: 40px;
   height: 51px;
+  width: 80%;
   padding: 12px 20px 14px 20px;
   margin-top: -20px;
+  display: flex;
+  justify-content: center;
 
  }
  .button_pg_01 {
   background: rgba(26, 33, 58, 1);
   color:aliceblue;
-  font-size: 18px;
   padding: 6px;
   border: none;
+  font-size: 1.3em;
+  font-family:Arial, Helvetica, sans-serif;
+  font-style: italic;
+  box-shadow: none;
 
  }
  .main_button_why_you_pg_01:hover {
@@ -127,20 +135,14 @@ header {
   transition: all 0.3s ease-out;
   transform: skewX(-45deg) scale(1, 1);
 }
-.main_pic_flecha_pg_01 {
 
-  Width: 55px;
-  Height: 45px;
-  margin-top: -27px;
-  margin-left: 251px;
-  
-}
-.flecha {
+
+/*.flecha {
   Width:60.06px;
   Height:50.82px;
   margin-top: 260px;
   margin-left:325px;}
-
+*/
 
 
 
