@@ -7,15 +7,12 @@
   margin-top: 60px;
 }
 
-* {
-  margin: 0px;
-  box-sizing: border-box;
-  padding: 0px;
- 
-}
 body {
   color: #202124;
   font-family: 'Roboto', sans-serif;
+  margin: 0px;
+  box-sizing: border-box;
+  padding: 0px;
 }
 header {
   width: 100%;
@@ -23,7 +20,7 @@ header {
   display: flex;
   justify-content: center; 
 }
-header img {
+.logo_header_pg_01 {
   width: 100%;
   max-width: 250px;
   margin-top: 90px;
@@ -41,15 +38,15 @@ header img {
   stroke-dasharray:0.25em;
   padding:3px 3px 3px 3px;
 }
-.message-hero {
+.main_title_pg_01 {
 
   color: rgb(35, 35, 34);
   text-align: center;
   letter-spacing: 2px;
   width: 100%;
   margin-top: 76px;
-  font-family: Roboto;
-  font-style: Regular;
+  font-family: 'Roboto';
+  font-style: 'Regular';
   font-size: 16px;
   line-height: 15px;
   color: rgb(35, 35, 34);
@@ -60,15 +57,17 @@ header img {
   padding-right: 30px; 
 }
 
-.message  {
+.main_text_pg_01 {
+
   display: flex;
   justify-content: center;
   color:#9C895D;
   font-size: 24px;
   text-align: center;
   letter-spacing: 1.5px;   
+  
 }
-.message02 {
+.main_message_pg_01 {
 
   display: flex;
     width: 100%;
@@ -76,37 +75,54 @@ header img {
     align-items: center;
     margin-top: 60px;
 }
-.why_you {
+.main_button_why_you_pg_01 {
   box-shadow: 0px 4px 6px 0px rgb(64, 73, 106);
-  background: rgba(26, 33, 58, 1);
-  color:aliceblue; 
+  background: rgba(26, 33, 58, 1);   
   font-size: 19px;
   font-family:Arial, Helvetica, sans-serif;
   font-style: italic;
   border-radius: 30px;
   height: 51px;
-  padding: 18px;  
+  padding: 12px 20px 14px 20px;
   margin-top: -23px;
- }
- 
-@media screen and (max-width: 360px) {}
 
-.frame {
-  width: 100%;
-  height: 100vh;
-  position:fixed;
-  border:solid #9C895D 2px;
+ }
+ .button_pg_01 {
+  background: rgba(26, 33, 58, 1);
+  color:aliceblue;
+
+ }
+ .main_button_why_you_pg_01:hover {
+  background-color: #fff;/* color de fuente hover */
 }
-.allPeople {
-  width:100%;
-  max-width: 996px;
-  max-height: 980px;
-  
+
+.main_button_why_you_pg_01::after {
+  content: "";
+  background: #0D0C2F; /* color de fondo hover */
+  position: absolute;
+  z-index: -1;
+  padding: 12px;
+  display: block;
+  left: -20%;
+  right: -20%;
+  transform: skewX(-45deg) scale(0, 1);
+  transition: all 0.3s ease;
 }
-.flecha {
+
+.main_button_why_you_pg_01:hover::after {
+  transition: all 0.3s ease-out;
+  transform: skewX(-45deg) scale(1, 1);
+}
+.main_pic_flecha_pg_01 {
   Width:61px;
   Height:51px;
   margin-top: -27px;
   margin-left: 264px;
   
+}
+.main_pic_allPeople_pg_01 {
+
+  width:100%;
+  max-width: 996px;
+  max-height: 980px;  
 }
