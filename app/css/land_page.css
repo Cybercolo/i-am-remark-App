@@ -1,1 +1,50 @@
 
+<<<<<<< HEAD
+=======
+
+}
+
+.why_you:hover {
+    color: #fff;/* color de fuente hover */
+  }
+  
+.why_you::after {
+    content: "";
+    background: #0D0C2F; /* color de fondo hover */
+    position: absolute;
+    z-index: -1;
+    padding: 12px;
+    display: block;
+    left: -20%;
+    right: -20%;
+    top: 0;
+    bottom: 0;
+    transform: skewX(-45deg) scale(0, 1);
+    transition: all 0.3s ease;
+  }
+  
+.why_you:hover::after {
+    transition: all 0.3s ease-out;
+    transform: skewX(-45deg) scale(1, 1);
+  }
+
+ 
+
+
+
+    
+
+    
+
+
+
+
+/*
+
+position: absolute;
+width: 881.91px;
+height: 289.81px;
+left: -71.04px;
+top: 446.26px;
+background: url(image.png);/
+>>>>>>> 1785cda7f71a8cc6fc9b2b068b85ff546d33a3ae
