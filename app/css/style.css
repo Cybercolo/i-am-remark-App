@@ -300,11 +300,6 @@ font-family: 'Roboto', sans-serif;
 *************************PAGINA 03******************************
 ****************************************************************
 ****************************************************************/
-
-
-
-/*************** CSS4 ******************/
-
 @media screen 
   and (device-width: 360px) 
   and (device-height: 640px) 
@@ -492,6 +487,67 @@ button  {
     margin-top: 5%;
     position: center;
 }
+/*** ESTILOS BOTÓN  ***/
+.main_flechita_03{
+  width: 15px;
+  height: 15px;
+  margin-left: 3px;
+}
+
+.main_llevame_03 {
+  background: #fff; /* color de fondo */
+  color: #0D0C2F; /* color de fuente */
+  border: 2px solid #0D0C2F; /* tamaño y color de borde */
+  padding: 12px;
+  border-radius: 30px; /* redondear bordes */
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  display: inline-block;
+  text-decoration:none;
+  font-family:Arial, Helvetica, sans-serif;
+  font-style: italic;
+  height: 51px;
+  font-size: 20px;
+  box-shadow: 0px 4px 6px 0px rgb(64, 73, 106);
+
+}
+.main_llevame_03:hover {
+  color: #fff;/* color de fuente hover */
+}
+.main_llevame_03::after {
+
+background: #fff; /* color de fondo */
+color: #0D0C2F; /* color de fuente */
+border: 2px solid #0D0C2F; /* tamaño y color de borde */
+padding: 12px;
+border-radius: 30px; /* redondear bordes */
+position: relative;
+z-index: 1;
+overflow: hidden;
+display: inline-block;
+text-decoration:none;
+font-family:Arial, Helvetica, sans-serif;
+font-style: italic;
+height: 51px;
+font-size: 20px;
+box-shadow: 0px 4px 6px 0px rgb(64, 73, 106);
+  
+}
+.main_llevame_03:hover::after {
+  transition: all 0.3s ease-out;
+  transform: skewX(-45deg) scale(1, 1);
+}
+
+
+
+
+/***************************************************************
+****************************************************************
+*************************PAGINA 04******************************
+****************************************************************
+****************************************************************/
+
 
 
 .header-logo-4{
@@ -534,6 +590,16 @@ linear-gradient(0deg, #AEC8CF, #AEC8CF);
   3px 3px 7px 0 rgb(255, 255, 255) inset,
   -3px -3px 5px 0 rgba(0, 0, 0, .2) inset;
   
+}
+
+section{
+ 
+  display: flex;
+  
+  margin-top: 50px;
+  margin-bottom: 250px;
+
+
 }
 
 .main-lupita1-4{
@@ -607,53 +673,7 @@ linear-gradient(0deg, #AEC8CF, #AEC8CF);
 }
 
 
-/*** ESTILOS BOTÓN  ***/
-.main_flechita_03{
-    width: 15px;
-    height: 15px;
-    margin-left: 3px;
-}
 
-.main_llevame_03 {
-    background: #fff; /* color de fondo */
-    color: #0D0C2F; /* color de fuente */
-    border: 2px solid #0D0C2F; /* tamaño y color de borde */
-    padding: 12px;
-    border-radius: 30px; /* redondear bordes */
-    position: relative;
-    z-index: 1;
-    overflow: hidden;
-    display: inline-block;
-    text-decoration:none;
-    font-family:Arial, Helvetica, sans-serif;
-    font-style: italic;
-    height: 51px;
-    font-size: 20px;
-    box-shadow: 0px 4px 6px 0px rgb(64, 73, 106);
-  
-  }
-  .main_llevame_03:hover {
-    color: #fff;/* color de fuente hover */
-  }
-  .main_llevame_03::after {
-
-  background: #fff; /* color de fondo */
-  color: #0D0C2F; /* color de fuente */
-  border: 2px solid #0D0C2F; /* tamaño y color de borde */
-  padding: 12px;
-  border-radius: 30px; /* redondear bordes */
-  position: relative;
-  z-index: 1;
-  overflow: hidden;
-  display: inline-block;
-  text-decoration:none;
-  font-family:Arial, Helvetica, sans-serif;
-  font-style: italic;
-  height: 51px;
-  font-size: 20px;
-  box-shadow: 0px 4px 6px 0px rgb(64, 73, 106);
-    
-}
   .main-botonnext-4:hover {
     color: #fff;/* color de fuente hover */
   }
@@ -712,12 +732,11 @@ linear-gradient(0deg, #AEC8CF, #AEC8CF);
     transform: skewX(-45deg) scale(0, 1);
     transition: all 0.3s ease;
   }
-  .main_llevame_03:hover::after {
-    transition: all 0.3s ease-out;
-    transform: skewX(-45deg) scale(1, 1);
-  }
-
-
+  /***************************************************************
+****************************************************************
+*************************FINAL PAGINA 04******************************
+****************************************************************
+****************************************************************/
 
 
 /* .view1{
@@ -729,11 +748,6 @@ linear-gradient(0deg, #AEC8CF, #AEC8CF);
     margin:20px ;
     margin-left:40px;
  } */
-
-
-
-
-
 
 
 
@@ -795,15 +809,5 @@ linear-gradient(0deg, #AEC8CF, #AEC8CF);
     } */
 
 
-    /***************************** FINAL  PAGINA 03 *******************************/
-section{
- 
-  display: flex;
-  
-  margin-top: 50px;
-  margin-bottom: 250px;
-
-
-}
 
 /************ CSS4  ************/
