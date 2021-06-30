@@ -19,6 +19,7 @@ import {
 	Vector3,
 	PointLightHelper,
 	GridHelper,
+	BoxGeometry,
 } from "./source/three.module.js"
 
 import {
@@ -26,14 +27,14 @@ import {
 } from "./source/GLTFLoader.js";
 
 import {
-	boxes
+	people
 } from "./people.js";
 // var parsedJSON = require('./people.json');
 // var result = parsedJSON.people
 
 //////////////////// GLOBAL VARIABLES ////////////////////
 let alturaSuelo = 0.01;
-let distancia = 1.2;
+let distancia = 1;
 let rowLength = 4 * distancia;
 let groundLength = 1;
 let distanceBetweenRows = 8;
@@ -49,7 +50,8 @@ const camera = new PerspectiveCamera(50, window.innerWidth / window.innerHeight,
 // const camera = new OrthographicCamera(window.innerWidth / -2, window.innerWidth / 2, window.innerHeight / 2, window.innerHeight / -2, 1, 1000);
 camera.lookAt(getCameraTargetVector());
 
-camera.position.set(0, 1, 4);
+let cameraOriginalPosition = new Vector3(0, 1, 4)
+camera.position.set(cameraOriginalPosition.x, cameraOriginalPosition.y, cameraOriginalPosition.z);
 
 //////////////////// LIGHT ////////////////////
 const hemisphereLight = new HemisphereLight(0xb5b5b5, 0x6f6f6f, 1);
@@ -91,18 +93,6 @@ renderer.shadowMap.enabled = true;
 
 renderer.render(scene, camera);
 
-//////////////////// LOOP ////////////////////
-function animate() {
-	requestAnimationFrame(animate);
-
-	camera.aspect = canvas.clientWidth / canvas.clientHeight;
-	camera.updateProjectionMatrix();
-
-	renderer.setSize(window.innerWidth, window.innerHeight);
-	// controls.update();
-	renderer.render(scene, camera);
-}
-
 //////////////////// DATA ////////////////////
 let colors = [0xc4ec6e, 0x7089fa, 0xef86f7, 0xb681eb];
 
@@ -124,7 +114,7 @@ function setPosition(index, row, array) {
 		const vector0 = new Vector3(0, alturaSuelo, 0);
 		return vector0;
 	}
-	let vector = new Vector3(index * distancia - (rowLength / 2) - ((rowLength + distancia) * (row - 1)), alturaSuelo, -(distanceBetweenRows + row * distanceBetweenRows));
+	let vector = new Vector3(index * distancia - (rowLength / 2) - ((rowLength + distancia) * (row - 1)), alturaSuelo, -(distanceBetweenRows + (row * distanceBetweenRows)));
 	return vector;
 }
 
@@ -184,13 +174,10 @@ function addText(item, bubbleMesh) {
 		map: texture
 	});
 
-	// let sprite = new Mesh(plane, spriteMaterial);
+
 	let sprite = new Sprite(spriteMaterial);
 
 	sprite.position.set(0, 0.50 - 0.15, 0.15);
-
-	// let centerPositionY = 1 / (rowsText + (rowsText / 2));
-	// MAYBE FIX?? CENTER THIS
 	bubbleMesh.add(sprite);
 	scene.add(bubbleMesh);
 }
@@ -235,7 +222,7 @@ let modelsArray = [];
 
 function loadNextModel() {
 	if (loadedModels > modelLocationArray.length - 1) {
-		generateElements(boxes, colors);
+		generateElements(people, colors);
 		return;
 	};
 	gltfLoader.load(modelLocationArray[loadedModels], function(object) {
@@ -266,9 +253,8 @@ function generateElements(arrayPerson, colors) {
 		let objectHeight = boundingBox.max.z - boundingBox.min.z;
 		let objectWidth = boundingBox.max.y - boundingBox.min.y;
 
-		generateTextBubble(item, objectWidth, person.position.x, objectHeight, person.position.z);
+		// generateTextBubble(item, objectWidth, person.position.x, objectHeight, person.position.z);
 		scene.add(person);
-
 	});
 }
 
@@ -326,85 +312,65 @@ function stopZoomOut(maxZoomOutValue) {
 	groundLength = 1;
 }
 
-/*function phoneMove() {
-	while (isPressedMe) {
-		console.log("Violacion", camera.position.z);
-		if (isPressedMe == false){
-			break;
-		}
-	
-	}
-}*/
+function getTargetPositionCamara(cameraPositionCounter) {
+	let targetPosition = new Vector3(0, 5, -(-1 + (cameraPositionCounter * distanceBetweenRows)));
+	console.log(targetPosition)
+	return targetPosition;
+}
 
-document.querySelector(".forwards").addEventListener("touchstart", function() {
-	isPressedMe = true;
-	console.log(isPressedMe)
-})
-document.querySelector(".forwards").addEventListener("touchend", function() {
-	isPressedMe = false;
-	console.log(isPressedMe)
-})
+let cameraPositionCounter = 0;
+
+document.querySelector(".forwards").addEventListener("click", function() {
+	cameraPositionCounter++;
+	let targetPosition = getTargetPositionCamara(cameraPositionCounter)
+	// let targetPositionCamara = new Vector3(targetPosition.x, targetPosition.y, targetPosition.z);
+	let duration = 1000;
+	tweenCube(targetPosition, duration, camera);
+});
 
 document.querySelector(".backwards").addEventListener("click", function() {
-	moveForBackwards();
+	cameraPositionCounter--;
+	let targetPosition = getTargetPositionCamara(cameraPositionCounter)
+	let duration = 1000;
+	tweenCube(targetPosition, duration, camera);
+	console.log("this")
 })
 
-<<<<<<< HEAD
-
-
-
-function moveToTheNextRow() {
-=======
-function moveForwards() {
->>>>>>> 1ba271902e000e7ffc7235ea8d6ebb82550344ad
-	console.log(camera.position.z)
-	camera.position.z -= 1;
-	let maxZoomOutValue = 7;
-	if (camera.position.z > maxZoomOutValue) { // camera zoom out limit
-		stopZoomOut(maxZoomOutValue);
-	}
-	moveCameraYForwards()
-	
+function tweenCube(targetPosition, duration) {
+	let currentPosition = camera.position;
+	let tween = new TWEEN.Tween(currentPosition)
+		.to(targetPosition, duration)
+		.onUpdate(function() {
+			camera.position.y = currentPosition.y;
+			pointLight.position.set(pointLight.position.x, pointLight.position.y, camera.position.z + 10);
+			camera.lookAt(getCameraTargetVector())
+		})
+		.start();
 }
 
-<<<<<<< HEAD
 
-function moveToThePreviousRow() {
 
-	console.log(camera.position.z)
-=======
-function moveForBackwards() {
->>>>>>> 1ba271902e000e7ffc7235ea8d6ebb82550344ad
-	let maxZoomOutValue = 7;
-	camera.position.z += 1;
-	if (camera.position.z > maxZoomOutValue) { // camera zoom out limit
-		stopZoomOut(maxZoomOutValue);
-	}
 
-	moveCameraYBackwards()
+
+
+
+
+
+//////////////////// LOOP ////////////////////
+function animate() {
+	requestAnimationFrame(animate);
+
+	camera.aspect = canvas.clientWidth / canvas.clientHeight;
+	camera.updateProjectionMatrix();
+	TWEEN.update()
+	renderer.setSize(window.innerWidth, window.innerHeight);
+	// controls.update();
+	renderer.render(scene, camera);
 }
 
-function moveCameraYForwards() {
-	let cameraTargetVector = getCameraTargetVector();
-	camera.lookAt(cameraTargetVector);
 
-	pointLight.position.set(pointLight.position.x, pointLight.position.y, camera.position.z + 10); // pointlight following camera
-	if (camera.position.z < 4 && camera.position.z > 0) { // if moves to the front
-		camera.position.y++
-	}
-}
 
-function moveCameraYBackwards() {
-	let cameraTargetVector = getCameraTargetVector();
-	camera.lookAt(cameraTargetVector);
 
-	pointLight.position.set(pointLight.position.x, pointLight.position.y, camera.position.z + 10); // pointlight following camera
-	console.log("AtrasZ", camera.position.z)
-	if (camera.position.z > 1 && camera.position.z < 5 ) { // pa tras
-		console.log("atras")
-		camera.position.y--
-	}
-}
 
 animate();
 loadNextModel()

@@ -1,4 +1,4 @@
-export let boxes = [{
+export let people = [{
 	"name": "Mei",
 	"description": "I 'm remarkable because I decided to follow my dreams and becore and artist.",
 	"country": "China"
