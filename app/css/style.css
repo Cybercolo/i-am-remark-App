@@ -6,7 +6,7 @@
 ****************************************************************/
 
 
-
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
 
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -30,7 +30,7 @@ header {
   display: flex;
   justify-content: center; 
 }
-.logo_header_pg_01 {
+.header_logo {
   width: 100%;
   max-width: 250px;
   margin-top: 90px;
@@ -147,22 +147,8 @@ header {
 ****************************************************************
 ****************************************************************/
 
- @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
+ 
 
-body{
-display: flex;
-position: absolute;
-margin:0px;
-font-family: 'Roboto', sans-serif;
-
-}
-.container {
-    width: 100%;
-    height: 100vh;
-    position:fixed;
-    border:solid darkgoldenrod 2px;
-    /* margin:10px; */
-    }
 .containerpg_02 {
 
     width: 100vw;
@@ -173,7 +159,7 @@ font-family: 'Roboto', sans-serif;
     padding:0;
     box-sizing: border-box;     
 }
-.header-logo-2
+.header_logo-2
 {
     color: #202124;
     font-family: 'Raleway', sans-serif;
@@ -290,8 +276,6 @@ font-family: 'Roboto', sans-serif;
   }
 
 
-  /******************** FINALPAGINA 02 ************************/
-
   
 
 
@@ -300,29 +284,15 @@ font-family: 'Roboto', sans-serif;
 *************************PAGINA 03******************************
 ****************************************************************
 ****************************************************************/
-@media screen 
-  and (device-width: 360px) 
-  and (device-height: 640px) 
-  and (-webkit-device-pixel-ratio: 4) {
 
-}
 
-.container{
-    position:relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background: radial-gradient(112.66% 58.05% at 48.31% -1.3%, rgba(255, 255, 255, 0.54) 16.78%, rgba(135, 237, 255, 0) 82.33%),
-    linear-gradient(0deg, #AEC8CF, #AEC8CF);
-    font-family: 'Roboto', sans-serif;
 
-}
 
 .main_texto_03{
     font-family: 'Open Sans', sans-serif;
 }
 
-.header_logo_03{
+.header_logo{
     
     margin-bottom: 5px;
     margin-left: 100px;
@@ -550,24 +520,13 @@ box-shadow: 0px 4px 6px 0px rgb(64, 73, 106);
 
 
 
-.header-logo-4{
-  margin-top: 20px;
-}
+
 
 .botones{
   margin-bottom: 20px;
 }
 
 
-.container-4{
-position:relative;
-display: flex;
-flex-direction: column;
-align-items: center;
-background:radial-gradient(112.66% 58.05% at 48.31% -1.3%, rgba(255, 255, 255, 0.54) 16.78%, rgba(135, 237, 255, 0) 82.33%),
-linear-gradient(0deg, #AEC8CF, #AEC8CF);
-
-}
 .main-posicionBoton-4{
 
   display: flex;
@@ -594,8 +553,7 @@ linear-gradient(0deg, #AEC8CF, #AEC8CF);
 
 section{
  
-  display: flex;
-  
+  display: flex;  
   margin-top: 50px;
   margin-bottom: 250px;
 
@@ -662,15 +620,7 @@ section{
 
 }
 
-*{
-    margin: 0px;
-    padding: 0px;
-    color: #202124;
-    font-size: 9px;
-    font-family: 'Roboto', sans-serif;
-    box-sizing: border-box;
-    
-}
+
 
 
 
