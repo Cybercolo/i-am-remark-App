@@ -30,6 +30,36 @@ header {
   display: flex;
   justify-content: center; 
 }
+hr {
+  height: 10px;
+  background-color: black;
+}
+/* 
+.stroke1 {
+  stroke-dasharray: 20;
+
+  stroke: green;
+  stroke-width: 20;
+}
+
+.stroke2 {
+  /* pattern with even number
+  of values */ 
+  stroke-dasharray: 40 20;
+
+  stroke: red;    
+  stroke-width: 20;
+}
+
+.stroke3 {
+  /* pattern with odd number
+  of values */ 
+  stroke-dasharray: 80 40 20;
+
+  stroke: orange;
+  stroke-width: 20;
+} */
+
 .header_logo {
   width: 100%;
   max-width: 250px;
