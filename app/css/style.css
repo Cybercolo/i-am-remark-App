@@ -57,14 +57,15 @@ header {
   padding-right: 30px; 
 }
 
-.main_text_pg_01 {
+.main_text_pg_01 p {
 
   display: flex;
   justify-content: center;
   color:#9C895D;
   font-size: 24px;
   text-align: center;
-  letter-spacing: 1.5px;   
+  letter-spacing: 1.5px; 
+  margin-top: 65px;  
   
 }
 .main_message_pg_01 {
@@ -84,12 +85,15 @@ header {
   border-radius: 30px;
   height: 51px;
   padding: 12px 20px 14px 20px;
-  margin-top: -23px;
+  margin-top: -20px;
 
  }
  .button_pg_01 {
   background: rgba(26, 33, 58, 1);
   color:aliceblue;
+  font-size: 18px;
+  padding: 6px;
+  border: none;
 
  }
  .main_button_why_you_pg_01:hover {
@@ -114,10 +118,11 @@ header {
   transform: skewX(-45deg) scale(1, 1);
 }
 .main_pic_flecha_pg_01 {
-  Width:61px;
-  Height:51px;
+
+  Width: 55px;
+  Height: 45px;
   margin-top: -27px;
-  margin-left: 264px;
+  margin-left: 251px;
   
 }
 .main_pic_allPeople_pg_01 {
