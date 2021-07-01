@@ -32,7 +32,18 @@ body {
   padding: 0px;
   
 }
+header {
+  width: 100%;
+  max-width: 1024px;
+  display: flex;
+  justify-content: center; 
+}
 
+.header_logo {
+  width: 100%;
+  max-width: 250px;
+  margin-top: 90px;
+}
 .container {
   box-sizing: border-box;
   width: 100%;
@@ -70,10 +81,12 @@ header {
   justify-content: center; 
   margin-bottom: 10%;
 }
+
 .header_logo {
   width: 100%;
   max-width: 250px;
 }
+
 .main_title_pg_01 {
   width: 80%;
   max-width: 1024px;
@@ -86,7 +99,6 @@ header {
   font-style: 'Regular';
   font-size: 1em;
   line-height: auto;
-
 }
 
 .main_text_pg_01{
@@ -96,8 +108,8 @@ header {
   letter-spacing: 1.5px; 
   margin-top: 10%; 
   z-index: 1;
+  }
   
-}
 .main_message_pg_01 {
   width: 100%;
   color:#9C895D;
