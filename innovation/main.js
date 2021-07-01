@@ -44,8 +44,8 @@ let isPressedMe = false;
 
 //////////////////// ESCENA ////////////////////
 const scene = new Scene();
-scene.background = new Color("white");
-scene.fog = new Fog("white", 10, 25);
+scene.background = new Color(0xDDE9ED);
+scene.fog = new Fog(0xDDE9ED, 10, 25);
 
 //////////////////// CAMARAS ////////////////////
 const camera = new PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.1, 25);
@@ -68,7 +68,7 @@ scene.add(hemisphereLight, pointLight);
 //////////////////// GROUND ////////////////////
 const geometryGround = new PlaneGeometry(50, 50);
 const materialGround = new MeshStandardMaterial({
-	color: "white"
+	color: 0xDDE9ED
 });
 
 const ground = new Mesh(geometryGround, materialGround);
@@ -116,102 +116,102 @@ function setPosition(index, row, array) {
 	return vector;
 }
 
-function createText(item) {
-	let text = `${item.name}/n${item.country}`
-	return text;
-}
-
-function printDescriptionWithWordWrap(context, text, x, y, lineHeight, fitWidth) {
-	let wordsArray = text.split(' ');
-	let currentLine = 0;
-	let index = 1;
-
-	while (index <= wordsArray.length && index <= wordsArray.length) {
-		let string = wordsArray.slice(0, index).join(' ');
-		let stringWidth = context.measureText(string).width;
-
-		if (stringWidth > fitWidth) {
-			let finalText = wordsArray.slice(0, index - 1).join(' ');
-			context.fillText(finalText, x, y + (lineHeight * currentLine));
-			currentLine++;
-			wordsArray = wordsArray.splice(index - 1);
-			index = 1;
-
-		} else {
-			index++;
-		}
-	}
-	// Last line :
-	context.fillText(wordsArray.join(' '), x, y + (lineHeight * currentLine));
-	return currentLine;
-}
-
-function addText(item, bubbleMesh) {
-	let canvas = document.createElement('canvas');
-	canvas.width = 400;
-	canvas.height = 400;
-	let context = canvas.getContext("2d");
-	context.font = "24pt Arial";
-	// context.fillRect(0, 0, canvas.width, canvas.height)
-	context.fillStyle = "black";
-	context.textAlign = "left";
-
-	let lineHeight = context.measureText("M").width * 1.5;
-	let text = createText(item);
-	let lines = text.split('/n');
-	let rowsText = printDescriptionWithWordWrap(context, item.description, 50, 24 + lineHeight, lineHeight, 300) + 1;
-
-	for (var i = 0; i < lines.length; i++) {
-		context.fillText(lines[i], 50, 24 + (i * lineHeight * (rowsText + 1)));
-	}
-
-	let texture = new Texture(canvas);
-	texture.needsUpdate = true;
-
-	let spriteMaterial = new SpriteMaterial({
-		map: texture
-	});
-
-
-	let sprite = new Sprite(spriteMaterial);
-
-	sprite.position.set(0, 0.50 - 0.15, 0.15);
-	bubbleMesh.add(sprite);
-	scene.add(bubbleMesh);
-}
-
-function generateTextBubble(item, objectWidth, objectPositionX, objectHeight, objectPositionZ) {
-	const bubbleShape = new Shape();
-	let bubbleWidth = 1;
-	let bubbleHeight = 1;
-	let bubbleBorderRadius = 0.2;
-	let bubblePositionX = -0.5;
-	let bubblePositionY = 0;
-
-	function roundedRect(ctx, x, y, width, height, radius) {
-		ctx.moveTo(x, y + radius);
-		ctx.lineTo(x, y + height - radius);
-		ctx.quadraticCurveTo(x, y + height, x + radius, y + height);
-		ctx.lineTo(x + width - radius, y + height);
-		ctx.quadraticCurveTo(x + width, y + height, x + width, y + height - radius);
-		ctx.lineTo(x + width, y + radius);
-		ctx.quadraticCurveTo(x + width, y, x + width - radius, y);
-		ctx.lineTo(x + radius, y);
-		ctx.quadraticCurveTo(x, y, x, y + radius);
-	}
-	roundedRect(bubbleShape, bubblePositionX, bubblePositionY, bubbleWidth, bubbleHeight, bubbleBorderRadius);
-
-	let bubbleGeometry = new ShapeGeometry(bubbleShape);
-	let bubbleMaterial = new MeshBasicMaterial({
-		color: 0xf1f1f1
-	});
-	const bubbleMesh = new Mesh(bubbleGeometry, bubbleMaterial);
-	bubbleMesh.position.set(objectPositionX, (objectHeight * 2) + 0.15, objectPositionZ);
-	bubbleMesh.rotation.set(0, 0, 0)
-	addText(item, bubbleMesh);
-
-	scene.add(bubbleMesh);
-}
+// function createText(item) {
+// 	let text = `${item.name}/n${item.country}`
+// 	return text;
+// }
+//
+// function printDescriptionWithWordWrap(context, text, x, y, lineHeight, fitWidth) {
+// 	let wordsArray = text.split(' ');
+// 	let currentLine = 0;
+// 	let index = 1;
+//
+// 	while (index <= wordsArray.length && index <= wordsArray.length) {
+// 		let string = wordsArray.slice(0, index).join(' ');
+// 		let stringWidth = context.measureText(string).width;
+//
+// 		if (stringWidth > fitWidth) {
+// 			let finalText = wordsArray.slice(0, index - 1).join(' ');
+// 			context.fillText(finalText, x, y + (lineHeight * currentLine));
+// 			currentLine++;
+// 			wordsArray = wordsArray.splice(index - 1);
+// 			index = 1;
+//
+// 		} else {
+// 			index++;
+// 		}
+// 	}
+// 	// Last line :
+// 	context.fillText(wordsArray.join(' '), x, y + (lineHeight * currentLine));
+// 	return currentLine;
+// }
+//
+// function addText(item, bubbleMesh) {
+// 	let canvas = document.createElement('canvas');
+// 	canvas.width = 400;
+// 	canvas.height = 400;
+// 	let context = canvas.getContext("2d");
+// 	context.font = "24pt Arial";
+// 	// context.fillRect(0, 0, canvas.width, canvas.height)
+// 	context.fillStyle = "black";
+// 	context.textAlign = "left";
+//
+// 	let lineHeight = context.measureText("M").width * 1.5;
+// 	let text = createText(item);
+// 	let lines = text.split('/n');
+// 	let rowsText = printDescriptionWithWordWrap(context, item.description, 50, 24 + lineHeight, lineHeight, 300) + 1;
+//
+// 	for (var i = 0; i < lines.length; i++) {
+// 		context.fillText(lines[i], 50, 24 + (i * lineHeight * (rowsText + 1)));
+// 	}
+//
+// 	let texture = new Texture(canvas);
+// 	texture.needsUpdate = true;
+//
+// 	let spriteMaterial = new SpriteMaterial({
+// 		map: texture
+// 	});
+//
+//
+// 	let sprite = new Sprite(spriteMaterial);
+//
+// 	sprite.position.set(0, 0.50 - 0.15, 0.15);
+// 	bubbleMesh.add(sprite);
+// 	scene.add(bubbleMesh);
+// }
+//
+// function generateTextBubble(item, objectWidth, objectPositionX, objectHeight, objectPositionZ) {
+// 	const bubbleShape = new Shape();
+// 	let bubbleWidth = 1;
+// 	let bubbleHeight = 1;
+// 	let bubbleBorderRadius = 0.2;
+// 	let bubblePositionX = -0.5;
+// 	let bubblePositionY = 0;
+//
+// 	function roundedRect(ctx, x, y, width, height, radius) {
+// 		ctx.moveTo(x, y + radius);
+// 		ctx.lineTo(x, y + height - radius);
+// 		ctx.quadraticCurveTo(x, y + height, x + radius, y + height);
+// 		ctx.lineTo(x + width - radius, y + height);
+// 		ctx.quadraticCurveTo(x + width, y + height, x + width, y + height - radius);
+// 		ctx.lineTo(x + width, y + radius);
+// 		ctx.quadraticCurveTo(x + width, y, x + width - radius, y);
+// 		ctx.lineTo(x + radius, y);
+// 		ctx.quadraticCurveTo(x, y, x, y + radius);
+// 	}
+// 	roundedRect(bubbleShape, bubblePositionX, bubblePositionY, bubbleWidth, bubbleHeight, bubbleBorderRadius);
+//
+// 	let bubbleGeometry = new ShapeGeometry(bubbleShape);
+// 	let bubbleMaterial = new MeshBasicMaterial({
+// 		color: 0xf1f1f1
+// 	});
+// 	const bubbleMesh = new Mesh(bubbleGeometry, bubbleMaterial);
+// 	bubbleMesh.position.set(objectPositionX, (objectHeight * 2) + 0.15, objectPositionZ);
+// 	bubbleMesh.rotation.set(0, 0, 0)
+// 	addText(item, bubbleMesh);
+//
+// 	scene.add(bubbleMesh);
+// }
 
 let modelLocationArray = ["models3D/model01.glb", "models3D/model02.glb", "models3D/model03.glb", "models3D/model04.glb", "models3D/model05.glb", "models3D/model06.glb", "models3D/model07.glb", "models3D/model08.glb"]
 const gltfLoader = new GLTFLoader();
@@ -250,7 +250,7 @@ function generateElements(arrayPerson, colors) {
 		let boundingBox = person.geometry.boundingBox;
 		let objectHeight = boundingBox.max.z - boundingBox.min.z;
 		let objectWidth = boundingBox.max.y - boundingBox.min.y;
-
+		generateBubbles(item);
 		// generateTextBubble(item, objectWidth, person.position.x, objectHeight, person.position.z);
 		scene.add(person);
 	});
@@ -340,21 +340,26 @@ function tweenCube(targetPosition, duration) {
 			camera.position.y = currentPosition.y;
 			pointLight.position.set(pointLight.position.x, pointLight.position.y, camera.position.z + 10);
 			camera.lookAt(getCameraTargetVector());
-			longerGround(currentPosition)
+			ground.scale.y = 1 + (cameraPositionCounter / 1.5);
 		})
 		.start();
 }
 
 
-function longerGround(cameraPosition) {
-	// if (ground.scale.y === 1) {
-	// 	return;
-	// }
-	ground.scale.y = 1 + (cameraPositionCounter / 2);
-	console.log(ground.scale);
-	// console.log(cameraPosition.z * -1);
-	// ground.scale.set(1, (groundLength -= 0.05), 1);
+function generateBubbles(item) {
+	let bubble = document.createElement("div");
+	bubble.classList.add("bubble");
+	bubble.innerHTML = `<p>${item.name}</p>
+	<p>${item.description}</p>
+	<p>${item.country}</p>`
+	let bubblesContainer = document.querySelector(".bubbles");
+
+	bubblesContainer.style.transform = "translateX(0)";
+
+	bubblesContainer.appendChild(bubble);
+	// console.log(document.body)
 }
+
 
 //////////////////// LOOP ////////////////////
 function animate() {
@@ -367,9 +372,6 @@ function animate() {
 	// controls.update();
 	renderer.render(scene, camera);
 }
-
-
-
 
 
 animate();
