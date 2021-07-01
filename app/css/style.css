@@ -62,24 +62,19 @@ header {
 
 }
 
-header {
-  width: 100%;
-  max-width: 1024px;
-  display: flex;
-  justify-content: center; 
-}
 .header_logo {
   width: 100%;
   max-width: 250px;
   margin-top: 90px;
 }
 
-header {
+
+.header_3{
   width: 100%;
   max-width: 1024px;
   display: flex;
   justify-content: center; 
-  margin-bottom: 10%;
+
 }
 
 .header_logo {
@@ -286,9 +281,9 @@ margin-left: 20px;
   
 .main_pic_allPeople_pg_01 {
 
-  width:100%;
-  max-width: 996px;
-  max-height: 980px;  
+      width:100%;
+      max-width: 996px;
+      max-height: 980px;  
 }
 
 /*** ESTILOS BOTÓN  ***/
@@ -348,34 +343,44 @@ margin-left: 20px;
 ****************************************************************
 ****************************************************************/
 
-
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
 .main_texto_03{
     font-family: 'Open Sans', sans-serif;
 }
 
-.header_logo{
+ .main_usuario_03{
+    display: flex;
+    align-items: center;
+   
+  }
+
+  .header_logo_3{
+
+
+
+  }
+
+h5{
+    src: url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+    color: #9C895D; 
     
-    margin-bottom: 5px;
+}
+
+.main_bocadillo{
+    width: 100%;
+    box-sizing: content-box;
+
+}
+
+.main_texto_03{
+    position: absolute;
+    font-size: 12px;
+    box-sizing: border-box;
     margin-left: 100px;
-    margin-right: 100px;
-    margin-top: 5px;
-    position: center;
-
+    margin-right: 220px;
 }
-
-/* 
-.main_usuario_03{
-    padding: 100px;
-    border-radius: 30px;
-    background-color: rgb(254, 255, 255, 75) ;
-    box-shadow:  
-    3px 3px 7px 0 rgb(255, 255, 255) inset,
-    -3px -3px 5px 0 rgba(0, 0, 0, .2) inset;
-    margin: 40px; 
-
-}
-
+/*
 .main_texto_03{
     margin-bottom: 100px;
 
@@ -420,7 +425,7 @@ margin-left: 20px;
     margin-left: 17px;
 
 }
-.main_cor_03{
+/* .main_cor_03{
     background-color:  #FAFCFB;
     border-radius: 50px;
     padding: 20px;    
@@ -433,9 +438,9 @@ margin-left: 20px;
     3px 3px 7px 0 rgb(255, 255, 255) inset,
     -3px -3px 5px 0 rgba(0, 0, 0, .2) inset;
     
-}
+} */
 
-.main_cora1_03{
+/* .main_cora1_03{
     z-index: 1;
     background-color:  #FAFCFB;
     border-radius: 50px;
@@ -445,7 +450,7 @@ margin-left: 20px;
     3px 3px 7px 0 rgb(255, 255, 255) ,
     -3px -3px 5px 0 rgba(0, 0, 0, .2) ; 
 
-}
+} */
 .main_imgCompartir_03{
     width: 15px;
     height: 15px;
@@ -518,54 +523,54 @@ button  {
 }
 /*** ESTILOS BOTÓN  ***/
 .main_flechita_03{
-  width: 15px;
-  height: 15px;
-  margin-left: 3px;
+    width: 15px;
+    height: 15px;
+    margin-left: 3px;
 }
 
 .main_llevame_03 {
-  background: #fff; /* color de fondo */
-  color: #0D0C2F; /* color de fuente */
-  border: 2px solid #0D0C2F; /* tamaño y color de borde */
-  padding: 12px;
-  border-radius: 30px; /* redondear bordes */
-  position: relative;
-  z-index: 1;
-  overflow: hidden;
-  display: inline-block;
-  text-decoration:none;
-  font-family:Arial, Helvetica, sans-serif;
-  font-style: italic;
-  height: 51px;
-  font-size: 20px;
-  box-shadow: 0px 4px 6px 0px rgb(64, 73, 106);
+      background: #fff; /* color de fondo */
+      color: #0D0C2F; /* color de fuente */
+      border: 2px solid #0D0C2F; /* tamaño y color de borde */
+      padding: 12px;
+      border-radius: 30px; /* redondear bordes */
+      position: relative;
+      z-index: 1;
+      overflow: hidden;
+      display: inline-block;
+      text-decoration:none;
+      font-family:Arial, Helvetica, sans-serif;
+      font-style: italic;
+      height: 51px;
+      font-size: 20px;
+      box-shadow: 0px 4px 6px 0px rgb(64, 73, 106);
 
 }
 .main_llevame_03:hover {
-  color: #fff;/* color de fuente hover */
-}
+    color: #fff;/* color de fuente hover */
+  }
 .main_llevame_03::after {
-  content: "";
-  background: #0D0C2F; /* color de fondo hover */
-  position: absolute;
-  z-index: -1;
-  padding: 12px;
-  display: block;
-  left: -20%;
-  right: -20%;
-  top: 0;
-  bottom: 0;
-  transform: skewX(-45deg) scale(0, 1);
-  transition: all 0.3s ease;
+      content: "";
+      background: #0D0C2F; /* color de fondo hover */
+      position: absolute;
+      z-index: -1;
+      padding: 12px;
+      display: block;
+      left: -20%;
+      right: -20%;
+      top: 0;
+      bottom: 0;
+      transform: skewX(-45deg) scale(0, 1);
+      transition: all 0.3s ease;
   
 }
 .main_llevame_03:hover::after {
-  transition: all 0.3s ease-out;
-  transform: skewX(-45deg) scale(1, 1);
-}
+      transition: all 0.3s ease-out;
+      transform: skewX(-45deg) scale(1, 1);
+    }
 .main_final_03{
-  display: flex;
-  
+      display: flex;
+      
 
 }
 
