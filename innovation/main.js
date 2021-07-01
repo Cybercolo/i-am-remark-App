@@ -312,7 +312,6 @@ function stopZoomOut(maxZoomOutValue) {
 
 function getTargetPositionCamara(cameraPositionCounter) {
 	let targetPosition = new Vector3(0, 5, -(-1 + (cameraPositionCounter * distanceBetweenRows)));
-	console.log(targetPosition)
 	return targetPosition;
 }
 
@@ -330,7 +329,7 @@ document.querySelector(".backwards").addEventListener("click", function() {
 	cameraPositionCounter--;
 	let targetPosition = getTargetPositionCamara(cameraPositionCounter)
 	let duration = 1000;
-	tweenCube(targetPosition, duration, cameraPositionCounter);
+	tweenCube(targetPosition, duration);
 })
 
 function tweenCube(targetPosition, duration) {
@@ -348,18 +347,14 @@ function tweenCube(targetPosition, duration) {
 
 
 function longerGround(cameraPosition) {
-	ground.scale.y = 1 + (cameraPosition.z * -1) - (7 * (cameraPositionCounter));
-	cameraPosition.z
-	console.log(ground.scale)
-	console.log(cameraPosition.z * -1)
+	// if (ground.scale.y === 1) {
+	// 	return;
+	// }
+	ground.scale.y = 1 + (cameraPositionCounter / 2);
+	console.log(ground.scale);
+	// console.log(cameraPosition.z * -1);
 	// ground.scale.set(1, (groundLength -= 0.05), 1);
-
 }
-
-
-
-
-
 
 //////////////////// LOOP ////////////////////
 function animate() {
