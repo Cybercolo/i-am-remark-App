@@ -220,17 +220,33 @@ header {
 }
 .main-origen-2
 {
+  display: flex;
+    flex-direction: column;
+    align-items: center;
     margin-bottom: 12px;
     justify-content: space-around;
     
 } 
 
 .main-input-2{
-  border-radius: 20px;
+  border-radius: 25px;
   border:none;  
   box-shadow: inset 0px 4px 6px 0px grey;
-margin-bottom: 10px;
+  margin-bottom: 10px;
+  font-family:Arial, Helvetica, sans-serif;
+  font-style: italic;
+  font-size: 14px;
+  opacity: 0.9;
+  width: 277px;
+  height: 240px;
+  padding-left: 20px;
+  background:rgba(212, 230, 236, 1);
+  padding-top: 30px;
+  
 }
+
+
+
 /* .main-input-2 {
     box-shadow: 0px 0px 10px 0px silver inset;
     background-color:snow;
@@ -246,23 +262,31 @@ margin-bottom: 10px;
 .main-alias-2  {
     box-shadow: inset 0px 4px 6px 0px grey;
     font-family:Arial, Helvetica, sans-serif;
-    font-style: italic;
-    border-radius: 30px;
+    
+    border-radius: 25px;
     opacity: 0.9;
     padding: 6px; 
-    width: 140px;
-    border:none;    
+    width: 277px;
+    height: 50px;
+    border:none;  
+    margin-bottom: 15px;  
+    background:rgba(212, 230, 236, 1);
+}
+input::placeholder{
+margin-left: 20px;
+
 }
 
 .main-country-2  {
     box-shadow: inset 0px 4px 6px 0px grey;
-    font-family:Arial, Helvetica, sans-serif;
-    font-style: italic;
-    width:150px;
-    height: 25px;
-    border-radius: 40px;
+    font-family:Arial, Helvetica, sans-serif;  
+    width:290px;
+    height: 60px;
+    border-radius: 25px;
     opacity: 0.9;
-    border:none; }
+    border:none;
+    background:rgba(212, 230, 236, 1);
+   }
  
   
 .main_pic_allPeople_pg_01 {
@@ -279,18 +303,19 @@ margin-bottom: 10px;
     background: #fff; /* color de fondo */
     color: #0D0C2F; /* color de fuente */
     border: 2px solid #0D0C2F; /* tamaño y color de borde */
-    padding: 12px;
-    border-radius: 30px; /* redondear bordes */
+    padding: 5px;
+    border-radius: 10px 20px 43px 50px; /* redondear bordes */
     position: relative;
     z-index: 1;
     overflow: hidden;
     display: inline-block;
     text-decoration:none;
     font-family:Arial, Helvetica, sans-serif;
-    font-style: italic;
-    height: 51px;
+    font-weight: 600;
+    height: 40px;
     font-size: 20px;
     box-shadow: 0px 4px 6px 0px rgb(64, 73, 106);
+    width: 240px;
   
 }
 
@@ -303,7 +328,7 @@ margin-bottom: 10px;
     background: #0D0C2F; /* color de fondo hover */
     position: absolute;
     z-index: -1;
-    padding: 12px;
+    padding: 5px;
     display: block;
     left: -20%;
     right: -20%;
