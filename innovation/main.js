@@ -29,8 +29,10 @@ import {
 import {
 	people
 } from "./people.js";
-// var parsedJSON = require('./people.json');
-// var result = parsedJSON.people
+
+//////////////////// DATA ////////////////////
+let colors = [0xc4ec6e, 0x7089fa, 0xef86f7, 0xb681eb];
+
 
 //////////////////// GLOBAL VARIABLES ////////////////////
 let alturaSuelo = 0.01;
@@ -92,10 +94,6 @@ const renderer = new WebGLRenderer({
 renderer.shadowMap.enabled = true;
 
 renderer.render(scene, camera);
-
-//////////////////// DATA ////////////////////
-let colors = [0xc4ec6e, 0x7089fa, 0xef86f7, 0xb681eb];
-
 
 //////////////////// FUNCTIONS ////////////////////
 
@@ -270,12 +268,12 @@ canvas.addEventListener("wheel", function(e) {
 	pointLight.position.set(pointLight.position.x, pointLight.position.y, camera.position.z + 10); // pointlight following camera
 	camera.position.z = getWheelCount(e);
 
-	longerGround(e);
 	if (camera.position.z > maxZoomOutValue) { // camera zoom out limit
 		stopZoomOut(maxZoomOutValue);
 	} else if (camera.position.y < 3.5) {
 		moveCameraYScroll(e);
 	}
+	longerGroundScroll(e);
 });
 
 function moveCameraYScroll(e) {
@@ -301,7 +299,7 @@ function getWheelCount(e) {
 	return wheelCount;
 }
 
-function longerGround(e) { // para que el suelo se alargue si la camara se va muy lejos
+function longerGroundScroll(e) { // para que el suelo se alargue si la camara se va muy lejos
 	e.deltaY < 0 ? ground.scale.set(1, (groundLength += 0.05), 1) : ground.scale.set(1, (groundLength -= 0.05), 1);
 }
 
@@ -325,15 +323,14 @@ document.querySelector(".forwards").addEventListener("click", function() {
 	let targetPosition = getTargetPositionCamara(cameraPositionCounter)
 	// let targetPositionCamara = new Vector3(targetPosition.x, targetPosition.y, targetPosition.z);
 	let duration = 1000;
-	tweenCube(targetPosition, duration, camera);
+	tweenCube(targetPosition, duration, cameraPositionCounter);
 });
 
 document.querySelector(".backwards").addEventListener("click", function() {
 	cameraPositionCounter--;
 	let targetPosition = getTargetPositionCamara(cameraPositionCounter)
 	let duration = 1000;
-	tweenCube(targetPosition, duration, camera);
-	console.log("this")
+	tweenCube(targetPosition, duration, cameraPositionCounter);
 })
 
 function tweenCube(targetPosition, duration) {
@@ -343,13 +340,21 @@ function tweenCube(targetPosition, duration) {
 		.onUpdate(function() {
 			camera.position.y = currentPosition.y;
 			pointLight.position.set(pointLight.position.x, pointLight.position.y, camera.position.z + 10);
-			camera.lookAt(getCameraTargetVector())
+			camera.lookAt(getCameraTargetVector());
+			longerGround(currentPosition)
 		})
 		.start();
 }
 
 
+function longerGround(cameraPosition) {
+	ground.scale.y = 1 + (cameraPosition.z * -1) - (7 * (cameraPositionCounter));
+	cameraPosition.z
+	console.log(ground.scale)
+	console.log(cameraPosition.z * -1)
+	// ground.scale.set(1, (groundLength -= 0.05), 1);
 
+}
 
 
 
