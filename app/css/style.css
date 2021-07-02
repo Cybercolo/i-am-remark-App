@@ -306,10 +306,6 @@ position: absolute;
 
 
 }
-
-.perso{
-  mix-blend-mode: multiply;
-}
 /*** ESTILOS BOTÓN  ***/
 
 .button-send-2{
@@ -369,8 +365,6 @@ position: absolute;
 
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
-
-
 .main_texto_03{
     font-family: 'Open Sans', sans-serif;
     position: absolute;
@@ -393,8 +387,7 @@ position: absolute;
   }
 
 h5{
-    
-    src: url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet');
+    src: url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
     color: #9C895D; 
     
 }
@@ -513,19 +506,6 @@ align-items: center;
    
 
 }
-
-.elipse{
-z-index: 1;
-position: absolute;
-
-}
-
-.circulo{
-z-index: 2;
-position: absolute;
-}
-
-
 /* .main_cor_03{
     background-color:  #FAFCFB;
     border-radius: 50px;
