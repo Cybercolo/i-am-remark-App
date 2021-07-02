@@ -224,6 +224,7 @@ body {
   padding-left: 20px;
   background:rgba(212, 230, 236, 1);
   padding-top: 30px;
+  margin-bottom: 40px;
   
 }
 
@@ -243,15 +244,14 @@ body {
 
 .main-alias-2  {
     box-shadow: inset 0px 4px 6px 0px grey;
-    font-family:Arial, Helvetica, sans-serif;
-    
+    font-family:Arial, Helvetica, sans-serif;    
     border-radius: 25px;
     opacity: 0.9;
     padding: 6px; 
     width: 277px;
     height: 50px;
     border:none;  
-    margin-bottom: 15px;  
+    margin-bottom: 25px;  
     background:rgba(212, 230, 236, 1);
 }
 input::placeholder{
@@ -265,6 +265,7 @@ margin-left: 20px;
     width:290px;
     height: 60px;
     border-radius: 25px;
+    margin-bottom: 17px;  
     opacity: 0.9;
     border:none;
     background:rgba(212, 230, 236, 1);
@@ -278,6 +279,35 @@ margin-left: 20px;
       max-height: 980px;  
 }
 
+
+.final03{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+   
+}
+
+.final02{
+  position: absolute;
+  z-index: 3;
+  margin-top:70px;
+  
+}
+
+
+.corona2{
+  z-index: 1;
+  position: absolute;
+  margin-bottom: 20px;
+  margin-left: 200px;
+}
+
+.esterllas1{
+z-index: 2;
+position: absolute;
+
+
+}
 /*** ESTILOS BOTÓN  ***/
 
 .button-send-2{
@@ -297,7 +327,7 @@ margin-left: 20px;
     height: 40px;
     font-size: 20px;
     box-shadow: 0px 4px 6px 0px rgb(64, 73, 106);
-    width: 240px;
+    width: 220px;
   
 }
 
