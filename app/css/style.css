@@ -198,16 +198,44 @@ body {
     position:relative;
        
 }
+.flecha02{
+  position: absolute;
+
+}
+.estrellitas02{
+
+
+}
+
+.main-principal-01{
+display: flex;
+align-items: center;
+
+
+}
 .main-origen-2
 {
   display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 12px;
+    margin-bottom: 30px;
     justify-content: space-around;
     
 } 
-
+.main-alias-2  {
+  position:absolute;
+  margin-left: 23px;
+  box-shadow: inset 0px 4px 6px 0px grey;
+  font-family:Arial, Helvetica, sans-serif;    
+  border-radius: 25px;
+  
+  padding: 6px; 
+  width: 277px;
+  height: 50px;
+  border:none;  
+  margin-bottom: 25px;  
+  background:rgba(212, 230, 236, 1);
+}
 .main-input-2{
   border-radius: 25px;
   border:none;  
@@ -228,6 +256,7 @@ body {
 
 
 
+
 /* .main-input-2 {
     box-shadow: 0px 0px 10px 0px silver inset;
     background-color:snow;
@@ -240,18 +269,7 @@ body {
     border:none;  
 }*/
 
-.main-alias-2  {
-    box-shadow: inset 0px 4px 6px 0px grey;
-    font-family:Arial, Helvetica, sans-serif;    
-    border-radius: 25px;
-    opacity: 0.9;
-    padding: 6px; 
-    width: 277px;
-    height: 50px;
-    border:none;  
-    margin-bottom: 25px;  
-    background:rgba(212, 230, 236, 1);
-}
+
 input::placeholder{
 margin-left: 20px;
 
@@ -279,31 +297,40 @@ margin-left: 20px;
 
 
 .final03{
-  display: flex;
-  align-items: center;
-  justify-content: center;
+      display: flex;
+      align-items: center;
+    
    
 }
 
 .final02{
-  position: absolute;
-  z-index: 3;
-  margin-top:70px;
   
+      display: flex;
+      align-items: center;
+      justify-content: center;
+   
 }
 
 
 .corona2{
-  z-index: 1;
-  position: absolute;
-  margin-bottom: 20px;
-  margin-left: 200px;
+        z-index: 3;
+        position: absolute;
+        margin-bottom: 30px;
+        margin-left: 220px;
+  
 }
 
 .esterllas1{
-z-index: 2;
-position: absolute;
+        z-index: 2;
+        position: absolute;
+        margin-top:100px;
 
+}
+a{
+  z-index: 1;
+  position: absolute;
+  margin-top: 60px;
+  margin-left: 10px;
 
 }
 
@@ -311,6 +338,8 @@ position: absolute;
   mix-blend-mode: multiply;
 }
 /*** ESTILOS BOTÓN  ***/
+
+
 
 .button-send-2{
     
