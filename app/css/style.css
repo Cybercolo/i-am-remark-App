@@ -419,8 +419,6 @@ align-items: center;
 
 }
 
-<<<<<<< HEAD
-=======
 .estrellas_03{
 
 
@@ -432,7 +430,6 @@ align-items: center;
 }
 
 
->>>>>>> 396cc390f8b6eddf614b182c37b79a8931dcb347
 .main_usuario_03{
   z-index: 1;
   background-color: #FAFCFB;
@@ -444,8 +441,6 @@ align-items: center;
   -3px -3px 5px 0 rgba(0, 0, 0, .2) ;   
 }
 
-<<<<<<< HEAD
-=======
 .main_texto_03{
     position: absolute;
     font-size: 12px;
@@ -454,7 +449,6 @@ align-items: center;
     margin-right: 220px;
 }
 /*
->>>>>>> 396cc390f8b6eddf614b182c37b79a8931dcb347
 .main_texto_03{
     margin-bottom: 100px;
 
@@ -483,7 +477,8 @@ align-items: center;
 }
 
 .corona_03{
-
+margin-top: -150px;
+margin-bottom: -180px;
 }
 
 
