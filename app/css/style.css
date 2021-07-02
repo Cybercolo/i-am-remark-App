@@ -306,6 +306,10 @@ position: absolute;
 
 
 }
+
+.perso{
+  mix-blend-mode: multiply;
+}
 /*** ESTILOS BOTÓN  ***/
 
 .button-send-2{
