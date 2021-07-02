@@ -346,19 +346,6 @@ margin-left: 20px;
 
 }
 
-<<<<<<< HEAD
-.estrellas_03{
-
-
-}
-
-.corona_03{
-  
-
-}
-
-
-=======
 .main_usuario_03{
   z-index: 1;
   background-color: #FAFCFB;
@@ -370,7 +357,6 @@ margin-left: 20px;
   -3px -3px 5px 0 rgba(0, 0, 0, .2) ;   
 }
 
->>>>>>> 1565f4b4a4574707955735b98076fffa00504f91
 .main_texto_03{
     margin-bottom: 100px;
 
@@ -394,6 +380,13 @@ margin-left: 20px;
     
 } */
 
+.estrellas_03{
+
+}
+
+.corona_03{
+
+}
 
 
 .main_enlaces_03{
