@@ -88,8 +88,9 @@ body {
   flex-direction: row;
   justify-content: center;
   letter-spacing: 1.5px; 
-  margin-top: 10%; 
   z-index: 1;
+  position: relative;
+  top: 80px;
   }
   
 .main_message_pg_01 {
@@ -97,21 +98,18 @@ body {
   color:#9C895D;
   font-size: 1.8em;
   text-align: center;
-  margin-right: 10px;
+  position: relative;
+  bottom: 30px;
+  left: 105px;
 }
 
-.main_pic_flecha_pg_01 {
-  Width: 55px;
-  Height: 45px;
-  margin-top: 18%;
-}
 
 .main_button_why_you_pg_01 {
   background: rgba(26, 33, 58, 1);   
-  box-shadow: 0px 4px 6px 0px rgb(64, 73, 106);
+  box-shadow: rgba(26, 33, 58, 1);
   border-radius: 40px;
   height: 51px;
-  width: 80%;
+  width: 60%;
   padding: 12px 20px 14px 20px;
   margin-top: -20px;
   display: flex;
@@ -119,10 +117,10 @@ body {
 }
 
 .button_pg_01{
-
-  background: rgba(26, 33, 58, 1);
   color:aliceblue;
-  padding: 6px;
+  background: rgba(26, 33, 58, 1);
+  padding: 16px;
+  width: 100%;
   border: none;
   font-size: 1.3em;
   font-family:Arial, Helvetica, sans-serif;
@@ -131,7 +129,7 @@ body {
 }
 
  .main_button_why_you_pg_01:hover {
-  background-color: #fff;/* color de fuente hover */
+  background-color: rgb(35, 44, 77);/* color de fuente hover */
 }
 
 .main_button_why_you_pg_01::after {
@@ -153,10 +151,10 @@ body {
 }
 .main_pic_flecha_pg_01 {
   display: flex;
-  Width: 55px;
-  Height: 45px;
-  margin-top: -51px;
-  margin-left: 240px;
+  Width: 190px;
+  Height: 75px;
+  margin-bottom: 60px;
+  margin-left: 90px;
   
 }
 
@@ -224,6 +222,7 @@ body {
   padding-left: 20px;
   background:rgba(212, 230, 236, 1);
   padding-top: 30px;
+  margin-bottom: 40px;
   
 }
 
@@ -243,15 +242,14 @@ body {
 
 .main-alias-2  {
     box-shadow: inset 0px 4px 6px 0px grey;
-    font-family:Arial, Helvetica, sans-serif;
-    
+    font-family:Arial, Helvetica, sans-serif;    
     border-radius: 25px;
     opacity: 0.9;
     padding: 6px; 
     width: 277px;
     height: 50px;
     border:none;  
-    margin-bottom: 15px;  
+    margin-bottom: 25px;  
     background:rgba(212, 230, 236, 1);
 }
 input::placeholder{
@@ -265,6 +263,7 @@ margin-left: 20px;
     width:290px;
     height: 60px;
     border-radius: 25px;
+    margin-bottom: 17px;  
     opacity: 0.9;
     border:none;
     background:rgba(212, 230, 236, 1);
@@ -278,6 +277,39 @@ margin-left: 20px;
       max-height: 980px;  
 }
 
+
+.final03{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+   
+}
+
+.final02{
+  position: absolute;
+  z-index: 3;
+  margin-top:70px;
+  
+}
+
+
+.corona2{
+  z-index: 1;
+  position: absolute;
+  margin-bottom: 20px;
+  margin-left: 200px;
+}
+
+.esterllas1{
+z-index: 2;
+position: absolute;
+
+
+}
+
+.perso{
+  mix-blend-mode: multiply;
+}
 /*** ESTILOS BOTÓN  ***/
 
 .button-send-2{
@@ -297,7 +329,7 @@ margin-left: 20px;
     height: 40px;
     font-size: 20px;
     box-shadow: 0px 4px 6px 0px rgb(64, 73, 106);
-    width: 240px;
+    width: 220px;
   
 }
 
