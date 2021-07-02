@@ -98,18 +98,11 @@ body {
   color:#9C895D;
   font-size: 1.8em;
   text-align: center;
-  margin-right: 10px;
   position: relative;
-  bottom: 85px;
-  left: 150px;
+  bottom: 30px;
+  left: 105px;
 }
 
-.main_pic_flecha_pg_01 {
-  position: relative;
-  right: 93px;
-  
-  
-}
 
 .main_button_why_you_pg_01 {
   background: rgba(26, 33, 58, 1);   
@@ -158,10 +151,10 @@ body {
 }
 .main_pic_flecha_pg_01 {
   display: flex;
-  Width: 55px;
-  Height: 45px;
-  margin-top: -51px;
-  margin-left: 240px;
+  Width: 190px;
+  Height: 75px;
+  margin-bottom: 60px;
+  margin-left: 90px;
   
 }
 
