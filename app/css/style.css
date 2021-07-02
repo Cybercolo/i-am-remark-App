@@ -465,6 +465,19 @@ align-items: center;
    
 
 }
+
+.elipse{
+z-index: 1;
+position: absolute;
+
+}
+
+.circulo{
+z-index: 2;
+position: absolute;
+}
+
+
 /* .main_cor_03{
     background-color:  #FAFCFB;
     border-radius: 50px;
