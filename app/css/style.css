@@ -444,15 +444,29 @@ a{
 
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
+.container03 {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
 .main_texto_03{
     font-family: 'Open Sans', sans-serif;
     position: absolute;
     font-size: 12px;
     box-sizing: border-box;
-    margin: 0% 0 12% 0;
     width: 30%;
-    max-width: 30%;
-    height: fit-content;
+    max-width: 50%;
+    max-height: 30px;
+    top: 32%;
+
+    
+    
     
 }
 
@@ -461,15 +475,27 @@ a{
     align-items: center;
     width: 30%;
     height: 20px; 
+    max-height: 30px;
     margin: 10% 0 10% 0;
+    
     
    
   }
+.main_bocadillo {
+    position: absolute;
+    width: 60%;
+    max-height: 30px;
+    top: 23%;
+    margin-bottom: 30%;
+}
+
 .main_bocadillo1 {
-    width: 200%;
-    max-width: 200%;
+    position: absolute;
+    width: 100%;
+    max-width: 100%;
     height: fit-content;
-    margin: 10% 40% 15% -50%;
+    right: 20%;
+    
 }
 
 
