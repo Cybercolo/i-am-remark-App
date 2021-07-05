@@ -246,12 +246,12 @@ header {
 }
 
 .main-country-2  {
+  position: relative;
   box-shadow: inset 0px 4px 6px 0px grey;
   font-family:Arial, Helvetica, sans-serif;  
   width: 300px;
   height: 40px;
   padding-left: 20px; 
-  padding-right: 20px; 
   border-radius: 25px;
   margin-bottom: 17px;  
   opacity: 0.9;
