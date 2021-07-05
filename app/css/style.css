@@ -3,7 +3,7 @@
 
 /***************************************************************
 ****************************************************************
-*************************PAGINA 01******************************
+*************************LANDING PAGE******************************
 ****************************************************************
 ****************************************************************
 /* 
@@ -170,6 +170,7 @@ header {
  
 
 .container02 {
+  background: radial-gradient();
   box-sizing: border-box;
   width: 100%;
   display: flex;
@@ -733,6 +734,7 @@ margin-bottom: -180px;
 ****************************************************************/
 
 .container {
+  background: radial-gradient();
   box-sizing: border-box;
   width: 100%;
   display: flex;
@@ -922,9 +924,11 @@ margin-bottom: -180px;
     transition: all 0.3s ease-out;
     transform: skewX(-45deg) scale(1, 1);
   }
+  
 
   .main-personaje3d-4{
   mix-blend-mode: multiply;
+  mask-position:center;
 }
 
 
