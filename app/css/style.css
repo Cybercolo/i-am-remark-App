@@ -437,8 +437,9 @@ a{
     position: absolute;
     font-size: 12px;
     box-sizing: border-box;
-    margin: 10% 0 0 0;
+    margin: 0% 0 12% 0;
     width: 30%;
+    max-width: 30%;
     height: fit-content;
     
 }
@@ -514,17 +515,6 @@ align-items: center;
 
 }
 
-
-.main_usuario_03{
-  z-index: 1;
-  background-color: #FAFCFB;
-  border-radius: 50px;
-  padding: 25px;    
-  text-decoration: none;    
-  box-shadow: 
-  3px 3px 7px 0 rgb(255, 255, 255) ,
-  -3px -3px 5px 0 rgba(0, 0, 0, .2) ;   
-}
 
 .main_texto_03{
     position: absolute;
@@ -665,16 +655,7 @@ margin-bottom: -180px;
 
 } */
   
-/* .main_usuario_03{
-    z-index: 1;
-    background-color: #FAFCFB;
-    border-radius: 50px;
-    padding: 25px;    
-    text-decoration: none;    
-    box-shadow: 
-    3px 3px 7px 0 rgb(255, 255, 255) ,
-    -3px -3px 5px 0 rgba(0, 0, 0, .2) ;   
-} */
+
 
 
 /*** ESTILOS BOTÓN  ***/
