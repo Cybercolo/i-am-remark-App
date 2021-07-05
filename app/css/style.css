@@ -51,7 +51,6 @@ body {
 
 
 header {
-
   width: 100%;
   max-width: 250px;
   margin-top: 90px;
@@ -158,6 +157,11 @@ header {
   transition: all 0.3s ease-out;
   transform: skewX(-45deg) scale(1, 1);
 }
+.main_pic_allPeople_pg_01 {
+  width: 100%;
+  max-width: 996px;
+  max-height: 980px;
+}
 
 /***************************************************************
 ****************************************************************
@@ -183,7 +187,7 @@ header {
     font-family: 'Raleway', sans-serif;
     border-radius: 25px;
     text-shadow: gainsboro;
-    font-style: italic;
+    
 }
 .header-message:hover {
     color:royalblue;
@@ -237,25 +241,44 @@ header {
   border:none;  
   margin-bottom: 25px; 
   margin-top: 30px; 
-  
   background:rgba(212, 230, 236, 1);
-}
-.main-input-2{
-  border-radius: 25px;
-  border:none;  
-  box-shadow: inset 0px 4px 6px 0px grey;
-  margin-bottom: 10px;
-  font-family:Arial, Helvetica, sans-serif;
-  font-style: italic;
+  padding-left: 20px;  
   font-size: 14px;
+
+}
+
+.main-country-2  {
+  box-shadow: inset 0px 4px 6px 0px grey;
+  font-family:Arial, Helvetica, sans-serif;  
+  width: 300px;
+  height: 60px;
+  padding-left: 20px; 
+  padding-right: 20px; 
+  border-radius: 25px;
+  margin-bottom: 17px;  
   opacity: 0.9;
+  border:none;
+  background:rgba(212, 230, 236, 1);
+ }
+
+.main-why-2{
+  display: flex;
+  flex-direction: column;
+}
+
+.main-input-2{
   width: 277px;
   height: 240px;
-  padding-left: 20px;
+  border-radius: 25px;
+  border:none;  
   background:rgba(212, 230, 236, 1);
+  box-shadow: inset 0px 4px 6px 0px grey;
+  margin-bottom: 10px;
+  padding-left: 20px;
   padding-top: 30px;
    
 }
+
 p{
   font-size: 14px;
   float: right;
@@ -281,18 +304,6 @@ input::placeholder{
 margin-left: 20px;
 
 }
-
-.main-country-2  {
-    box-shadow: inset 0px 4px 6px 0px grey;
-    font-family:Arial, Helvetica, sans-serif;  
-    width:290px;
-    height: 60px;
-    border-radius: 25px;
-    margin-bottom: 17px;  
-    opacity: 0.9;
-    border:none;
-    background:rgba(212, 230, 236, 1);
-   }
  
   
 .main_pic_allPeople_pg_01 {
@@ -340,10 +351,6 @@ a{
   margin-top: 60px;
   margin-left: 10px;
 
-}
-
-.perso{
-  mix-blend-mode: multiply;
 }
 /*** ESTILOS BOTÓN  ***/
 
@@ -521,6 +528,14 @@ align-items: center;
     
 } */
 
+.estrellas_03{
+
+}
+
+.corona_03{
+margin-top: -150px;
+margin-bottom: -180px;
+}
 
 
 .main_enlaces_03{
@@ -654,7 +669,6 @@ align-items: center;
   display: inline-block;
   text-decoration:none;
   font-family:Arial, Helvetica, sans-serif;
-  font-style: italic;
   height: 30px;
   width: 230px;
   font-size: 20px;
@@ -816,7 +830,6 @@ align-items: center;
   display: inline-block;
   text-decoration:none;
   font-family:Arial, Helvetica, sans-serif;
-  font-style: italic;
   height: 51px;
   font-size: 20px;
   
@@ -859,7 +872,6 @@ align-items: center;
   display: inline-block;
   text-decoration:none;
   font-family:Arial, Helvetica, sans-serif;
-  font-style: italic;
   height: 51px;
   font-size: 20px;
   
