@@ -1,12 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&display=swap');
+
 
 /***************************************************************
 ****************************************************************
 *************************PAGINA 01******************************
 ****************************************************************
-****************************************************************/
-
-
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
+****************************************************************
 /* 
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -234,8 +233,7 @@ header {
   z-index: 3;
   box-shadow: inset 0px 4px 6px 0px grey;
   font-family:Arial, Helvetica, sans-serif;    
-  border-radius: 20px;
-  padding: 6px; 
+  border-radius: 25px;
   width: 277px;
   height: 38px;
   border:none;  
@@ -244,14 +242,13 @@ header {
   background:rgba(212, 230, 236, 1);
   padding-left: 20px;  
   font-size: 14px;
-
 }
 
 .main-country-2  {
   box-shadow: inset 0px 4px 6px 0px grey;
   font-family:Arial, Helvetica, sans-serif;  
   width: 300px;
-  height: 60px;
+  height: 40px;
   padding-left: 20px; 
   padding-right: 20px; 
   border-radius: 25px;
@@ -526,9 +523,6 @@ align-items: center;
     
 } */
 
-/*.estrellas_03{
-
-}*/
 
 .corona_03{
 margin-top: -150px;
