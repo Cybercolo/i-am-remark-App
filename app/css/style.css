@@ -464,6 +464,7 @@ align-items: center;
   
 
 /* 
+
 .main_usuario_03{
     padding: 100px;
     border-radius: 30px;
@@ -472,16 +473,6 @@ align-items: center;
     3px 3px 7px 0 rgb(255, 255, 255) inset,
     -3px -3px 5px 0 rgba(0, 0, 0, .2) inset;
     margin: 40px; 
-
-}
-
-.estrellas_03{
-
-
-}
-
-.corona_03{
-  
 
 }
 
@@ -528,9 +519,9 @@ align-items: center;
     
 } */
 
-.estrellas_03{
+/*.estrellas_03{
 
-}
+}*/
 
 .corona_03{
 margin-top: -150px;
@@ -716,7 +707,7 @@ margin-bottom: -180px;
 ****************************************************************/
 
 
-
+.container
 
 
 .botones{
