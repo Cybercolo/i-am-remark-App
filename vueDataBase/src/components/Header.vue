@@ -1,9 +1,9 @@
 <template>
-    <div class="card">
+    <div>
 
-      <header> 
-        <img class="header-brand" src="../images/brand.png" alt="">
-      </header>
+    <header> 
+      <img class="header_logo" src="../images/brand.png" alt="">
+    </header>
           
     </div>
 </template>
