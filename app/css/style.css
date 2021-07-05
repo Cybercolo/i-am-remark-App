@@ -99,18 +99,25 @@ body {
   font-size: 1.8em;
   text-align: center;
   position: relative;
-  bottom: 30px;
-  left: 105px;
+  bottom: 107px;
+  left: 98px;
 }
-
+.main_pic_flecha_pg_01 {
+  display: flex;
+  Width: 184px;
+  Height: 62px;
+  margin-bottom: 74px;
+  margin-left: 50px;
+  
+}
 
 .main_button_why_you_pg_01 {
   background: rgba(26, 33, 58, 1);   
   box-shadow: rgba(26, 33, 58, 1);
   border-radius: 40px;
   height: 51px;
-  width: 60%;
-  padding: 12px 20px 14px 20px;
+  width: 31%;
+  padding: 10px;
   margin-top: -20px;
   display: flex;
   justify-content: center;
@@ -119,7 +126,7 @@ body {
 .button_pg_01{
   color:aliceblue;
   background: rgba(26, 33, 58, 1);
-  padding: 16px;
+  padding: 0px;
   width: 100%;
   border: none;
   font-size: 1.3em;
@@ -149,14 +156,7 @@ body {
   transition: all 0.3s ease-out;
   transform: skewX(-45deg) scale(1, 1);
 }
-.main_pic_flecha_pg_01 {
-  display: flex;
-  Width: 190px;
-  Height: 75px;
-  margin-bottom: 60px;
-  margin-left: 90px;
-  
-}
+
 
 /***************************************************************
 ****************************************************************
