@@ -17,11 +17,11 @@
   margin-top: 60px;
 } */
 
-@media screen 
-  and (device-width: 360px) 
-  and (device-height: 640px) 
-  and (-webkit-device-pixel-ratio: 4) 
-{}
+/* @media screen 
+   (device-width: 360px) ;
+   (device-height: 640px) 
+   (-webkit-device-pixel-ratio: 4) ;
+{} */
 
 body {
   box-sizing: content-box;
@@ -223,7 +223,7 @@ header {
 .estrellitas02{
   position: absolute;
   z-index: 2;
-  padding-top: 13px;
+  padding-top: 10px;
   margin-right: 120px;
 }
 .main-alias-2  {
