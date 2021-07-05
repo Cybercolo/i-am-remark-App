@@ -607,7 +607,9 @@ align-items: center;
 .main_compartir_03{
     display: flex;
     align-items: center;
-    margin-right: -80px;
+    margin-right: -170px;
+    position: absolute;
+    margin-top: 400px;
    
 }
 .main_com_03{
