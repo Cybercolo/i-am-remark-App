@@ -16,11 +16,16 @@ background-image:
     align-items: center;
     margin: 0%;
     padding:0%;
-    
-      
+     
   }
   
+.header-img-001 {
+  
+    width: 100%;
+    max-width: 250px;
+    margin-top: 90px;
 
+}
 .mision{
     color: #202124;
     font-family: 'Raleway', sans-serif;
@@ -47,14 +52,6 @@ color: #ffffff;
 font-family: 'Open Sans', sans-serif;
 }
 
-
-.datemin, .label-datemin {
-font-style: italic;
-color: indigo;
-}
-.datemax, .labe-datemax {
-    font-style: italic;
-    color: rgb(28, 142, 45);
 
 }
 .todo{

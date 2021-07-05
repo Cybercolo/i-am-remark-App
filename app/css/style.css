@@ -7,7 +7,7 @@
 
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
-
+/* 
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -15,7 +15,8 @@
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
-}
+} */
+
 @media screen 
   and (device-width: 360px) 
   and (device-height: 640px) 
@@ -49,10 +50,12 @@ body {
 }
 
 
-.header_logo {
+header {
+
   width: 100%;
   max-width: 250px;
   margin-top: 90px;
+  padding-bottom: 35px;
 }
 
 
@@ -79,7 +82,7 @@ body {
   letter-spacing: 2px;
   font-family: 'Roboto';
   font-style: 'Regular';
-  font-size: 1em;
+  font-size: 30px;
   line-height: auto;
 }
 
@@ -99,18 +102,25 @@ body {
   font-size: 1.8em;
   text-align: center;
   position: relative;
-  bottom: 30px;
-  left: 105px;
+  bottom: 107px;
+  left: 98px;
 }
-
+.main_pic_flecha_pg_01 {
+  display: flex;
+  Width: 184px;
+  Height: 62px;
+  margin-bottom: 74px;
+  margin-left: 50px;
+  
+}
 
 .main_button_why_you_pg_01 {
   background: rgba(26, 33, 58, 1);   
   box-shadow: rgba(26, 33, 58, 1);
   border-radius: 40px;
   height: 51px;
-  width: 60%;
-  padding: 12px 20px 14px 20px;
+  width: 40%;
+  padding: 10px;
   margin-top: -20px;
   display: flex;
   justify-content: center;
@@ -119,12 +129,11 @@ body {
 .button_pg_01{
   color:aliceblue;
   background: rgba(26, 33, 58, 1);
-  padding: 16px;
+  padding: 0px;
   width: 100%;
   border: none;
-  font-size: 1.3em;
-  font-family:Arial, Helvetica, sans-serif;
-  font-style: italic;
+  font-size: 1.6em;
+  font-family:roboto;
   box-shadow: none;
 }
 
@@ -148,14 +157,6 @@ body {
 .main_button_why_you_pg_01:hover::after {
   transition: all 0.3s ease-out;
   transform: skewX(-45deg) scale(1, 1);
-}
-.main_pic_flecha_pg_01 {
-  display: flex;
-  Width: 190px;
-  Height: 75px;
-  margin-bottom: 60px;
-  margin-left: 90px;
-  
 }
 
 /***************************************************************
@@ -198,16 +199,47 @@ body {
     position:relative;
        
 }
+
 .main-origen-2
 {
-  display: flex;
+   display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 12px;
+    margin-bottom: 5px;
     justify-content: space-around;
     
 } 
+.main-principal-02{
+  display: flex;
+  flex-direction: column;
+  align-items: center;}
 
+.flecha02{
+  position: absolute;
+  margin-left: 350px;
+  margin-bottom: 50px;
+ 
+}
+.estrellitas02{
+  position: absolute;
+  z-index: 2;
+  padding-top: 13px;
+  margin-right: 120px;
+}
+.main-alias-2  {
+  z-index: 3;
+  box-shadow: inset 0px 4px 6px 0px grey;
+  font-family:Arial, Helvetica, sans-serif;    
+  border-radius: 20px;
+  padding: 6px; 
+  width: 277px;
+  height: 38px;
+  border:none;  
+  margin-bottom: 25px; 
+  margin-top: 30px; 
+  
+  background:rgba(212, 230, 236, 1);
+}
 .main-input-2{
   border-radius: 25px;
   border:none;  
@@ -222,11 +254,15 @@ body {
   padding-left: 20px;
   background:rgba(212, 230, 236, 1);
   padding-top: 30px;
-  margin-bottom: 40px;
-  
+   
 }
-
-
+p{
+  font-size: 14px;
+  float: right;
+  align-self:flex-end;
+  color: #969696;
+  margin:0
+}
 
 /* .main-input-2 {
     box-shadow: 0px 0px 10px 0px silver inset;
@@ -240,18 +276,7 @@ body {
     border:none;  
 }*/
 
-.main-alias-2  {
-    box-shadow: inset 0px 4px 6px 0px grey;
-    font-family:Arial, Helvetica, sans-serif;    
-    border-radius: 25px;
-    opacity: 0.9;
-    padding: 6px; 
-    width: 277px;
-    height: 50px;
-    border:none;  
-    margin-bottom: 25px;  
-    background:rgba(212, 230, 236, 1);
-}
+
 input::placeholder{
 margin-left: 20px;
 
@@ -279,39 +304,51 @@ margin-left: 20px;
 
 
 .final03{
-  display: flex;
-  align-items: center;
-  justify-content: center;
+      display: flex;
+      align-items: center;
+    
    
 }
 
 .final02{
-  position: absolute;
-  z-index: 3;
-  margin-top:70px;
   
+      display: flex;
+      align-items: center;
+      justify-content: center;
+   
 }
 
 
 .corona2{
-  z-index: 1;
-  position: absolute;
-  margin-bottom: 20px;
-  margin-left: 200px;
+        z-index: 3;
+        position: absolute;
+        margin-bottom: 30px;
+        margin-left: 220px;
+  
 }
 
 .esterllas1{
-z-index: 2;
-position: absolute;
+        z-index: 2;
+        position: absolute;
+        margin-top:100px;
+       
 
+}
+a{
+  z-index: 1;
+  position: absolute;
+  margin-top: 60px;
+  margin-left: 10px;
 
 }
 /*** ESTILOS BOTÓN  ***/
 
+
+
 .button-send-2{
     
-    background: #fff; /* color de fondo */
-    color: #0D0C2F; /* color de fuente */
+    background: #0D0C2F; /* color de fondo */
+    color: #fff; /* color de fuente */
     border: 2px solid #0D0C2F; /* tamaño y color de borde */
     padding: 5px;
     border-radius: 10px 20px 43px 50px; /* redondear bordes */
@@ -322,20 +359,19 @@ position: absolute;
     text-decoration:none;
     font-family:Arial, Helvetica, sans-serif;
     font-weight: 600;
-    height: 40px;
+    height: 42px;
     font-size: 20px;
-    box-shadow: 0px 4px 6px 0px rgb(64, 73, 106);
     width: 220px;
   
 }
 
 .button-send-2:hover {
-    color: #fff;/* color de fuente hover */
+    color: #0D0C2F;/* color de fuente hover */
   }
   
 .button-send-2::after {
     content: "";
-    background: #0D0C2F; /* color de fondo hover */
+    background: #fff; /* color de fondo hover */
     position: absolute;
     z-index: -1;
     padding: 5px;
@@ -380,11 +416,7 @@ position: absolute;
    
   }
 
-  .header_logo_3{
 
-
-
-  }
 
 h5{
     src: url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
@@ -402,10 +434,23 @@ align-items: center;
   position: absolute;
  z-index: 2;
  margin-left: 200px;
+ margin-top: 30px;
  
 
 
 }
+
+.elipse{
+  z-index: 1;
+  position: absolute;
+  
+  }
+  
+  .circulo{
+  z-index: 2;
+  position: absolute;
+  }
+  
 
 /* 
 .main_usuario_03{
@@ -501,6 +546,12 @@ margin-bottom: -180px;
    
 
 }
+<<<<<<< HEAD
+=======
+
+
+
+>>>>>>> ef2c34851a6e0f8e25363bd5ae98ddf57f2700ee
 /* .main_cor_03{
     background-color:  #FAFCFB;
     border-radius: 50px;
@@ -533,23 +584,24 @@ margin-bottom: -180px;
     position: absolute;
     z-index: 3;
     margin-left: 17px;
+    
 }
+
 
 .main_compartir_03{
     display: flex;
     align-items: center;
-    margin-right: 5px;
-    
+    margin-right: -80px;
+   
 }
 .main_com_03{
     background-color:  #FAFCFB;
     border-radius: 50px;
     padding: 20px;    
     text-decoration: none;
-    position: absolute;
+    position: relative;
     z-index: 2;
     margin-left: 5px;
-    margin-top: 0.75px;
     box-shadow: 
     3px 3px 7px 0 rgb(255, 255, 255) inset,
     -3px -3px 5px 0 rgba(0, 0, 0, .2) inset;
@@ -567,7 +619,7 @@ margin-bottom: -180px;
     -3px -3px 5px 0 rgba(0, 0, 0, .2) ; 
 }
 
-button  {
+/* button  {
     background-color:linear-gradient(rgb(255, 255, 255) rgb(199, 199, 199))   ;
     border-radius: 50px;
     padding: 20px;
@@ -575,7 +627,7 @@ button  {
     box-shadow:3px 3px 7px  rgba(160, 145, 145, 0.973) inset,
     -3px -3px 7px  rgba(255, 255, 255, 0.877) inset;
 
-}
+} */
   
 /* .main_usuario_03{
     z-index: 1;
@@ -588,15 +640,7 @@ button  {
     -3px -3px 5px 0 rgba(0, 0, 0, .2) ;   
 } */
 
-.main_animacion3d_03 {
-    padding-left: 100px;
-    margin: 40px;
-    margin-bottom: 5%;
-    margin-left: 35%;
-    margin-right: 35%;
-    margin-top: 5%;
-    position: center;
-}
+
 /*** ESTILOS BOTÓN  ***/
 .main_flechita_03{
     width: 15px;
@@ -606,8 +650,8 @@ button  {
 
 
 .main_llevame_03 {
-  background: #fff; /* color de fondo */
-  color: #0D0C2F; /* color de fuente */
+  background: #0D0C2F; /* color de fondo */
+  color: #fff; /* color de fuente */
   border: 2px solid #0D0C2F; /* tamaño y color de borde */
   padding: 15px 5px 10px 35px;
   border-radius: 30px; /* redondear bordes */
@@ -621,18 +665,18 @@ button  {
   height: 30px;
   width: 230px;
   font-size: 20px;
-  box-shadow: 0px 4px 6px 0px rgb(64, 73, 106);
+  
   
 
 
 }
 
 .main_llevame_03:hover {
-    color: #fff;/* color de fuente hover */
+    color: #0D0C2F;/* color de fuente hover */
   }
 .main_llevame_03::after {
       content: "";
-      background: #0D0C2F; /* color de fondo hover */
+      background: #fff; /* color de fondo hover */
       position: absolute;
       z-index: -1;
       padding: 12px;
@@ -695,14 +739,14 @@ button  {
   -3px -3px 5px 0 rgba(0, 0, 0, .2) inset;
 }
 
-section{
+/* section{
  
   display: flex;  
   margin-top: 50px;
   margin-bottom: 250px;
 
 
-}
+} */
 
 .main-lupita1-4{
   z-index: 1;
@@ -768,8 +812,8 @@ section{
 
 /*** ESTILOS BOTÓN  ***/
 .main-botonnext-4 {
-  background: #fff; /* color de fondo */
-  color: #0D0C2F; /* color de fuente */
+  background: #0D0C2F; /* color de fondo */
+  color: #fff; /* color de fuente */
   border: 2px solid #0D0C2F; /* tamaño y color de borde */
   padding: 12px;
   border-radius: 30px; /* redondear bordes */
@@ -782,17 +826,17 @@ section{
   font-style: italic;
   height: 51px;
   font-size: 20px;
-  box-shadow: 0px 4px 6px 0px rgb(64, 73, 106);
+  
     
 }
 
 
   .main-botonnext-4:hover {
-    color: #fff;/* color de fuente hover */
+    color: #0D0C2F;/* color de fuente hover */
   }
   .main-botonnext-4::after {
     content: "";
-    background: #0D0C2F; /* color de fondo hover */
+    background: #fff; /* color de fondo hover */
     position: absolute;
     z-index: -1;
     padding: 12px;
@@ -811,8 +855,8 @@ section{
 
   /*** ESTILOS BOTÓN  ***/
 .main-botonhome-4 {
-  background: #fff; /* color de fondo */
-  color: #0D0C2F; /* color de fuente */
+  background: #0D0C2F; /* color de fondo */
+  color: #fff; /* color de fuente */
   border: 2px solid #0D0C2F; /* tamaño y color de borde */
   padding: 12px;
   border-radius: 30px; /* redondear bordes */
@@ -825,15 +869,15 @@ section{
   font-style: italic;
   height: 51px;
   font-size: 20px;
-  box-shadow: 0px 4px 6px 0px rgb(64, 73, 106);
+  
     
 }
   .main-botonhome-4:hover {
-    color: #fff;/* color de fuente hover */
+    color: #0D0C2F;/* color de fuente hover */
   }
   .main-botonhome-4::after {
     content: "";
-    background: #0D0C2F; /* color de fondo hover */
+    background: #fff; /* color de fondo hover */
     position: absolute;
     z-index: -1;
     padding: 12px;

@@ -1,10 +1,10 @@
 
 
-.why_you:hover {
-    color:  #0D0C2F;/* color de fuente hover */
+.main_button_why_you_pg_01:hover {
+    color:  #12103d;/* color de fuente hover */
   }
   
-.why_you::after {
+.main_button_why_you_pg_01::after {
     content: "";
     background: #0D0C2F; /* color de fondo hover */
     position: absolute;
@@ -19,7 +19,7 @@
     transition: all 0.3s ease;
   }
   
-.why_you:hover::after {
+.main_button_why_you_pg_01:hover::after {
     transition: all 0.3s ease-out;
     transform: skewX(-45deg) scale(1, 1);
   }    
