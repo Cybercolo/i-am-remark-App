@@ -50,7 +50,6 @@ body {
 
 
 header {
-
   width: 100%;
   max-width: 250px;
   margin-top: 90px;
@@ -157,7 +156,11 @@ header {
   transition: all 0.3s ease-out;
   transform: skewX(-45deg) scale(1, 1);
 }
-
+.main_pic_allPeople_pg_01 {
+  width: 100%;
+  max-width: 996px;
+  max-height: 980px;
+}
 
 /***************************************************************
 ****************************************************************
@@ -183,7 +186,7 @@ header {
     font-family: 'Raleway', sans-serif;
     border-radius: 25px;
     text-shadow: gainsboro;
-    font-style: italic;
+    
 }
 .header-message:hover {
     color:royalblue;
@@ -240,7 +243,6 @@ align-items: center;
   box-shadow: inset 0px 4px 6px 0px grey;
   margin-bottom: 10px;
   font-family:Arial, Helvetica, sans-serif;
-  font-style: italic;
   font-size: 14px;
   opacity: 0.9;
   width: 277px;
@@ -656,7 +658,6 @@ align-items: center;
   display: inline-block;
   text-decoration:none;
   font-family:Arial, Helvetica, sans-serif;
-  font-style: italic;
   height: 30px;
   width: 230px;
   font-size: 20px;
@@ -818,7 +819,6 @@ align-items: center;
   display: inline-block;
   text-decoration:none;
   font-family:Arial, Helvetica, sans-serif;
-  font-style: italic;
   height: 51px;
   font-size: 20px;
   
@@ -861,7 +861,6 @@ align-items: center;
   display: inline-block;
   text-decoration:none;
   font-family:Arial, Helvetica, sans-serif;
-  font-style: italic;
   height: 51px;
   font-size: 20px;
   
