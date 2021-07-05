@@ -237,25 +237,44 @@ header {
   border:none;  
   margin-bottom: 25px; 
   margin-top: 30px; 
-  
   background:rgba(212, 230, 236, 1);
-}
-.main-input-2{
-  border-radius: 25px;
-  border:none;  
-  box-shadow: inset 0px 4px 6px 0px grey;
-  margin-bottom: 10px;
-  font-family:Arial, Helvetica, sans-serif;
-  font-style: italic;
+  padding-left: 20px;  
   font-size: 14px;
+
+}
+
+.main-country-2  {
+  box-shadow: inset 0px 4px 6px 0px grey;
+  font-family:Arial, Helvetica, sans-serif;  
+  width: 300px;
+  height: 60px;
+  padding-left: 20px; 
+  padding-right: 20px; 
+  border-radius: 25px;
+  margin-bottom: 17px;  
   opacity: 0.9;
+  border:none;
+  background:rgba(212, 230, 236, 1);
+ }
+
+.main-why-2{
+  display: flex;
+  flex-direction: column;
+}
+
+.main-input-2{
   width: 277px;
   height: 240px;
-  padding-left: 20px;
+  border-radius: 25px;
+  border:none;  
   background:rgba(212, 230, 236, 1);
+  box-shadow: inset 0px 4px 6px 0px grey;
+  margin-bottom: 10px;
+  padding-left: 20px;
   padding-top: 30px;
    
 }
+
 p{
   font-size: 14px;
   float: right;
@@ -281,18 +300,6 @@ input::placeholder{
 margin-left: 20px;
 
 }
-
-.main-country-2  {
-    box-shadow: inset 0px 4px 6px 0px grey;
-    font-family:Arial, Helvetica, sans-serif;  
-    width:290px;
-    height: 60px;
-    border-radius: 25px;
-    margin-bottom: 17px;  
-    opacity: 0.9;
-    border:none;
-    background:rgba(212, 230, 236, 1);
-   }
  
   
 .main_pic_allPeople_pg_01 {
