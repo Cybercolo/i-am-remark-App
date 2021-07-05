@@ -49,10 +49,12 @@ body {
 }
 
 
-.header_logo {
+header {
+
   width: 100%;
   max-width: 250px;
   margin-top: 90px;
+  padding-bottom: 35px;
 }
 
 
@@ -79,7 +81,7 @@ body {
   letter-spacing: 2px;
   font-family: 'Roboto';
   font-style: 'Regular';
-  font-size: 1em;
+  font-size: 30px;
   line-height: auto;
 }
 
@@ -116,7 +118,7 @@ body {
   box-shadow: rgba(26, 33, 58, 1);
   border-radius: 40px;
   height: 51px;
-  width: 31%;
+  width: 40%;
   padding: 10px;
   margin-top: -20px;
   display: flex;
@@ -129,9 +131,8 @@ body {
   padding: 0px;
   width: 100%;
   border: none;
-  font-size: 1.3em;
-  font-family:Arial, Helvetica, sans-serif;
-  font-style: italic;
+  font-size: 1.6em;
+  font-family:roboto;
   box-shadow: none;
 }
 
@@ -201,10 +202,6 @@ body {
 .flecha02{
   position: absolute;
   z-index: 1;
-
-
-}
-.estrellitas02{
 
 
 }
@@ -426,11 +423,7 @@ a{
    
   }
 
-  .header_logo_3{
 
-
-
-  }
 
 h5{
     src: url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
@@ -463,20 +456,6 @@ align-items: center;
   .circulo{
   z-index: 2;
   position: absolute;
-  }
-
-  .main_estrellas_03{
-
-  }
-
-  .main_corona_03{
-    
-  }
-
-  .main_element3d{
-
-
-    
   }
   
 
