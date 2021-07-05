@@ -431,6 +431,7 @@ a{
 
 h5{
     src: url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+    font-family:'Sacramento', cursive;
     color: #9C895D; 
     
 }
@@ -460,6 +461,12 @@ align-items: center;
   .circulo{
   z-index: 2;
   position: absolute;
+  }
+
+  .perso{
+
+    mix-blend-mode: multiply;
+
   }
   
 
@@ -590,7 +597,9 @@ margin-bottom: -180px;
 .main_compartir_03{
     display: flex;
     align-items: center;
-    margin-right: -80px;
+    margin-right: -170px;
+    position: absolute;
+    margin-top: 500px;
    
 }
 .main_com_03{
