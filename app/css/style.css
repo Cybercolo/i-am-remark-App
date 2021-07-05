@@ -356,22 +356,32 @@ select {
         margin-bottom: 30px;
         margin-left: 220px;
   
-}
+       }
 
 .esterllas1{
         z-index: 2;
         position: absolute;
         margin-top:100px;
-       
+      }
 
-}
-a{
+
+
+
+
+/* 
+a {
   z-index: 1;
   position: absolute;
   margin-top: 60px;
   margin-left: 10px;
+} */
 
-}
+
+
+
+
+
+
 /*** ESTILOS BOTÓN  ***/
 
 
