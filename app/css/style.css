@@ -7,7 +7,7 @@
 
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
-
+/* 
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -15,7 +15,8 @@
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
-}
+} */
+
 @media screen 
   and (device-width: 360px) 
   and (device-height: 640px) 
@@ -49,10 +50,12 @@ body {
 }
 
 
-.header_logo {
+header {
+
   width: 100%;
   max-width: 250px;
   margin-top: 90px;
+  padding-bottom: 35px;
 }
 
 
@@ -79,7 +82,7 @@ body {
   letter-spacing: 2px;
   font-family: 'Roboto';
   font-style: 'Regular';
-  font-size: 1em;
+  font-size: 30px;
   line-height: auto;
 }
 
@@ -116,7 +119,7 @@ body {
   box-shadow: rgba(26, 33, 58, 1);
   border-radius: 40px;
   height: 51px;
-  width: 31%;
+  width: 40%;
   padding: 10px;
   margin-top: -20px;
   display: flex;
@@ -129,9 +132,8 @@ body {
   padding: 0px;
   width: 100%;
   border: none;
-  font-size: 1.3em;
-  font-family:Arial, Helvetica, sans-serif;
-  font-style: italic;
+  font-size: 1.6em;
+  font-family:roboto;
   box-shadow: none;
 }
 
@@ -349,8 +351,8 @@ a{
 
 .button-send-2{
     
-    background: #fff; /* color de fondo */
-    color: #0D0C2F; /* color de fuente */
+    background: #0D0C2F; /* color de fondo */
+    color: #fff; /* color de fuente */
     border: 2px solid #0D0C2F; /* tamaño y color de borde */
     padding: 5px;
     border-radius: 10px 20px 43px 50px; /* redondear bordes */
@@ -363,18 +365,17 @@ a{
     font-weight: 600;
     height: 42px;
     font-size: 20px;
-    box-shadow: 0px 4px 6px 0px rgb(64, 73, 106);
     width: 220px;
   
 }
 
 .button-send-2:hover {
-    color: #fff;/* color de fuente hover */
+    color: #0D0C2F;/* color de fuente hover */
   }
   
 .button-send-2::after {
     content: "";
-    background: #0D0C2F; /* color de fondo hover */
+    background: #fff; /* color de fondo hover */
     position: absolute;
     z-index: -1;
     padding: 5px;
@@ -419,11 +420,7 @@ a{
    
   }
 
-  .header_logo_3{
 
-
-
-  }
 
 h5{
     src: url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
@@ -456,20 +453,6 @@ align-items: center;
   .circulo{
   z-index: 2;
   position: absolute;
-  }
-
-  .main_estrellas_03{
-
-  }
-
-  .main_corona_03{
-    
-  }
-
-  .main_element3d{
-
-
-    
   }
   
 
@@ -660,8 +643,8 @@ align-items: center;
 
 
 .main_llevame_03 {
-  background: #fff; /* color de fondo */
-  color: #0D0C2F; /* color de fuente */
+  background: #0D0C2F; /* color de fondo */
+  color: #fff; /* color de fuente */
   border: 2px solid #0D0C2F; /* tamaño y color de borde */
   padding: 15px 5px 10px 35px;
   border-radius: 30px; /* redondear bordes */
@@ -675,18 +658,18 @@ align-items: center;
   height: 30px;
   width: 230px;
   font-size: 20px;
-  box-shadow: 0px 4px 6px 0px rgb(64, 73, 106);
+  
   
 
 
 }
 
 .main_llevame_03:hover {
-    color: #fff;/* color de fuente hover */
+    color: #0D0C2F;/* color de fuente hover */
   }
 .main_llevame_03::after {
       content: "";
-      background: #0D0C2F; /* color de fondo hover */
+      background: #fff; /* color de fondo hover */
       position: absolute;
       z-index: -1;
       padding: 12px;
@@ -822,8 +805,8 @@ align-items: center;
 
 /*** ESTILOS BOTÓN  ***/
 .main-botonnext-4 {
-  background: #fff; /* color de fondo */
-  color: #0D0C2F; /* color de fuente */
+  background: #0D0C2F; /* color de fondo */
+  color: #fff; /* color de fuente */
   border: 2px solid #0D0C2F; /* tamaño y color de borde */
   padding: 12px;
   border-radius: 30px; /* redondear bordes */
@@ -836,17 +819,17 @@ align-items: center;
   font-style: italic;
   height: 51px;
   font-size: 20px;
-  box-shadow: 0px 4px 6px 0px rgb(64, 73, 106);
+  
     
 }
 
 
   .main-botonnext-4:hover {
-    color: #fff;/* color de fuente hover */
+    color: #0D0C2F;/* color de fuente hover */
   }
   .main-botonnext-4::after {
     content: "";
-    background: #0D0C2F; /* color de fondo hover */
+    background: #fff; /* color de fondo hover */
     position: absolute;
     z-index: -1;
     padding: 12px;
@@ -865,8 +848,8 @@ align-items: center;
 
   /*** ESTILOS BOTÓN  ***/
 .main-botonhome-4 {
-  background: #fff; /* color de fondo */
-  color: #0D0C2F; /* color de fuente */
+  background: #0D0C2F; /* color de fondo */
+  color: #fff; /* color de fuente */
   border: 2px solid #0D0C2F; /* tamaño y color de borde */
   padding: 12px;
   border-radius: 30px; /* redondear bordes */
@@ -879,15 +862,15 @@ align-items: center;
   font-style: italic;
   height: 51px;
   font-size: 20px;
-  box-shadow: 0px 4px 6px 0px rgb(64, 73, 106);
+  
     
 }
   .main-botonhome-4:hover {
-    color: #fff;/* color de fuente hover */
+    color: #0D0C2F;/* color de fuente hover */
   }
   .main-botonhome-4::after {
     content: "";
-    background: #0D0C2F; /* color de fondo hover */
+    background: #fff; /* color de fondo hover */
     position: absolute;
     z-index: -1;
     padding: 12px;
