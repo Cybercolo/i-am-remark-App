@@ -461,6 +461,12 @@ align-items: center;
   z-index: 2;
   position: absolute;
   }
+
+  .perso{
+
+    mix-blend-mode: multiply;
+
+  }
   
 
 /* 
@@ -601,7 +607,7 @@ margin-bottom: -180px;
     align-items: center;
     margin-right: -170px;
     position: absolute;
-    margin-top: 400px;
+    margin-top: 500px;
    
 }
 .main_com_03{
