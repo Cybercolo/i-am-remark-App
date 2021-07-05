@@ -414,16 +414,27 @@ a{
     position: absolute;
     font-size: 12px;
     box-sizing: border-box;
-    margin-left: 100px;
-    margin-right: 220px;
+    margin: 10% 0 0 0;
+    width: 30%;
+    height: fit-content;
+    
 }
 
  .main_usuario_03{
     display: flex;
     align-items: center;
+    width: 30%;
+    height: 20px; 
+    margin: 10% 0 10% 0;
+    
    
   }
-
+.main_bocadillo1 {
+    width: 200%;
+    max-width: 200%;
+    height: fit-content;
+    margin: 10% 40% 15% -50%;
+}
 
 
 h5{
