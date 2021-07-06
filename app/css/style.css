@@ -343,7 +343,7 @@ select {
     width: 50vw;
     height: 40vh; 
     border:none;  
-}*/
+  }*/
 
   
 .main_pic_allPeople_pg_01 {
@@ -353,19 +353,14 @@ select {
       max-height: 980px;  
 }
 
-
-.final03{
-      display: flex;
-      justify-content: center;
-      width: 100%;
-      max-width: 500px; 
-}
-
 .final02{
+      flex-direction: column;    
       display: flex;
       align-items: center;
       justify-content: center;
-      position: relative;  
+      position: relative;
+      width: 100%;
+      max-width: 500px; 
 }
 
 .corona2{
