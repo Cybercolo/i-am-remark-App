@@ -1,14 +1,15 @@
 <template>
   <div>
     <body>
-      <div class="container">
         <div class="container02">
-          <Header/>
+          <div>
+            <img class="corner" src="../images/Vectorcorner.png">
+            <Header/>
+          </div>
           <section class="main-2">
               <Register/>
           </section>
         </div>
-      </div>
     </body>
   </div>
 </template>
@@ -20,7 +21,7 @@ export default {
   name:'Formulario',
   components: {
     Register,
-    Header
+    Header 
   },
   data() {
     return {
