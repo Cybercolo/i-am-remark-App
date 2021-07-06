@@ -123,7 +123,7 @@ header {
   justify-content: center;
 }
 
-.button_pg_01{
+a.btn-01 {
   color:aliceblue;
   background: rgba(26, 33, 58, 1);
   padding: 0px;
@@ -263,18 +263,26 @@ header {
 }
 
 .main-country-2  {
+
+  box-shadow: inset 0px 4px 6px 0px grey;
+  font-family: Arial, Helvetica, sans-serif;
+  width: 150px;
+  height: 25px;
+  border-radius: 40px;
+  opacity: 0.9;
+  border: none;
   position: relative;
-    box-shadow: inset 0px 4px 6px 0px grey,
-    0px 2px 3px 0px rgb(255, 255, 255, 0.5);
-    /*max-width: 300px;*/
-    width: 100%;
-    height: 44px;
-    padding-left: 20px; 
-    border-radius: 25px;
-    margin-bottom: 25px;  
-    opacity: 0.9;
-    border:none;
-    background:rgba(212, 230, 236, 1);
+  box-shadow: inset 0px 4px 6px 0px grey, 0px 2px 3px 0px rgb(255 255 255 / 50%);
+  /* max-width: 300px; */
+  width: 100%;
+  height: 44px;
+  padding-left: 20px;
+  border-radius: 25px;
+  margin-bottom: 25px;
+  opacity: 0.9;
+  border: none;
+  background: rgba(212, 230, 236, 1);
+
  }
 
 .main-why-2{
@@ -397,31 +405,29 @@ a{
 
 
 
-.button-send-2{
-    
-    background: #0D0C2F; /* color de fondo */
-    color: #fff; /* color de fuente */
-    border: 2px solid #0D0C2F; /* tamaño y color de borde */
-    padding: 5px;
-    border-radius: 10px 20px 43px 50px; /* redondear bordes */
-    position: relative;
-    z-index: 1;
-    overflow: hidden;
-    display: inline-block;
-    text-decoration:none;
-    font-family:Arial, Helvetica, sans-serif;
-    font-weight: 600;
-    height: 42px;
-    font-size: 20px;
-    width: 220px;
+a.button-send-2 {
+  
+  background: #0D0C2F; /* color de fondo */
+  color: #fff; /* color de fuente */
+  border: 2px solid #0D0C2F; /* tamaÃ±o y color de borde */
+  padding: 12px;
+  border-radius: 25px; /* redondear bordes */
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  display: inline-block;
+  text-decoration:none;
+  font-family:Arial, Helvetica, sans-serif;
+  height: 51px;
+  font-size: 20px;
   
 }
 
-.button-send-2:hover {
-    color: #0D0C2F;/* color de fuente hover */
+a.button-send-2:hover {
+    color: #abaadb;/* color de fuente hover */
   }
   
-.button-send-2::after {
+a.button-send-2::after {
     content: "";
     background: #fff; /* color de fondo hover */
     position: absolute;
@@ -436,13 +442,12 @@ a{
     transition: all 0.3s ease;
   }
   
-.button-send-2:hover::after {
+a.button-send-2:hover::after {
     transition: all 0.3s ease-out;
     transform: skewX(-45deg) scale(1, 1);
   }
 
 
-  
 
 
 /***************************************************************
