@@ -57,13 +57,6 @@ header {
 }
 
 
-.header_3{
-  width: 100%;
-  max-width: 1024px;
-  display: flex;
-  justify-content: center; 
-}
-
 .header_logo {
   width: 100%;
   max-width: 240px;
@@ -160,6 +153,13 @@ header {
   transform: skewX(-45deg) scale(1, 1);
 }
 
+.main_pic_allPeople_pg_01 {
+
+  width:100%;
+  max-width: 996px;
+  max-height: 980px;  
+}
+
 
 /***************************************************************
 ****************************************************************
@@ -241,44 +241,40 @@ header {
   }
 
 .main-alias-2  {
-    z-index: 3;
-    box-shadow: inset 0px 4px 6px 0px grey,
-    0px 2px 3px 0px rgb(255, 255, 255, 0.5);
-    box-sizing: border-box;
-    font-family:Arial, Helvetica, sans-serif;    
-    border-radius: 25px;
-    width: 100%;
-    /*max-width: 277px;*/
-    height: 40px;
-    border:none;  
-    margin-bottom: 25px; 
-    margin-top: 30px; 
-    background:rgba(212, 230, 236, 1);
-    padding-left: 20px;  
-    font-size: 14px;
+  
+  z-index: 3;
+  box-shadow: inset 0px 4px 6px 0px grey, 0px 2px 3px 0px rgb(255 255 255 / 50%);
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  border-radius: 25px;
+  width: 100%;
+  max-width: 277px;
+  height: 40px;
+  border: none;
+  margin-bottom: 25px;
+  margin-top: 30px;
+  background: rgba(212, 230, 236, 1);
+  padding-left: 20px;
+  font-size: 14px;
   
 }
 
 .main-country-2  {
 
-  box-shadow: inset 0px 4px 6px 0px grey;
-  font-family: Arial, Helvetica, sans-serif;
-  width: 150px;
-  height: 25px;
-  border-radius: 40px;
-  opacity: 0.9;
-  border: none;
-  position: relative;
+  z-index: 3;
   box-shadow: inset 0px 4px 6px 0px grey, 0px 2px 3px 0px rgb(255 255 255 / 50%);
-  /* max-width: 300px; */
-  width: 100%;
-  height: 44px;
-  padding-left: 20px;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
   border-radius: 25px;
-  margin-bottom: 25px;
-  opacity: 0.9;
+  width: 100%;
+  max-width: 277px;
+  height: 40px;
   border: none;
+  margin-bottom: 25px;
+  margin-top: 30px;
   background: rgba(212, 230, 236, 1);
+  padding-left: 20px;
+  font-size: 14px;
 
  }
 
@@ -349,14 +345,6 @@ select {
     height: 40vh; 
     border:none;  
   }*/
-
-  
-.main_pic_allPeople_pg_01 {
-
-      width:100%;
-      max-width: 996px;
-      max-height: 980px;  
-}
 
 .final02{
       flex-direction: column;    
@@ -493,7 +481,6 @@ a.button-send-2:hover::after {
     max-width: 420px;
     height: 350px;
   
-     
 }
 
 
