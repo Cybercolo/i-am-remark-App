@@ -56,17 +56,10 @@ header {
 }
 
 
-.header_3{
-  width: 100%;
-  max-width: 1024px;
-  display: flex;
-  justify-content: center; 
-}
-
 .header_logo {
   width: 100%;
   max-width: 240px;
-  margin-top: 90px;
+  
 }
 
 .main_title_pg_01 {
@@ -451,37 +444,31 @@ select {
     align-items: center;
     flex-direction: column;
     max-width: 2130px;
-    max-height: 1500px;
+    max-height: 1900px;
+    background: radial-gradient(112.66% 58.05% at 48.31% -1.3%, rgba(255, 255, 255, 0.54) 16.78%, rgba(135, 237, 255, 0) 82.33%), linear-gradient(
+    0deg, #DDE9ED, #DDE9ED);
+    padding-bottom: 25px;
 }
 
-.main_texto_03{
-    font-family: 'Open Sans', sans-serif;
-    position: relative;
-    font-size: 12px;
-    box-sizing: border-box;
-    width: 100%;
-    max-width: 250px;
-    height: 270px;
-    left: 20%;
-    bottom: 45px;
-    
-    
-    
+.header03 {
+  width: 100%;
+  max-width: 250px;
+  padding-bottom: 30px;
 }
 
  .main_usuario_03{
-   position: relative;
+    position: relative;
     display: flex;
     align-items: center;
     width: 100%;
-    max-width: 320px;
+    max-width: 390px;
     height: 100px; 
     max-height: 110px;
     margin-top: 150px;
-    margin-left: 4%;
     
-   
+    
   }
+
 .main_bocadillo {
     position: absolute;
     width: 100%;
@@ -495,17 +482,40 @@ select {
 .main_bocadillo1 {
     position: absolute;
     width: 100%;
-    max-width: 420px;
+    max-width: 330px;
     height: 350px;
   
-     
+}
+.main_texto_03{
+  font-family: 'Open Sans', sans-serif;
+  position: relative;
+  font-size: 12px;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 230px;
+  height: 270px;
+  left: 20%;
+  bottom: 55px;
+  
+  
+  
 }
 
+h2 {
+  font-family: 'Roboto Slab';
+}
+
+.lorem {
+  font-family: 'Roboto Slab';
+  margin: 0 0 10px 0;
+}
 
 h5{
     src: url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
     font-family:'Sacramento', cursive;
     color: #9C895D; 
+    font-size: 1.7em;
+    top: 10px;
     
 }
 
@@ -513,15 +523,14 @@ h5{
 display: flex;
 align-items: center;
 
+
 }
 
 .corazon{
   position: absolute;
- z-index: 2;
- margin-left: 200px;
- margin-top: 30px;
- 
-
+  z-index: 2;
+  margin-left: 195px;
+  
 
 }
 
@@ -539,17 +548,18 @@ align-items: center;
   .perso{
 
     mix-blend-mode: multiply;
+    width: 100%;
 
   }
-  
-
-.corona_03{
-margin-top: -150px;
-margin-bottom: -180px;
-}
 
 
-.main_enlaces_03{
+  .corona_03{
+  margin-top: -150px;
+  margin-bottom: -180px;
+  }
+
+
+  .main_enlaces_03{
     display: flex;
     justify-content:flex-end;
     margin-right: 15px;
@@ -658,12 +668,6 @@ margin-bottom: -180px;
 
 
 /*** ESTILOS BOTÓN  ***/
-.main_flechita_03{
-    width: 15px;
-    height: 15px;
-    margin-left: 3px;
-}
-
 
 .main_llevame_03 {
   background: #0D0C2F; /* color de fondo */
@@ -687,14 +691,14 @@ margin-bottom: -180px;
 }
 
 .main_llevame_03:hover {
-    color: #0D0C2F;/* color de fuente hover */
+    color: #fff;/* color de fuente hover */
   }
 .main_llevame_03::after {
       content: "";
-      background: #fff; /* color de fondo hover */
+      background:#0D0C2F; /* color de fondo hover */
       position: absolute;
       z-index: -1;
-      padding: 12px;
+      padding: 12%;
       display: block;
       left: -20%;
       right: -20%;
@@ -710,7 +714,6 @@ margin-bottom: -180px;
     }
 .main_final_03{
       display: flex;
-      
 
 }
 
