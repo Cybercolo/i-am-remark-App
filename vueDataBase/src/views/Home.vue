@@ -9,8 +9,10 @@
       <img class="main_pic_flecha_pg_01" src="../images/Vector_flecha.svg" alt="">
     </div> 
     <div class="main_button_why_you_pg_01">
-      <button class="button_pg_01" type="text" placeholder="Why are you Remarkable?" size="10">Why are you Remarkable? </button>
-    </div>
+        <button class="button_pg_01" type="text" placeholder="Why are you Remarkable?" size="10">
+          <router-link to="/Formulario"> Why are you Remarkable? </router-link>
+        </button>
+   </div>
     <div style= "margin-top:35px">
       <img class="main_pic_allPeople_pg_01" src="../images/allPeople.png" alt="">
     </div>
