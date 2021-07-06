@@ -33,15 +33,16 @@ body {
   
 }
 
-.container {
+.containerlandpage {
   box-sizing: border-box;
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: radial-gradient(112.66% 58.05% at 48.31% -1.3%, rgba(255, 255, 255, 0.54) 16.78%, rgba(135, 237, 255, 0) 82.33%),
+  background: radial-gradient(112.66% 58.05% at 48.31% -1.3%, rgba(255, 255, 255, 0.54) 16.78%, rgba(174, 200, 207, 0100) 82.33%),
   linear-gradient(0deg, #AEC8CF, #AEC8CF);
+  overflow-x: hidden; 
   /*<svg  width="100vw" height="100vh">
       <rect class="stroke_container" width="100vw" height="100vh" style="fill:rgb(213, 210, 224);stroke-width:10;stroke:rgb(146, 138, 100);stroke-dasharray:30;"
     </svg>*/
@@ -114,9 +115,10 @@ header {
   margin-top: -20px;
   display: flex;
   justify-content: center;
+  
 }
 
-.button_pg_01{
+.btn-01 {
   color:aliceblue;
   background: rgba(26, 33, 58, 1);
   padding: 0px;
@@ -125,6 +127,8 @@ header {
   font-size: 1.6em;
   font-family:roboto;
   box-shadow: none;
+  text-align: center;
+  text-decoration: none;
 }
 
  .main_button_why_you_pg_01:hover {
@@ -148,11 +152,7 @@ header {
   transition: all 0.3s ease-out;
   transform: skewX(-45deg) scale(1, 1);
 }
-.main_pic_allPeople_pg_01 {
-  width: 100%;
-  max-width: 996px;
-  max-height: 980px;
-}
+
 
 /***************************************************************
 ****************************************************************
@@ -160,10 +160,7 @@ header {
 ****************************************************************
 ****************************************************************/
 
- 
-
 .container02 {
-  background: radial-gradient();
   box-sizing: border-box;
   width: 100%;
   display: flex;
@@ -256,18 +253,26 @@ header {
 }
 
 .main-country-2  {
+
+  box-shadow: inset 0px 4px 6px 0px grey;
+  font-family: Arial, Helvetica, sans-serif;
+  width: 150px;
+  height: 25px;
+  border-radius: 40px;
+  opacity: 0.9;
+  border: none;
   position: relative;
-    box-shadow: inset 0px 4px 6px 0px grey,
-    0px 2px 3px 0px rgb(255, 255, 255, 0.5);
-    /*max-width: 300px;*/
-    width: 100%;
-    height: 44px;
-    padding-left: 20px; 
-    border-radius: 25px;
-    margin-bottom: 25px;  
-    opacity: 0.9;
-    border:none;
-    background:rgba(212, 230, 236, 1);
+  box-shadow: inset 0px 4px 6px 0px grey, 0px 2px 3px 0px rgb(255 255 255 / 50%);
+  /* max-width: 300px; */
+  width: 100%;
+  height: 44px;
+  padding-left: 20px;
+  border-radius: 25px;
+  margin-bottom: 25px;
+  opacity: 0.9;
+  border: none;
+  background: rgba(212, 230, 236, 1);
+
  }
 
 .main-why-2{
@@ -370,41 +375,32 @@ select {
 }
 
 
-
-
-
-
-
-
 /*** ESTILOS BOTÓN  ***/
 
 
-
-.button-send-2{
-    
-    background: #0D0C2F; /* color de fondo */
-    color: #fff; /* color de fuente */
-    border: 2px solid #0D0C2F; /* tamaño y color de borde */
-    padding: 5px;
-    border-radius: 10px 20px 43px 50px; /* redondear bordes */
-    position: relative;
-    z-index: 1;
-    overflow: hidden;
-    display: inline-block;
-    text-decoration:none;
-    font-family:Arial, Helvetica, sans-serif;
-    font-weight: 600;
-    height: 42px;
-    font-size: 20px;
-    width: 220px;
+a.button-send-2 {
+  
+  background: #0D0C2F; /* color de fondo */
+  color: #fff; /* color de fuente */
+  border: 2px solid #0D0C2F; /* tamaÃ±o y color de borde */
+  padding: 12px;
+  border-radius: 25px; /* redondear bordes */
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  display: inline-block;
+  text-decoration:none;
+  font-family:Arial, Helvetica, sans-serif;
+  height: 51px;
+  font-size: 20px;
   
 }
 
-.button-send-2:hover {
-    color: #0D0C2F;/* color de fuente hover */
+a.button-send-2:hover {
+    color: #abaadb;/* color de fuente hover */
   }
   
-.button-send-2::after {
+a.button-send-2::after {
     content: "";
     background: #fff; /* color de fondo hover */
     position: absolute;
@@ -419,13 +415,12 @@ select {
     transition: all 0.3s ease;
   }
   
-.button-send-2:hover::after {
+a.button-send-2:hover::after {
     transition: all 0.3s ease-out;
     transform: skewX(-45deg) scale(1, 1);
   }
 
 
-  
 
 
 /***************************************************************
