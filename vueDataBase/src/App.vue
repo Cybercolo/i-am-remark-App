@@ -1,12 +1,12 @@
 <template>
+
   <div id="nav">
+    <router-view/>
   </div>
-  <router-view/>
-</template>
 
+  </template>
+  
+  
 <style>
-
-
-
-
+  
 </style>
