@@ -1,43 +1,50 @@
 <template>
-<div>
-
-  <body>
-    <div class="container03">
-      <Header />
-      <div class="main_usuario_03">
-        <div class="main_bocadillo">
-          <img class="main_bocadillo1" src="../images/vector21.png" alt="" />
+  <div>
+    <body>
+      <div class="container03">
+        <Header />
+        <div class="main_usuario_03">
+          <div class="main_bocadillo">
+            <img class="main_bocadillo1" src="../images/vector21.png" alt="" />
+          </div>
+          <div class="main_texto_03">
+            <Description />
+          </div>
         </div>
-        <div class="main_texto_03">
-          <Description />
+        <img class="main_estrellas_03" src="../images/estrellas.png" />
+        <img class="main_corona_03" src="../images/corona.png" />
+        <div class="main_compartir_03">
+          <button class="main_com_03"></button>
+          <img
+            class="main_imgCompartir_03"
+            src="../images/share-2.png"
+            alt=""
+          />
+          <img class="elipse" src="../images/elipse.png" />
+          <img class="circulo" src="../images/circulo.png" />
+        </div>
+        <div class="main_element3d">
+          <div id="bubbles"></div>
+          <div id="forwards" class="button">Move forwards</div>
+          <div id="backwards" class="button">Move backwards</div>
+          <canvas id="canvas"></canvas>
+        </div>
+        <div class="boton2">
+          <button class="main_llevame_03">
+            <router-link to="/MasUsuarios"> See More Storys </router-link>
+            <img class="corazon" src="../images/megusta.png" />
+          </button>
+        </div>
+        <div class="main_final_03">
+          <img
+            class="main_flechita_03"
+            src="../images/flecha-hacia-arriba.png"
+            alt=""
+          />
         </div>
       </div>
-      <img class="main_estrellas_03" src="../images/estrellas.png" />
-      <img class="main_corona_03" src="../images/corona.png" />
-      <div class="main_compartir_03">
-        <button class="main_com_03"></button>
-        <img class="main_imgCompartir_03" src="../images/share-2.png" alt="" />
-        <img class="elipse" src="../images/elipse.png" />
-        <img class="circulo" src="../images/circulo.png" />
-      </div>
-      <div class="main_element3d">
-        <div id="bubbles"></div>
-        <div id="forwards" class="button">Move forwards</div>
-        <div id="backwards" class="button">Move backwards</div>
-        <canvas id="canvas"></canvas>
-      </div>
-      <div class="boton2">
-        <button class="main_llevame_03">
-          <router-link to="/MasUsuarios"> See More Storys </router-link>
-          <img class="corazon" src="../images/megusta.png" />
-        </button>
-      </div>
-      <div class="main_final_03">
-        <img class="main_flechita_03" src="../images/flecha-hacia-arriba.png" alt="" />
-      </div>
-    </div>
-  </body>
-</div>
+    </body>
+  </div>
 </template>
 
 <script>
@@ -45,12 +52,8 @@ import Description from "@/components/Description.vue";
 import Header from "../components/Header.vue";
 
 import * as THREE from "../threejs/source/three.module.js";
-import {
-  people
-} from "../threejs/people.js";
-import {
-  GLTFLoader
-} from "../threejs/source/GLTFLoader.js";
+import { people } from "../threejs/people.js";
+import { GLTFLoader } from "../threejs/source/GLTFLoader.js";
 import * as TWEEN from "../threejs/source/tween.esm.js";
 
 export default {
@@ -261,9 +264,9 @@ export default {
 
     function longerGroundScroll(e) {
       // para que el suelo se alargue si la camara se va muy lejos
-      e.deltaY < 0 ?
-        ground.scale.set(1, (groundLength += 0.05), 1) :
-        ground.scale.set(1, (groundLength -= 0.05), 1);
+      e.deltaY < 0
+        ? ground.scale.set(1, (groundLength += 0.05), 1)
+        : ground.scale.set(1, (groundLength -= 0.05), 1);
     }
 
     function stopZoomOut(maxZoomOutValue) {
@@ -292,42 +295,41 @@ export default {
     }
 
     let cameraPositionCounter = 0;
-    let bubblesContainer = document.getElementById("bubbles");
-    let peopleIndex = 0;
+    // let bubblesContainer = document.getElementById("bubbles");
+    // let peopleIndex = 0;
 
     let forwardsButton = document.getElementById("forwards");
 
     forwardsButton.addEventListener("click", function() {
       console.log(camera.position);
 
-      if (peopleIndex === 0) generateBubbles();
-      if (peopleIndex % 5 === 0) {
-        cameraPositionCounter++;
-        let targetPosition = getTargetPositionCamara(cameraPositionCounter);
-        let duration = 1000;
-        tweenCube(targetPosition, duration, cameraPositionCounter);
-      }
-      if (peopleIndex !== 1) {
-        moveBubbles(bubblesContainer, peopleIndex - 1, true);
-      }
-      peopleIndex++;
+      // if (peopleIndex === 0) generateBubbles();
+      // if (peopleIndex % 5 === 0) {
+      //  cameraPositionCounter++;
+      let targetPosition = getTargetPositionCamara(cameraPositionCounter);
+      let duration = 1000;
+      tweenCube(targetPosition, duration, cameraPositionCounter);
+      // }
+      // if (peopleIndex !== 1) {
+      //  moveBubbles(bubblesContainer, peopleIndex - 1, true);
+      // }
+      // peopleIndex++;
     });
 
     document.getElementById("backwards").addEventListener("click", function() {
       console.log(camera.position);
-      if (peopleIndex === 1) hideBubbles();
-      if (peopleIndex % 5 === 0) {
-        cameraPositionCounter--;
-        let targetPosition = getTargetPositionCamara(cameraPositionCounter);
-        let duration = 1000;
-        tweenCube(targetPosition, duration);
-      }
-      if (peopleIndex !== 0) {
-        // if its not the first one
-        moveBubbles(bubblesContainer, peopleIndex - 1, false);
-
-        peopleIndex--;
-      }
+      // if (peopleIndex === 1) hideBubbles();
+      // if (peopleIndex % 5 === 0) {
+      //  cameraPositionCounter--;
+      let targetPosition = getTargetPositionCamara(cameraPositionCounter);
+      let duration = 1000;
+      tweenCube(targetPosition, duration);
+      //}
+      //if (peopleIndex !== 0) {
+      // if its not the first one
+      //  moveBubbles(bubblesContainer, peopleIndex - 1, false);
+      //  peopleIndex--;
+      //}
     });
 
     function tweenCube(targetPosition, duration) {
@@ -347,7 +349,7 @@ export default {
       tween.start();
     }
 
-    function generateBubbles() {
+    /* function generateBubbles() {
       people.forEach(item => {
         let bubble = document.createElement("div");
         bubble.classList.add("bubble");
@@ -357,15 +359,15 @@ export default {
         bubblesContainer.appendChild(bubble);
         bubblesContainer.style.display = "flex";
       });
-    }
+    } */
 
-    function hideBubbles() {
+    /*function hideBubbles() {
       bubblesContainer.style.transform = `translateX(0)`;
       bubblesContainer.style.display = "none";
-    }
+    }*/
 
     // MOVES THE OBJECT THE EXACT AMOUNT TO BE CENTERED, BASED ON INDEX
-    function moveBubbles(bubblesContainer, indexPeople, isFont) {
+    /*function moveBubbles(bubblesContainer, indexPeople, isFont) {
       let nextIndex;
       if (isFont) {
         nextIndex = indexPeople + 1;
@@ -375,7 +377,7 @@ export default {
       nextIndex = indexPeople + 1;
       bubblesContainer.style.transform = `translateX(-${(100 / people.length) *
         nextIndex}%)`;
-    }
+    }*/
 
     //////////////////// LOOP ////////////////////
     function animate() {
