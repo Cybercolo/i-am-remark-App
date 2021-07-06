@@ -22,14 +22,7 @@
     0deg, #DDE9ED, #DDE9ED);
 }
 
-.header_logo_03{
-    
-    margin-bottom: 5px;
-    margin-left: 100px;
-    margin-right: 100px;
-    margin-top: 5px;
-    position: center;
-}
+
 
 
 /* .popup {
@@ -80,7 +73,7 @@
     box-shadow: 
     0px 0px 0px 0 rgb(255, 255, 255) inset,
     -3px -3px 5px 0 rgba(0, 0, 0, .2) inset;
-    position: center
+    position: center;
     
 }
 
@@ -131,13 +124,7 @@
     -3px -3px 5px 0 rgba(0, 0, 0, .2) ; 
 
 }
-.main_imgCompartir_03{
-    width: 15px;
-    height: 15px;
-    position: absolute;
-    z-index: 3;
-    margin-left: 17px;
-}
+
 
 /*.main_compartir_03{
     position:absolute;
@@ -226,8 +213,8 @@ button  {
     height: 51px;
     font-size: 20px;
     box-shadow: 0px 4px 6px 0px rgb(64, 73, 106);
-  
   }
+
   .main_llevame_03:hover {
     color: #fff;/* color de fuente hover */
   }
