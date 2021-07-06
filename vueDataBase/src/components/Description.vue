@@ -21,7 +21,7 @@ export default {
         }
     },
     mounted() {
-        axios.get('http://localhost:8081').then(response => (
+        axios.get('http://localhost:8080').then(response => (
             response.remarkable = localStorage.getItem('remarkable'),
             this.Remarkable = response.remarkable,
 
