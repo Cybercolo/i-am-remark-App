@@ -122,6 +122,7 @@ header {
   margin-top: -20px;
   display: flex;
   justify-content: center;
+  
 }
 
 a.btn-01 {
@@ -133,6 +134,8 @@ a.btn-01 {
   font-size: 1.6em;
   font-family:roboto;
   box-shadow: none;
+  text-align: center;
+  text-decoration: none;
 }
 
  .main_button_why_you_pg_01:hover {
@@ -156,10 +159,7 @@ a.btn-01 {
   transition: all 0.3s ease-out;
   transform: skewX(-45deg) scale(1, 1);
 }
-.all {
-  
-  
-}
+
 
 /***************************************************************
 ****************************************************************
