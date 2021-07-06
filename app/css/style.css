@@ -450,8 +450,8 @@ select {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    max-width: 1630px;
-    max-height: fit-content;
+    max-width: 2130px;
+    max-height: 1500px;
 }
 
 .main_texto_03{
@@ -460,20 +460,24 @@ select {
     font-size: 12px;
     box-sizing: border-box;
     width: 100%;
-    max-width: 320px;
+    max-width: 250px;
     height: 270px;
+    left: 20%;
+    bottom: 45px;
+    
     
     
 }
 
  .main_usuario_03{
+   position: relative;
     display: flex;
     align-items: center;
     width: 100%;
     max-width: 320px;
     height: 100px; 
     max-height: 110px;
-    margin-top: 13%;
+    margin-top: 150px;
     margin-left: 4%;
     
    
@@ -483,8 +487,9 @@ select {
     width: 100%;
     max-width: 450px;
     max-height: 120px;
-    top: 30%;
-    left: 16%;
+    bottom: 310px;
+    
+    
 }
 
 .main_bocadillo1 {
