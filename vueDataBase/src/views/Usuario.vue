@@ -21,9 +21,9 @@
         <img class="circulo" src="../images/circulo.png" />
       </div>
       <div class="main_element3d">
-        <div class="bubbles"></div>
-        <div class="forwards button">Move forwards</div>
-        <div class="backwards button">Move backwards</div>
+        <div id="bubbles"></div>
+        <div id="forwards" class="button">Move forwards</div>
+        <div id="backwards" class="button">Move backwards</div>
         <canvas id="canvas"></canvas>
       </div>
       <div class="boton2">
@@ -43,7 +43,11 @@
 <script>
 import Description from "@/components/Description.vue";
 import Header from "../components/Header.vue";
+
 import * as THREE from "../threejs/source/three.module.js";
+import {
+  people
+} from "../threejs/people.js";
 import {
   GLTFLoader
 } from "../threejs/source/GLTFLoader.js";
@@ -56,23 +60,6 @@ export default {
     Header
   },
   mounted() {
-    let people = [{
-        title: "hey",
-        description: "hey",
-        country: "spain"
-      },
-      {
-        title: "hey",
-        description: "hey",
-        country: "spain"
-      },
-      {
-        title: "hey",
-        description: "hey",
-        country: "spain"
-      }
-    ];
-
     //////////////////// DATA ////////////////////
     let colors = [0xc4ec6e, 0x7089fa, 0xef86f7, 0xb681eb];
 
@@ -126,13 +113,13 @@ export default {
     ground.receiveShadow = true;
 
     scene.add(ground);
+
     //////////////////// HELPERS ////////////////////
     const pointLightHelper = new THREE.PointLightHelper(pointLight);
     scene.add(pointLightHelper);
 
     //////////////////// RENDERER ////////////////////
     const canvas = document.getElementById("canvas");
-    console.log(canvas);
 
     const renderer = new THREE.WebGLRenderer({
       canvas,
@@ -144,9 +131,20 @@ export default {
     renderer.render(scene, camera);
 
     //////////////////// FUNCTIONS ////////////////////
+    let modelLocationArray = [
+      "./models3D/model01.glb",
+      "./models3D/model02.glb",
+      "./models3D/model03.glb",
+      "./models3D/model04.glb",
+      "./models3D/model05.glb",
+      "./models3D/model06.glb",
+      "./models3D/model07.glb",
+      "./models3D/model08.glb"
+    ];
 
     // function getRandomModelLocation() {
     // 	let randomLocation = getRandomItem(modelLocationArray);
+
     // 	return randomLocation;
     // }
 
@@ -168,16 +166,6 @@ export default {
       return vector;
     }
 
-    let modelLocationArray = [
-      "models3D/model01.glb",
-      "models3D/model02.glb",
-      "models3D/model03.glb",
-      "models3D/model04.glb",
-      "models3D/model05.glb",
-      "models3D/model06.glb",
-      "models3D/model07.glb",
-      "models3D/model08.glb"
-    ];
     const gltfLoader = new GLTFLoader();
     let loadedModels = 0;
     let modelsArray = [];
@@ -200,7 +188,9 @@ export default {
         if (index % 5 == 0) {
           row++;
         }
+
         let person = getRandomItem(modelsArray).clone();
+
         let color = new THREE.MeshStandardMaterial();
         person.material = color;
         // gltf.scene --> Group
@@ -208,18 +198,14 @@ export default {
         person.material.color.set(getRandomItem(colors));
         person.scale.set(2, 2, 2);
         person.rotation.set(-1.5707963267948966, 0, -1.5707963267948966);
+
         person.position.set(
           setPosition(index, row, arrayPerson).x,
           setPosition(index, row, arrayPerson).y,
           setPosition(index, row, arrayPerson).z
         );
         person.castShadow = true;
-        //
-        // 		let boundingBox = person.geometry.boundingBox;
-        // 		let objectHeight = boundingBox.max.z - boundingBox.min.z;
-        // 		let objectWidth = boundingBox.max.y - boundingBox.min.y;
-        // 		// generateTextBubble(item, objectWidth, person.position.x, objectHeight, person.position.z);
-        // 		scene.add(person);
+        scene.add(person);
       });
     }
 
@@ -306,16 +292,15 @@ export default {
     }
 
     let cameraPositionCounter = 0;
-    let bubblesContainer = document.getElementsByClassName("bubbles");
-    console.log(bubblesContainer);
+    let bubblesContainer = document.getElementById("bubbles");
     let peopleIndex = 0;
 
-    let forwardsButton = document.getElementsByClassName("forwards");
+    let forwardsButton = document.getElementById("forwards");
 
     forwardsButton.addEventListener("click", function() {
-      console.log("this")
+      console.log(camera.position);
+
       if (peopleIndex === 0) generateBubbles();
-      console.log(people[peopleIndex]);
       if (peopleIndex % 5 === 0) {
         cameraPositionCounter++;
         let targetPosition = getTargetPositionCamara(cameraPositionCounter);
@@ -328,9 +313,9 @@ export default {
       peopleIndex++;
     });
 
-    document.querySelector(".backwards").addEventListener("click", function() {
+    document.getElementById("backwards").addEventListener("click", function() {
+      console.log(camera.position);
       if (peopleIndex === 1) hideBubbles();
-      console.log(people[peopleIndex]);
       if (peopleIndex % 5 === 0) {
         cameraPositionCounter--;
         let targetPosition = getTargetPositionCamara(cameraPositionCounter);
@@ -340,7 +325,7 @@ export default {
       if (peopleIndex !== 0) {
         // if its not the first one
         moveBubbles(bubblesContainer, peopleIndex - 1, false);
-        console.log(people[peopleIndex]);
+
         peopleIndex--;
       }
     });
@@ -408,3 +393,12 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+#canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -100;
+}
+</style>
