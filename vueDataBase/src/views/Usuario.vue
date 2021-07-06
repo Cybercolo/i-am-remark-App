@@ -178,8 +178,10 @@ export default {
         generateElements(people, colors);
         return;
       }
+      console.log(modelLocationArray[loadedModels]);
       gltfLoader.load(modelLocationArray[loadedModels], function(object) {
         modelsArray.push(object.scene.children[0]);
+
         loadedModels++;
         loadNextModel();
       });
