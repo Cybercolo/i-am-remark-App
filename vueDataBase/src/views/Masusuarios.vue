@@ -8,7 +8,7 @@
 <script>
 import Header from '@/components/Header.vue'
 export default {
-    name:'Masusuarios',
+    name:'MasUsuarios',
     components: {
         Header,
     }

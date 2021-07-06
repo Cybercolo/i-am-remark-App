@@ -1,12 +1,12 @@
 <template>
-<div>
-  <select class="main-country-2" @click="dataLocal" v-model="country">
-    <option selected disabled value="CERO"> Choose your Country</option>
-    <option v-for="pais in paises" :key="pais">
-      {{ pais }}
-    </option>
-  </select>
-</div>
+  <div>
+    <select class="main-country-2" @click="dataLocal" v-model="country">
+      <option selected disabled value="CERO"> Choose your Country </option>
+      <option v-for="pais in paises" :key="pais">
+        {{ pais }}
+      </option>
+    </select>
+  </div>
 </template>
 
 <script>

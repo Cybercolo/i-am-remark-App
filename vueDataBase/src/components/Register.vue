@@ -13,14 +13,12 @@
                     <p>Max 200caracters</p>
                 </div>
             </div>
-            <div class="final03">
-              <div class="final02">
+            <div class="final02">
                 <img class="estrellas1" src="../images/2conjuntoestrellas.png">
                 <img class="corona2" src="../images/2corona.png">
                 <button @click="dataLocal" class="button-send-2" href="../views/Usuario.vue" type="button_send">
                     <router-link to="/Usuario"> Share </router-link>
                 </button>
-              </div>
             </div>
         </form>    
     </div>

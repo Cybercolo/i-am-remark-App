@@ -1,11 +1,9 @@
 <template>
-    <div>
-
+  <div>
     <header> 
       <img class="header_logo" src="../images/brand.png" alt="">
-    </header>
-          
-    </div>
+    </header>      
+  </div>
 </template>
 
 <script>

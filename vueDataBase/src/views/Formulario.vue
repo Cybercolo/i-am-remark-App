@@ -1,15 +1,15 @@
 <template>
   <div>
     <body>
-        <div class="container02">
-          <div>
-            <img class="corner" src="../images/Vectorcorner.png">
-            <Header/>
-          </div>
-          <section class="main-2">
-              <Register/>
-          </section>
+      <div class="container02">
+        <div>
+          <img class="corner" src="../images/Vectorcorner.png">
+          <Header/>
         </div>
+        <section class="main-2">
+            <Register/>
+        </section>
+      </div>
     </body>
   </div>
 </template>
