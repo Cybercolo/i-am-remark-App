@@ -61,10 +61,10 @@
 
 }
 
-.main_texto_03{
+/*.main_texto_03{
     margin-bottom: 0px;
 
-}
+}*/
 
 
 .main_view_03{
@@ -139,8 +139,8 @@
     margin-left: 17px;
 }
 
-.main_compartir_03{
-    position:absolute
+/*.main_compartir_03{
+    position:absolute;
     display: flex;
     align-items: center;
     margin-right: 5px;

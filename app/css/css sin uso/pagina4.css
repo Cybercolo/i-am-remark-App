@@ -73,8 +73,6 @@
 
 }
 
-
-
 .main-balon1-4{
 
   padding:  10px 20px;  
@@ -84,7 +82,6 @@
   position: relative;
   bottom: -102px;
   
-
 }
 .main-balon2-4{
 
@@ -92,9 +89,8 @@
   border-radius: 20px;
   background-color: rgb(255, 255, 255) ;
   box-shadow: 4px 4px 2px 2px rgba(120, 120, 120, 0.2);
-  
- 
-
+  position: relative;
+  bottom: -122px;
 }
 .main-balon3-4{
 
@@ -102,20 +98,17 @@
   border-radius: 20px;
   background-color: rgb(250, 250, 250) ;
   box-shadow: 4px 4px 2px 2px rgba(120, 120, 120, 0.2);
-  
- 
-
+  position: relative;
+  bottom: -142px;
 }
 .main-balon4-4{
   padding: 10px 10px;
   border-radius: 20px;
   background-color: rgb(250, 250, 250) ;
   box-shadow: 4px 4px 2px 2px rgba(120, 120, 120, 0.2);
-  
-
+  position: relative;
+  bottom: -162px;
 }
-
-
 
 /*** ESTILOS BOTÓN  ***/
 .main-botonnext-4 {
@@ -194,17 +187,17 @@
     transition: all 0.3s ease;
   }
   .main-botonhome-4:hover::after {
+    
     transition: all 0.3s ease-out;
     transform: skewX(-45deg) scale(1, 1);
   }
 
 section{
+
   display: flex;
   flex-direction: column;
   margin-top: 50px;
   margin-bottom: 250px;
-
-
 }
 
 /************ CSS4  ************/
