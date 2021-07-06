@@ -1,50 +1,43 @@
 <template>
-  <div>
-    <body>
-      <div class="container03">
-        <Header />
-        <div class="main_usuario_03">
-          <div class="main_bocadillo">
-            <img class="main_bocadillo1" src="../images/vector21.png" alt="" />
-          </div>
-          <div class="main_texto_03">
-            <Description />
-          </div>
+<div>
+
+  <body>
+    <div class="container03">
+      <Header />
+      <div class="main_usuario_03">
+        <div class="main_bocadillo">
+          <img class="main_bocadillo1" src="../images/vector21.png" alt="" />
         </div>
-        <img class="main_estrellas_03" src="../images/estrellas.png" />
-        <img class="main_corona_03" src="../images/corona.png" />
-        <div class="main_compartir_03">
-          <button class="main_com_03"></button>
-          <img
-            class="main_imgCompartir_03"
-            src="../images/share-2.png"
-            alt=""
-          />
-          <img class="elipse" src="../images/elipse.png" />
-          <img class="circulo" src="../images/circulo.png" />
-        </div>
-        <div class="main_element3d">
-          <div id="bubbles"></div>
-          <div id="forwards" class="button">Move forwards</div>
-          <div id="backwards" class="button">Move backwards</div>
-          <canvas id="canvas"></canvas>
-        </div>
-        <div class="boton2">
-          <button class="main_llevame_03">
-            <router-link to="/MasUsuarios"> See More Storys </router-link>
-            <img class="corazon" src="../images/megusta.png" />
-          </button>
-        </div>
-        <div class="main_final_03">
-          <img
-            class="main_flechita_03"
-            src="../images/flecha-hacia-arriba.png"
-            alt=""
-          />
+        <div class="main_texto_03">
+          <Description />
         </div>
       </div>
-    </body>
-  </div>
+      <img class="main_estrellas_03" src="../images/estrellas.png" />
+      <img class="main_corona_03" src="../images/corona.png" />
+      <div class="main_compartir_03">
+        <button class="main_com_03"></button>
+        <img class="main_imgCompartir_03" src="../images/share-2.png" alt="" />
+        <img class="elipse" src="../images/elipse.png" />
+        <img class="circulo" src="../images/circulo.png" />
+      </div>
+      <div class="main_element3d">
+        <div id="bubbles"></div>
+        <div id="forwards" class="button">Move forwards</div>
+        <div id="backwards" class="button">Move backwards</div>
+        <canvas id="canvas"></canvas>
+      </div>
+      <div class="boton2">
+        <button class="main_llevame_03">
+          <router-link to="/MasUsuarios"> See More Storys </router-link>
+          <img class="corazon" src="../images/megusta.png" />
+        </button>
+      </div>
+      <div class="main_final_03">
+        <img class="main_flechita_03" src="../images/flecha-hacia-arriba.png" alt="" />
+      </div>
+    </div>
+  </body>
+</div>
 </template>
 
 <script>
@@ -52,8 +45,12 @@ import Description from "@/components/Description.vue";
 import Header from "../components/Header.vue";
 
 import * as THREE from "../threejs/source/three.module.js";
-import { people } from "../threejs/people.js";
-import { GLTFLoader } from "../threejs/source/GLTFLoader.js";
+import {
+  people
+} from "../threejs/people.js";
+import {
+  GLTFLoader
+} from "../threejs/source/GLTFLoader.js";
 import * as TWEEN from "../threejs/source/tween.esm.js";
 
 export default {
@@ -135,14 +132,14 @@ export default {
 
     //////////////////// FUNCTIONS ////////////////////
     let modelLocationArray = [
-      "./models3D/model01.glb",
-      "./models3D/model02.glb",
-      "./models3D/model03.glb",
-      "./models3D/model04.glb",
-      "./models3D/model05.glb",
-      "./models3D/model06.glb",
-      "./models3D/model07.glb",
-      "./models3D/model08.glb"
+      "models3D/model01.glb",
+      "models3D/model02.glb",
+      "models3D/model03.glb",
+      "models3D/model04.glb",
+      "models3D/model05.glb",
+      "models3D/model06.glb",
+      "models3D/model07.glb",
+      "models3D/model08.glb"
     ];
 
     // function getRandomModelLocation() {
@@ -180,6 +177,7 @@ export default {
       }
       gltfLoader.load(modelLocationArray[loadedModels], function(object) {
         modelsArray.push(object.scene.children[0]);
+
         loadedModels++;
         loadNextModel();
       });
@@ -264,9 +262,9 @@ export default {
 
     function longerGroundScroll(e) {
       // para que el suelo se alargue si la camara se va muy lejos
-      e.deltaY < 0
-        ? ground.scale.set(1, (groundLength += 0.05), 1)
-        : ground.scale.set(1, (groundLength -= 0.05), 1);
+      e.deltaY < 0 ?
+        ground.scale.set(1, (groundLength += 0.05), 1) :
+        ground.scale.set(1, (groundLength -= 0.05), 1);
     }
 
     function stopZoomOut(maxZoomOutValue) {
