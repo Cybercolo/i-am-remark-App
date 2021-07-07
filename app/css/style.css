@@ -79,6 +79,7 @@ header {
  
 }
 
+<<<<<<< HEAD
 /* .main_text_pg_01{
   display: flex;
   justify-content: center; 
@@ -86,14 +87,21 @@ header {
   
   } */
   .main-center-1{
+=======
+.main-center-1{
+>>>>>>> 18deb9a146c5afec2b5c936e3673311b25c9c924
 
     display: flex;
     flex-direction: column;
     justify-content: center;
     margin-top: 20px;
+<<<<<<< HEAD
        
      
     
+=======
+               
+>>>>>>> 18deb9a146c5afec2b5c936e3673311b25c9c924
   }
    
  .main_message_pg_01 {
@@ -106,6 +114,7 @@ header {
   margin-bottom: 20px;
   margin-right:50px;
   letter-spacing: 1px;;
+<<<<<<< HEAD
    
   
 }
@@ -129,6 +138,18 @@ right:30px;
   
 } */
 
+=======
+     
+}
+.main_pic_flecha_pg_01 {
+  pointer-events: none; 
+  align-self:center;
+  position: absolute;
+  top:0;
+  right:0;
+
+}
+>>>>>>> 18deb9a146c5afec2b5c936e3673311b25c9c924
 
 .btn-01 {
   color:aliceblue;
@@ -142,8 +163,12 @@ right:30px;
   text-align: center;
   text-decoration: none;
   max-width: 250px;
+<<<<<<< HEAD
    
  
+=======
+    
+>>>>>>> 18deb9a146c5afec2b5c936e3673311b25c9c924
 }
 
 .btn-01:hover {
@@ -656,11 +681,20 @@ align-items: center;
 
 } */
 .main_imgCompartir_03{
+<<<<<<< HEAD
     width: 20px;
     height: 20px;
     position: relative;
     z-index: 3;
 
+=======
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    z-index: 4;
+    margin-left: 17px;
+    
+>>>>>>> 18deb9a146c5afec2b5c936e3673311b25c9c924
 }
 
 .elipse{
