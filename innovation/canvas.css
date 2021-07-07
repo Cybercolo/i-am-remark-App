@@ -10,9 +10,7 @@ html, body {
   overflow: hidden;
 }
 
-body {
-  background-color: red;
-}
+
 
 #app {
   text-align: center;

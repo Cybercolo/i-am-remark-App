@@ -107,9 +107,6 @@ renderer.shadowMap.enabled = true;
 
 renderer.render(scene, camera);
 
-//////////////////// DATA ////////////////////
-let colors = [0xFFF2CC, 0xFFF2CC, 0xFFF2CC, 0xFFF2CC];
-
 
 //////////////////// FUNCTIONS ////////////////////
 
