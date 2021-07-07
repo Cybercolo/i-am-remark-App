@@ -34,7 +34,7 @@
 </template>
 
 <script>
-  import Header from '@/components/Description.vue'
+import Header from '@/components/Description.vue'
   import Description from '@/components/Header.vue'
   import Canvas3dJs from '@/components/Canvas3dJs'
 
@@ -45,7 +45,7 @@
     Header,
     Canvas3dJs
   },
-  }; 
+};
 </script>
 
 <style scoped>
