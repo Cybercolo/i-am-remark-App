@@ -14,9 +14,9 @@ export default {
 
   data() {
     return {
-      Remarkable: null,
-      Name: null,
-      Country: null
+      Remarkable: "",
+      Name: "",
+      Country: ""
     };
   },
   mounted() {
@@ -30,9 +30,9 @@ export default {
         this.Name = response.name
       )
     );*/
-    this.Remarkable = localStorage.getItem("remarkable"),
-      this.Country = localStorage.getItem("country"),
-      this.Name = localStorage.getItem("name")
+    this.Remarkable = localStorage.getItem("remarkableLS"),
+      this.Country = localStorage.getItem("countryLS"),
+      this.Name = localStorage.getItem("nameLS")
   }
 };
 </script>

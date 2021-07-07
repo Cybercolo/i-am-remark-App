@@ -3,13 +3,13 @@
         <form>
             <div class="main-origen-2">
                 <div class="main-principal-02">
-                    <input  class="main-alias-2" type="text" maxlength="10" placeholder="Name / Alias" size="10" v-model="name">
+                    <InputName/>
                     <img class="flecha02" src="../images/2flechita.png">
                     <img class="estrellitas02" src="../images/estrellas3.png">
                 </div>
                 <SelectCountries/>
                 <div class="main-why-2">
-                    <textarea class="main-input-2" name="textarea" rows="6" cols="40" placeholder="I am remarkable because..." v-model="remarkable"></textarea>
+                    <InputRemarkable/>
                     <p>Max 200caracters</p>
                 </div>
             </div>
@@ -24,33 +24,19 @@
     </div>
 </template>
 
-
 <script>
     import SelectCountries from '@/components/Form/SelectCountries.vue'
+    import InputName from '@/components/Form/InputName.vue'
+    import InputRemarkable from '@/components/Form/InputRemarkable.vue'
     
     export default {
         name: 'Register',
         components:{
             SelectCountries,
-        },
-        data() {
-            return {
-                name: "",
-                remarkable: ""
-            }
-        },
-        mounted() {
-            this.name = localStorage.name;
-            this.remarkable = localStorage.remarkable;
-        },
-        methods:{
-            dataLocal() {
-                localStorage.name = this.name;
-                localStorage.remarkable = this.remarkable;
-                console.log(localStorage)
-            }
+            InputName,
+            InputRemarkable
         }
-    }
+    }    
 </script>
 
 

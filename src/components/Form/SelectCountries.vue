@@ -1,6 +1,6 @@
 <template>
   <div>
-    <select class="main-country-2" @click="dataLocal" v-model="country">
+    <select class="main-country-2" @click="dataLocal" v-model="Country">
       <option selected disabled value="CERO"> Choose your Country </option>
       <option v-for="pais in paises" :key="pais">
         {{ pais }}
@@ -15,7 +15,7 @@ export default {
   components: {},
   data() {
     return {
-      country: "",
+      Country: "",
       paises: [
         "Afghanistan",
         "Albania",
@@ -226,11 +226,11 @@ export default {
     };
   },
   mounted() {
-    this.country = localStorage.country;
+    this.Country = localStorage.countryLS;
   },
   methods: {
     dataLocal() {
-      localStorage.country = this.country;
+      localStorage.countryLS = this.Country;
     }
   }
 };
