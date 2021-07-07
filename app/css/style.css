@@ -256,6 +256,7 @@ right:30px;
   }
 
 .main-alias-2  {
+    outline: none;
     z-index: 3;
     box-shadow: inset 0px 4px 6px 0px grey,
     0px 2px 3px 0px rgb(255, 255, 255, 0.5);
@@ -276,6 +277,7 @@ right:30px;
 
 .main-country-2  {
 
+  outline: none;
   box-shadow: inset 0px 4px 6px 0px grey;
   font-family: Arial, Helvetica, sans-serif;
   width: 150px;
@@ -304,6 +306,8 @@ right:30px;
 }
 
 .main-input-2{
+    
+    outline: none;
     box-sizing: border-box;
     /*max-width: 277px;*/
     height: 240px;
@@ -345,7 +349,7 @@ textarea::placeholder{
 
 
 select {
-      
+    
     color: rgb(0, 0, 0);
     font-family: 'Roboto Slab';
     font-weight: 800; 
@@ -379,10 +383,11 @@ select {
 }
 
 .corona2{
-        z-index: 3;
-        position: absolute;
-        right: -60px;
-        max-width: 100px;
+  z-index: 3;
+  position: absolute;
+  left: 297px;
+  max-width: 100px;
+  bottom: 59px;
 }
 
 .esterllas1{
@@ -400,17 +405,19 @@ a.button-send-2 {
   background: #0D0C2F; /* color de fondo */
   color: #fff; /* color de fuente */
   border: 2px solid #0D0C2F; /* tamaÃ±o y color de borde */
-  padding: 12px;
   border-radius: 25px; /* redondear bordes */
   position: relative;
   z-index: 1;
   overflow: hidden;
   display: inline-block;
   text-decoration:none;
-  font-family:Arial, Helvetica, sans-serif;
   height: 51px;
   font-size: 20px;
-  
+  border-radius: 7px 20px 37px 36px;
+  text-align: center;
+  width: 257px;
+  padding: 0px;
+
 }
 
 a.button-send-2:hover {
@@ -534,28 +541,14 @@ h5{
 .boton2{
 display: flex;
 align-items: center;
-
-
 }
 
 .corazon{
   position: absolute;
   z-index: 2;
   margin-left: 195px;
-  
 
 }
-
-.elipse{
-  z-index: 1;
-  position: absolute;
-  
-  }
-  
-  .circulo{
-  z-index: 2;
-  position: absolute;
-  }
 
   .perso{
 
@@ -624,24 +617,36 @@ align-items: center;
 
 } */
 .main_imgCompartir_03{
-    width: 15px;
-    height: 15px;
-    position: absolute;
-    z-index: 4;
-    margin-left: 17px;
-    
+    width: 20px;
+    height: 20px;
+    position: relative;
+    z-index: 3;
+
 }
 
+.elipse{
+  z-index: 1;
+  position: absolute;
+  
+  }
+  
+.circulo{
+  z-index: 2;
+  position: absolute;
+  }
 
 .main_compartir_03{
     display: flex;
     align-items: center;
+    justify-content: center;
     margin-right: -170px;
     position: absolute;
     margin-top: 500px;
+    cursor: pointer;
    
 }
-.main_com_03{
+/*.main_com_03{
+  
     background-color:  #FAFCFB;
     border-radius: 50px;
     padding: 20px;    
@@ -653,7 +658,7 @@ align-items: center;
     3px 3px 7px 0 rgb(255, 255, 255) inset,
     -3px -3px 5px 0 rgba(0, 0, 0, .2) inset;
     
-}
+}*/
 
 .main_comp1_03{
     z-index: 1;
@@ -703,11 +708,13 @@ align-items: center;
 }
 
 .main_llevame_03:hover {
-    color: #fff;/* color de fuente hover */
+    color: #0D0C2F;/* color de fuente hover */
+    
   }
+
 .main_llevame_03::after {
       content: "";
-      background:#0D0C2F; /* color de fondo hover */
+      background:#fff; /* color de fondo hover */
       position: absolute;
       z-index: -1;
       padding: 12%;
@@ -1022,3 +1029,8 @@ align-items: center;
 
 
 /************ CSS4  ************/
+
+
+.canvas3d {
+  background-color: red;
+}
