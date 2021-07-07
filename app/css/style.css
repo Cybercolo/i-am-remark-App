@@ -621,7 +621,9 @@ align-items: center;
     align-items: center;
     margin-right: -170px;
     position: absolute;
-    margin-top: 500px;
+    margin-top: 400px;
+    
+
    
 }
 .main_com_03{
@@ -635,6 +637,7 @@ align-items: center;
     box-shadow: 
     3px 3px 7px 0 rgb(255, 255, 255) inset,
     -3px -3px 5px 0 rgba(0, 0, 0, .2) inset;
+    
     
 }
 
@@ -686,11 +689,13 @@ align-items: center;
 }
 
 .main_llevame_03:hover {
-    color: #fff;/* color de fuente hover */
+    color: #0D0C2F;/* color de fuente hover */
+    
   }
+
 .main_llevame_03::after {
       content: "";
-      background:#0D0C2F; /* color de fondo hover */
+      background:#fff; /* color de fondo hover */
       position: absolute;
       z-index: -1;
       padding: 12%;
