@@ -22,25 +22,8 @@ export default {
   components: {
     Register,
     Header 
-  },
-  data() {
-    return {
-      name: "",
-      remarkable: ""
-    }
-  },
-  mounted() {
-    this.name = localStorage.name;
-    this.remarkable = localStorage.remarkable;
-  },
-  methods:{
-    dataLocal() {
-      localStorage.name = this.name;
-      localStorage.remarkable = this.remarkable;
-      console.log(localStorage)
-    }
   }
-}
+};
 
 </script>
 
