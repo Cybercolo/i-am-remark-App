@@ -610,7 +610,7 @@ align-items: center;
     width: 15px;
     height: 15px;
     position: absolute;
-    z-index: 3;
+    z-index: 4;
     margin-left: 17px;
     
 }
