@@ -48,9 +48,8 @@
 </template>
 
 <script>
-import Description from "@/components/Description.vue";
-import Header from "../components/Header.vue";
 
+<<<<<<< HEAD
 import * as THREE from "../threejs/source/three.module.js";
 import { people } from "../threejs/people.js";
 import { GLTFLoader } from "../threejs/source/GLTFLoader.js";
@@ -408,4 +407,10 @@ html {
   left: 0;
   z-index: -100;
 }
+=======
+</script>
+
+<style scoped>
+
+>>>>>>> 489dcf54f305f6ed802a8491d6688294853a4379
 </style>
