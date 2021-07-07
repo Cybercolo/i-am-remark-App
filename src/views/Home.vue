@@ -12,13 +12,12 @@
     <img class="main_pic_flecha_pg_01" src="../images/Vector_flecha.svg" alt="" />
   </div>
 
-  <div class="main_button_why_you_pg_01 main_llevame_03">
-    <router-link to="/Formulario" class="btn-01">
-      Why are you remarkable?
-    </router-link>
+  <div class="main_button_why_you_pg_01">
+    <a href="/Formulario" class="btn-01"> Why are you remarkable? </a>
   </div>
 
-  <router-link to="/Formulario"> </router-link>
+
+  <router-link to="/Formulario"> ttetet </router-link>
 
   <div class=" all">
     <img class="main_pic_allPeople_pg_01" src="../images/allPeople.png" />
@@ -32,9 +31,9 @@ import Header from "@/components/Header.vue";
 export default {
   name: "Home",
   components: {
-  Header,
-    
-  
+    Header,
+
+
   }
 };
 </script>
