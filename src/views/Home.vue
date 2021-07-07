@@ -12,6 +12,11 @@
     <img class="main_pic_flecha_pg_01" src="../images/Vector_flecha.svg" alt="" />
   </div>
 
+  <div class="main_text_pg_01">
+      <p class="main_message_pg_01">Tell to the World,</p>
+      <img class="main_pic_flecha_pg_01" src="../images/Vector_flecha.svg" alt="" />
+  </div>
+
   <div class="main_button_why_you_pg_01 main_llevame_03">
     <router-link to="/Formulario" class="btn-01">
       Why are you remarkable?

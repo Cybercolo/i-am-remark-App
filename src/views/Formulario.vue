@@ -24,6 +24,5 @@ export default {
     Header 
   }
 };
-
 </script>
 
