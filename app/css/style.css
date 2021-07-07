@@ -79,21 +79,13 @@ header {
  
 }
 
-/* .main_text_pg_01{
-  display: flex;
-  justify-content: center; 
-  z-index: 1; 
-  
-  } */
-  .main-center-1{
+.main-center-1{
 
     display: flex;
     flex-direction: column;
     justify-content: center;
     margin-top: 20px;
-       
-     
-    
+               
   }
    
  .main_message_pg_01 {
@@ -106,29 +98,16 @@ header {
   margin-bottom: 20px;
   margin-right:50px;
   letter-spacing: 1px;;
-   
-  
+     
 }
 .main_pic_flecha_pg_01 {
-pointer-events: none; 
-align-self:center;
-right:30px;
+  pointer-events: none; 
+  align-self:center;
+  position: absolute;
+  top:0;
+  right:0;
 
 }
-
-/* .main_button_why_you_pg_01 {
-  background: rgba(26, 33, 58, 1);   
-  box-shadow: rgba(26, 33, 58, 1);
-  border-radius: 40px;
-  height: 51px;
-  width: 40%;
-  padding: 10px;
-  margin-top: -20px;
-  display: flex;
-  justify-content: center;
-  
-} */
-
 
 .btn-01 {
   color:aliceblue;
@@ -142,8 +121,7 @@ right:30px;
   text-align: center;
   text-decoration: none;
   max-width: 250px;
-   
- 
+    
 }
 
 .btn-01:hover {
