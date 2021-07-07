@@ -1,9 +1,9 @@
 <template>
-<div>
-  <p>{{ Remarkable }}</p>
-  <p>{{ Country }}</p>
-  <h5>{{ Name }}</h5>
-</div>
+  <div>
+    <p>{{ Remarkable }}</p>
+    <p>{{ Country }}</p>
+    <h5>{{ Name }}</h5>
+  </div>
 </template>
 
 <script>
@@ -21,7 +21,7 @@ export default {
   },
   mounted() {
     axios
-      .get("http://localhost:8082")
+      .get("http://localhost:8080")
       .then(
         response => (
           (response.remarkable = localStorage.getItem("remarkable")),
