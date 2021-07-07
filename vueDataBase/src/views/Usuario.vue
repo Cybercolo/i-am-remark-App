@@ -1,7 +1,5 @@
 <template>
 <div>
-
-  <body>
     <div class="container03">
       <Header />
       <div class="main_usuario_03">
@@ -20,12 +18,7 @@
         <img class="elipse" src="../images/elipse.png" />
         <img class="circulo" src="../images/circulo.png" />
       </div>
-      <div class="main_element3d">
-        <div id="bubbles"></div>
-        <div id="forwards" class="button">Move forwards</div>
-        <div id="backwards" class="button">Move backwards</div>
-        <canvas id="canvas"></canvas>
-      </div>
+      <div class="main_element3d">xxx</div>
       <div class="boton2">
         <button class="main_llevame_03">
           <router-link to="/MasUsuarios"> See More Storys </router-link>
@@ -36,7 +29,6 @@
         <img class="main_flechita_03" src="../images/flecha-hacia-arriba.png" alt="" />
       </div>
     </div>
-  </body>
 </div>
 </template>
 
@@ -53,11 +45,6 @@ export default {
   }; 
 </script>
 
-<style scoped>
-#canvas {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -100;
-}
+<style>
+
 </style>

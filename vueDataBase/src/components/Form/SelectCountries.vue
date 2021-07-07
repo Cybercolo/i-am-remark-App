@@ -231,7 +231,6 @@ export default {
   methods: {
     dataLocal() {
       localStorage.country = this.country;
-      console.log(localStorage, "pais");
     }
   }
 };
