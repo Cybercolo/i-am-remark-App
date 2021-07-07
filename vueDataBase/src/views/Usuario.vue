@@ -20,12 +20,7 @@
         <img class="elipse" src="../images/elipse.png" />
         <img class="circulo" src="../images/circulo.png" />
       </div>
-      <div class="main_element3d">
-        <div id="bubbles"></div>
-        <div id="forwards" class="button">Move forwards</div>
-        <div id="backwards" class="button">Move backwards</div>
-        <canvas id="canvas"></canvas>
-      </div>
+      <div class="main_element3d">xxx</div>
       <div class="boton2">
         <button class="main_llevame_03">
           <router-link to="/MasUsuarios"> See More Storys </router-link>
@@ -41,8 +36,8 @@
 </template>
 
 <script>
-import Description from "@/components/Description.vue";
-import Header from "../components/Header.vue";
+import Header from '@/components/Header.vue'
+import Description from '@/components/Description.vue'
 
 export default {
   name: "Usuario",
