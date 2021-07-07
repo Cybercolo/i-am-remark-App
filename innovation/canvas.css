@@ -1,3 +1,8 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
 html, body {
   width: 100vw;
   height: 100vh;
@@ -17,7 +22,7 @@ body {
   height: 100%;
 }
 
-div {
+.button {
   position: absolute;
   width: 20px;
   height: 20px;
@@ -33,4 +38,14 @@ div {
 .forwards {
   right: 20px;
   top: 20px;
+}
+
+.bubbles {
+  position: absolute;
+  display: flex;
+}
+
+.bubble {
+  width: 100vw;
+  padding: 100px 100px;
 }
