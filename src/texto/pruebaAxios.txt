@@ -1,0 +1,51 @@
+/*.get obtener informacion de API
+  .post enviar informacion a la API
+  .put modificar informacio de la API
+  https://jsonplaceholder.typicode.com/todos/1  */
+
+
+
+/*async created() { 
+        let newData = {
+            title: 'fo',
+            body: 'bar'
+        };
+        axios.put('https://jsonplaceholder.typicode.com/todos/1', post).then((result) => {
+            console.log(result);
+            console.log(result.data);
+            });
+        axios.get('https://jsonplaceholder.typicode.com/todos').then((result) => {
+            console.log(result);
+        /let response = await axios.put('https://jsonplaceholder.typicode.com/todos', newData);
+        this.result = response.data; 
+        console.log(this.result); 
+        
+        axios.get('https://jsonplaceholder.typicode.com/todos').then((result) => {
+            console.log(result);
+        });
+    }*/
+    /*methods: {
+        async getTodos() {
+            let response = await axios.get("https://jsonplaceholder.typicode.com/todos/1");
+            console.log(response.data);
+        },
+        async modifyPost() {
+            let post = {
+            title: 'foo',
+            body: 'bar',
+            gato: 'leon',
+            userId: 2
+            };
+            let response = await axios.put("https://jsonplaceholder.typicode.com/posts/1", post)
+            console.log(response.data);
+        },
+        },
+        
+        created() {
+        this.getTodos();
+        this.modifyPost();
+        this.getTodos2();
+        }
+
+
+    };*/
