@@ -32,13 +32,7 @@ import Header from "@/components/Header.vue";
 export default {
   name: "Home",
   components: {
-<<<<<<< HEAD
-    Header
-=======
-  Header,
-    
-  
->>>>>>> 40d67d945c470dd6979f3ac3baf11f95116d3786
+    Header,
   }
 };
 </script>
