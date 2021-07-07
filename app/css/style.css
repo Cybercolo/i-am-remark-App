@@ -234,6 +234,7 @@ header {
   }
 
 .main-alias-2  {
+    outline: none;
     z-index: 3;
     box-shadow: inset 0px 4px 6px 0px grey,
     0px 2px 3px 0px rgb(255, 255, 255, 0.5);
@@ -254,6 +255,7 @@ header {
 
 .main-country-2  {
 
+  outline: none;
   box-shadow: inset 0px 4px 6px 0px grey;
   font-family: Arial, Helvetica, sans-serif;
   width: 150px;
@@ -282,6 +284,8 @@ header {
 }
 
 .main-input-2{
+    
+    outline: none;
     box-sizing: border-box;
     /*max-width: 277px;*/
     height: 240px;
@@ -323,7 +327,7 @@ textarea::placeholder{
 
 
 select {
-      
+    
     color: rgb(0, 0, 0);
     font-family: 'Roboto Slab';
     font-weight: 800; 
@@ -362,10 +366,11 @@ select {
 }
 
 .corona2{
-        z-index: 3;
-        position: absolute;
-        right: -60px;
-        max-width: 100px;
+  z-index: 3;
+  position: absolute;
+  left: 297px;
+  max-width: 100px;
+  bottom: 59px;
 }
 
 .esterllas1{
@@ -383,17 +388,19 @@ a.button-send-2 {
   background: #0D0C2F; /* color de fondo */
   color: #fff; /* color de fuente */
   border: 2px solid #0D0C2F; /* tamaÃ±o y color de borde */
-  padding: 12px;
   border-radius: 25px; /* redondear bordes */
   position: relative;
   z-index: 1;
   overflow: hidden;
   display: inline-block;
   text-decoration:none;
-  font-family:Arial, Helvetica, sans-serif;
   height: 51px;
   font-size: 20px;
-  
+  border-radius: 7px 20px 37px 36px;
+  text-align: center;
+  width: 257px;
+  padding: 0px;
+
 }
 
 a.button-send-2:hover {
