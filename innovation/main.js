@@ -42,8 +42,10 @@ let isPressedMe = false;
 
 //////////////////// ESCENA ////////////////////
 const scene = new Scene();
-scene.background = new Color("white");
-scene.fog = new Fog("white", 10, 25);
+const mainColor = 0x6FA8DC
+//scene.background = new Color(mainColor);
+
+scene.fog = new Fog(mainColor, 10, 25);
 
 //////////////////// CAMARAS ////////////////////
 const camera = new PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.1, 25);
@@ -65,8 +67,10 @@ pointLight.castShadow = true;
 scene.add(hemisphereLight, pointLight);
 //////////////////// GROUND ////////////////////
 const geometryGround = new PlaneGeometry(50, 50);
+
 const materialGround = new MeshStandardMaterial({
-	color: "white"
+	color: mainColor,
+	
 });
 
 const ground = new Mesh(geometryGround, materialGround);
@@ -86,15 +90,18 @@ scene.add(pointLightHelper);
 const canvas = document.querySelector("#canvas");
 const renderer = new WebGLRenderer({
 	canvas,
-	antialias: true
+	antialias: true,
+	alpha:true
 });
+
+
 
 renderer.shadowMap.enabled = true;
 
 renderer.render(scene, camera);
 
 //////////////////// DATA ////////////////////
-let colors = [0xc4ec6e, 0x7089fa, 0xef86f7, 0xb681eb];
+let colors = [0xFFF2CC, 0xFFF2CC, 0xFFF2CC, 0xFFF2CC];
 
 
 //////////////////// FUNCTIONS ////////////////////
@@ -262,15 +269,25 @@ function generateElements(arrayPerson, colors) {
 
 // SCROLL
 let wheelCount = camera.position.z;
+
+camera.position.z = 4;
+
+console.log(camera.position);
+let maxZoomOutValue = 7;
+
+/**
 canvas.addEventListener("wheel", function(e) {
-	let maxZoomOutValue = 7;
-	let cameraTargetVector = getCameraTargetVector();
-	camera.lookAt(cameraTargetVector);
-
-	pointLight.position.set(pointLight.position.x, pointLight.position.y, camera.position.z + 10); // pointlight following camera
-	camera.position.z = getWheelCount(e);
-
 	longerGround(e);
+	let cameraTargetVector = getCameraTargetVector();
+	
+	camera.lookAt(cameraTargetVector);
+	camera.position.z = getWheelCount(e);
+	
+	pointLight.position.set(pointLight.position.x, pointLight.position.y, camera.position.z + 10); // pointlight following camera
+	
+	
+
+	
 	if (camera.position.z > maxZoomOutValue) { // camera zoom out limit
 		stopZoomOut(maxZoomOutValue);
 	} else if (camera.position.y < 3.5) {
@@ -291,12 +308,12 @@ function moveCameraYScroll(e) {
 	}
 }
 
-function getCameraTargetVector() {
-	let cameraTargetVector = new Vector3(0, 1, camera.position.z - 15);
-	return cameraTargetVector;
-}
+
+
+
 
 function getWheelCount(e) {
+	console.log(e.deltaY);
 	e.deltaY < 0 ? wheelCount-- : wheelCount++;
 	return wheelCount;
 }
@@ -312,43 +329,99 @@ function stopZoomOut(maxZoomOutValue) {
 	groundLength = 1;
 }
 
+ */
+let cameraPositionCounter = 0;
+
+let positionFirst = {x: 0, y: 1, z: 4};
+let positionRow = {x: 0, y: 5, z: -7};
+let duration = 500;
+
+
+
+
+function getCameraTargetVector() {
+	let cameraTargetVector = new Vector3(0, 1, camera.position.z - 15);
+	return cameraTargetVector;
+}
+
+
 function getTargetPositionCamara(cameraPositionCounter) {
-	let targetPosition = new Vector3(0, 5, -(-1 + (cameraPositionCounter * distanceBetweenRows)));
+	let targetPosition = new Vector3(0, 5, -((cameraPositionCounter * distanceBetweenRows)));
 	console.log(targetPosition)
 	return targetPosition;
 }
 
-let cameraPositionCounter = 0;
 
-document.querySelector(".forwards").addEventListener("click", function() {
+
+
+
+
+function moveFowards(){
+
 	cameraPositionCounter++;
-	let targetPosition = getTargetPositionCamara(cameraPositionCounter)
-	// let targetPositionCamara = new Vector3(targetPosition.x, targetPosition.y, targetPosition.z);
-	let duration = 1000;
-	tweenCube(targetPosition, duration, camera);
-});
+	positionRow.z = ( cameraPositionCounter * distanceBetweenRows);
+	let targetPosition = positionRow;
 
-document.querySelector(".backwards").addEventListener("click", function() {
+	tweenCube(targetPosition, duration);
+}
+
+function moveBackwards(){
+	if (cameraPositionCounter === 0){
+		return
+	}
 	cameraPositionCounter--;
 	let targetPosition = getTargetPositionCamara(cameraPositionCounter)
-	let duration = 1000;
+	let duration = 500;
 	tweenCube(targetPosition, duration, camera);
-	console.log("this")
-})
+}
+
+
+
+
+document.querySelector(".forwards").addEventListener("click", moveFowards);
+document.querySelector(".backwards").addEventListener("click", moveBackwards)
+
+
+
 
 function tweenCube(targetPosition, duration) {
 	let currentPosition = camera.position;
 	let tween = new TWEEN.Tween(currentPosition)
-		.to(targetPosition, duration)
-		.onUpdate(function() {
+	tween.to(targetPosition, duration)
+	tween.onUpdate(function() {
 			camera.position.y = currentPosition.y;
 			pointLight.position.set(pointLight.position.x, pointLight.position.y, camera.position.z + 10);
 			camera.lookAt(getCameraTargetVector())
 		})
-		.start();
+	tween.start();
 }
 
 
+document.addEventListener("touchstart", getYPosInit);
+document.addEventListener("touchmove", getYPosEnd);
+document.addEventListener("touchend", getYDirection);
+let posYInit;
+let posYEnd;
+
+
+
+function getYPosInit(e){
+	posYInit = e.touches[0].clientY;
+}
+
+function getYPosEnd(e){
+	posYEnd = e.touches[0].clientY;
+}
+
+function getYDirection(e){
+	if (posYInit < posYEnd){
+		moveFowards()
+	}
+	if (posYEnd - posYInit < 100){
+		moveBackwards()	
+		}
+	
+}
 
 
 

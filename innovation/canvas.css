@@ -5,6 +5,10 @@ html, body {
   overflow: hidden;
 }
 
+body {
+  background-color: red;
+}
+
 #app {
   text-align: center;
   color: #2c3e50;
