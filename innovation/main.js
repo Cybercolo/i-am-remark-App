@@ -113,6 +113,7 @@ function getRandomItem(array) {
 }
 
 function setPosition(index, row, array) {
+	// POSITION FOR THE FIRST ONE
 	if (index === array.length - 1) {
 		const vector0 = new Vector3(0, alturaSuelo, 0);
 		return vector0;
@@ -244,9 +245,9 @@ function stopZoomOut(maxZoomOutValue) {
 	groundLength = 1;
 }
 
-function getTargetPositionCamara(cameraPositionCounter) {
+function getTargetPositionCamara(cameraPositionCounter, isFront) {
 	let targetPosition;
-	if (cameraPositionCounter === 0) {
+	if (cameraPositionCounter === 0 && isFront === false) {
 		targetPosition = new Vector3(
 			cameraOriginalPosition.x,
 			cameraOriginalPosition.y,
@@ -267,36 +268,40 @@ let bubblesContainer = document.querySelector(".bubbles");
 let peopleIndex = 0;
 
 document.querySelector(".forwards").addEventListener("click", function() {
-
-	if (peopleIndex === 0) generateBubbles();
-	if (peopleIndex % 5 === 0) {
-		cameraPositionCounter++;
-		let targetPosition = getTargetPositionCamara(cameraPositionCounter);
-		let duration = 1000;
-		tweenCube(targetPosition, duration, cameraPositionCounter);
+	if (peopleIndex < people.length && peopleIndex >= 0) {
+		peopleIndex++;
+		if (peopleIndex === 1) generateBubbles();
+		console.log(people[peopleIndex])
+		if ((peopleIndex - 1) % 5 === 0 || peopleIndex === 1) {
+			cameraPositionCounter++;
+			let targetPosition = getTargetPositionCamara(cameraPositionCounter, true);
+			let duration = 1000;
+			tweenCube(targetPosition, duration, cameraPositionCounter);
+		}
+		if (peopleIndex !== 0) {
+			console.log(peopleIndex)
+			moveBubbles(bubblesContainer, peopleIndex - 2, true);
+		}
 	}
-	if (peopleIndex !== 1) {
-		moveBubbles(bubblesContainer, peopleIndex - 1, true);
-	}
-	peopleIndex++;
-
 });
 
 document.querySelector(".backwards").addEventListener("click", function() {
-	if (peopleIndex === 1) hideBubbles();
-	if (peopleIndex % 5 === 0) {
-		cameraPositionCounter--;
-		let targetPosition = getTargetPositionCamara(cameraPositionCounter);
-		let duration = 1000;
-		tweenCube(targetPosition, duration);
-	}
-	if (peopleIndex !== 0) {
-		// if its not the first one
-		moveBubbles(bubblesContainer, peopleIndex - 1, false);
-		console.log(people[peopleIndex]);
+	if (peopleIndex <= people.length && peopleIndex >= 1) {
 		peopleIndex--;
-	}
+		if (peopleIndex === 0) hideBubbles();
+		console.log(people[peopleIndex])
+		if (peopleIndex % 5 === 0) {
+			cameraPositionCounter--;
+			let targetPosition = getTargetPositionCamara(cameraPositionCounter, false);
+			let duration = 1000;
+			tweenCube(targetPosition, duration);
+		}
+		if (peopleIndex !== 0) {
+			// if its not the first one
+			moveBubbles(bubblesContainer, peopleIndex - 2, false);
 
+		}
+	}
 });
 
 function tweenCube(targetPosition, duration) {
@@ -347,14 +352,13 @@ function moveBubbles(bubblesContainer, indexPeople, isFront) {
 	} else {
 		nextIndex = indexPeople - 1;
 	}
-
+	// nextIndex = indexPeople + 1;
 	bubblesContainer.style.transform = `translateX(-${(100 / people.length) * nextIndex}%)`;
 }
 
 //////////////////// LOOP ////////////////////
 function animate() {
 	requestAnimationFrame(animate);
-
 	camera.aspect = canvas.clientWidth / canvas.clientHeight;
 	camera.updateProjectionMatrix();
 	TWEEN.update();
