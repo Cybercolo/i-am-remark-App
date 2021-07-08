@@ -226,11 +226,11 @@ export default {
     };
   },
   mounted() {
-    this.country = localStorage.country;
+    this.country = localStorage.countryLS;
   },
   methods: {
     dataLocal() {
-      localStorage.country = this.country;
+      localStorage.countryLS = this.country;
     }
   }
 };

@@ -31,9 +31,9 @@
 
 <script>
 import Description from "@/components/Description.vue";
-
 import Canvas3dJs from "@/components/Canvas3dJs";
 import domtoimage from 'dom-to-image';
+
 export default {
   name: "Usuario",
   components: {

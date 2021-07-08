@@ -392,12 +392,14 @@ a.button-send-2 {
   position: relative;
   z-index: 1;
   overflow: hidden;
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-decoration: none;
   height: 51px;
   font-size: 20px;
   border-radius: 7px 20px 37px 36px;
-  text-align: center;
+  
   width: 257px;
   padding: 0px;
 }
