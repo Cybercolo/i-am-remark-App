@@ -252,13 +252,13 @@ export default {
     }
 
     let cameraPositionCounter = 0;
-    let bubblesContainer = document.getElementById("bubbles");
+    let bubblesContainer = document.getElementById("card");
     let peopleIndex = 0;
 
     document.getElementById("forwards").addEventListener("click", function() {
       if (peopleIndex < people.length && peopleIndex >= 0) {
         peopleIndex++;
-        if (peopleIndex === 1) generateBubbles();
+        if (peopleIndex === 1) showBubbles();
         if ((peopleIndex - 1) % 5 === 0 || peopleIndex === 1) {
           cameraPositionCounter++;
           let targetPosition = getTargetPositionCamara(cameraPositionCounter, true);
@@ -306,16 +306,9 @@ export default {
       tween.start();
     }
 
-    function generateBubbles() {
-      people.forEach((item) => {
-        let bubble = document.createElement("div");
-        bubble.classList.add("bubble");
-        bubble.innerHTML = `<p>${item.name}</p>
-		<p>${item.description}</p>
-		<p>${item.country}</p>`;
-        bubblesContainer.appendChild(bubble);
-        bubblesContainer.style.display = "flex";
-      });
+    function showBubbles() {
+      bubblesContainer.style.transform = `translateX(0)`;
+      bubblesContainer.style.display = "flex";
     }
 
     function hideBubbles() {
