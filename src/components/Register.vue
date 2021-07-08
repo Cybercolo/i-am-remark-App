@@ -1,17 +1,17 @@
 <template>
-<section class="main-2">
-<div class="main-origen-2">
+    <section class="main-2">
+         <div class="main-origen-2">
                     <div class="main-principal-02">
                         <img class="flecha02" src="../images/2flechita.png">
                         <img class="estrellitas02" src="../images/estrellas3.png"> 
                         <input  class="main-alias-2" type="text" maxlength="10" placeholder="Name / Alias" size="10">   
-                    </div>
-                     <SelectCountries/> 
+        </div>
+            <SelectCountries/> 
                     <div class="main-why-2">
                         <textarea class="main-input-2" name="textarea" rows="4" minlength="10" size="4" maxlength="200" placeholder="I am remarkable because..."></textarea>
                         <p>Max 200 caracters</p>
                     </div>      
-                </div>                        
+        </div>                        
                 <div class="final02">
                     <img class="estrellas1" src="../images/2conjuntoestrellas.png">
                         <img class="corona2" src="../images/2corona.png">   
@@ -72,7 +72,7 @@
                 localStorage.name = this.name;
                 localStorage.remarkable = this.remarkable;
                 console.log(localStorage);
-                           }
+            }
         }
     }
 </script>

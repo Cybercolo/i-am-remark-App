@@ -1,5 +1,5 @@
 <template>
-  <div>
+  
     <body>
       <div class= "container02">
             <Header />
@@ -19,7 +19,7 @@
         </section>
       </div>-->
     </body>
-  </div>
+  
 </template>
 
 <script>
