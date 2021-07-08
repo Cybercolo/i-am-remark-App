@@ -1,11 +1,10 @@
 <template>
 <div>
-  <div id="forwards" style="position: absolute; top: 0; z-index: 100;">Siguiente</div>
   <div id="backwards" style="position: absolute; top: 30px; z-index: 100;">Anterior</div>
   <canvas id="canvas"></canvas>
   <Card />
-  <div class="boton2">
-    <router-link class="main_llevame_03" to="/MasUsuarios"> See More Storys </router-link>
+  <div id="forwards" class="boton2">
+    <a class="main_llevame_03"> See More Stories </a>
     <img class="corazon" src="../images/megusta.png" />
   </div>
 </div>
@@ -54,7 +53,7 @@ export default {
     // const camera = new THREE.OrthographicCamera(window.innerWidth / -2, window.innerWidth / 2, window.innerHeight / 2, window.innerHeight / -2, 1, 1000);
     camera.lookAt(getCameraTargetVector());
 
-    let cameraOriginalPosition = new THREE.Vector3(0, 1.5, 5);
+    let cameraOriginalPosition = new THREE.Vector3(0, 1.5, 6);
     camera.position.set(
       cameraOriginalPosition.x,
       cameraOriginalPosition.y,
@@ -221,7 +220,7 @@ export default {
     }
 
     function getCameraTargetVector() {
-      let cameraTargetVector = new THREE.Vector3(0, 1, camera.position.z - 15);
+      let cameraTargetVector = new THREE.Vector3(0, 1.2, camera.position.z - 15);
       return cameraTargetVector;
     }
 
@@ -252,6 +251,7 @@ export default {
           cameraOriginalPosition.y,
           cameraOriginalPosition.z
         );
+
         return targetPosition;
       }
       targetPosition = new THREE.Vector3(
@@ -266,11 +266,28 @@ export default {
     let bubblesContainer = document.getElementById("card-container");
     bubblesContainer.style.display = "none";
     let peopleIndex = 0;
+    let burbuja = document.getElementById("ocultar-main_usuario_03");
+    let estrellas = document.getElementById("ocultar-main_estrellas_03");
+    let corona = document.getElementById("ocultar-main_corona_03");
+    let compartir = document.getElementById("ocultar-main_compartir_03");
+
+    console.log(burbuja)
+    console.log(estrellas)
+    console.log(corona)
+    console.log(compartir)
+
+
 
     document.getElementById("forwards").addEventListener("click", function() {
       if (peopleIndex < people.length && peopleIndex >= 0) {
         peopleIndex++;
-        if (peopleIndex === 1) showBubbles();
+        if (peopleIndex === 1) {
+          showBubbles();
+          burbuja.style.display = "none";
+          estrellas.style.display = "none";
+          corona.style.display = "none";
+          compartir.style.display = "none";
+        }
         if ((peopleIndex - 1) % 5 === 0 || peopleIndex === 1) {
           cameraPositionCounter++;
           let targetPosition = getTargetPositionCamara(cameraPositionCounter, true);
@@ -286,7 +303,13 @@ export default {
     document.getElementById("backwards").addEventListener("click", function() {
       if (peopleIndex <= people.length && peopleIndex >= 1) {
         peopleIndex--;
-        if (peopleIndex === 0) hideBubbles();
+        if (peopleIndex === 0) {
+          hideBubbles();
+          burbuja.style.display = "flex";
+          estrellas.style.display = "block";
+          corona.style.display = "block";
+          compartir.style.display = "flex";
+        }
         if (peopleIndex % 5 === 0) {
           cameraPositionCounter--;
           let targetPosition = getTargetPositionCamara(cameraPositionCounter, false);
@@ -296,7 +319,6 @@ export default {
         if (peopleIndex !== 0) {
           // if its not the first one
           moveBubbles(bubblesContainer, peopleIndex - 2, false);
-
         }
       }
     });
@@ -313,6 +335,7 @@ export default {
             camera.position.z + 10
           );
           camera.lookAt(getCameraTargetVector());
+          console.log(getCameraTargetVector())
           ground.scale.y = 1 + cameraPositionCounter / 1.5;
         });
       tween.start();
@@ -373,7 +396,16 @@ export default {
 
 .boton2 {
   position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+}
 
+.main_llevame_03 {
+  height: auto;
+}
 
+#backwards {
+  display: none;
 }
 </style>

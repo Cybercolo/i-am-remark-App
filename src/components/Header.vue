@@ -1,6 +1,6 @@
 <template>
 <div>
-  <header>
+  <header class="header03">
     <img class="header_logo" src="../images/brand.png" alt="">
   </header>
 </div>
@@ -13,7 +13,7 @@ export default {
 </script>
 
 <style scoped>
-.header_logo {
-  z-index: 100;
+.main_usuario_03 {
+  margin-top: 10px;
 }
 </style>
