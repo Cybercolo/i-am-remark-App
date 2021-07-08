@@ -129,36 +129,43 @@ right:30px;
   
 } */
 
+/*** ESTILOS BOTÓN  ***/
 
 .btn-01 {
-  color:aliceblue;
-  background: rgba(26, 33, 58, 1);
-  border-radius: 40px;
-  width: 450px;
-  padding: 13px;
-  margin-top: -20px;
-  font-size: 1.1em;
+  background: #0D0C2F; /* color de fondo */
+  color: #fff; /* color de fuente */
+  border: 2px solid #0D0C2F; /* tamaño y color de borde */
+  padding: 15px 5px 10px 15px;
+  border-radius: 30px; /* redondear bordes */
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  display: inline-block;
+  text-decoration:none;
   font-family: 'Roboto Slab';
+  height: 30px;
+  width: 280px;
+  font-size: 20px;
   text-align: center;
-  text-decoration: none;
-  max-width: 250px;
    
  
 }
 
 .btn-01:hover {
-  background:rgba(26, 33, 58, 1); /*/* color de fuente hover */
+  color: #0D0C2F;/* color de fuente hover */
 }
 
 .btn-01::after {
   content: "";
-  background:rgba(26, 33, 58, 1); /* color de fondo hover */
+  background:#fff; /* color de fondo hover */
   position: absolute;
   z-index: -1;
-  padding: 12px;
+  padding: 12%;
   display: block;
   left: -20%;
   right: -20%;
+  top: 0;
+  bottom: 0;
   transform: skewX(-45deg) scale(0, 1);
   transition: all 0.3s ease;
 }
