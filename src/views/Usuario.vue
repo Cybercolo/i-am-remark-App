@@ -73,16 +73,17 @@ body {
 
 .main_corona_03 {
   position: relative;
-  bottom: 120px;
+  bottom: 150px;
   left: 10px;
 }
 
 .main_estrellas_03 {
-  top: 30px;
+  top: 50px;
 }
 
 .main_usuario_03 {
-  margin-top: 250px;
+  margin-top: 225px;
+  max-height: 100px;
 }
 
 .header03 {
@@ -91,6 +92,7 @@ body {
   margin: 0;
   top: 20px;
   right: 50%;
+  max-width: 140px;
   transform: translateX(50%);
 }
 </style>
