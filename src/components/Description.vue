@@ -1,8 +1,8 @@
 <template>
 <div>
-  <p>{{ Remarkable }}</p>
+  <h2>{{ Remarkable }}</h2>
   <p>{{ Country }}</p>
-  <p>{{ Name }}</p>
+  <h5>{{ Name }}</h5>
 </div>
 </template>
 

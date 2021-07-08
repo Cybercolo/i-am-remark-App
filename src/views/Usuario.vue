@@ -30,9 +30,6 @@
       <img class="corazon" src="../images/megusta.png" />
     </button>
   </div>
-  <div class="main_final_03">
-    <img class="main_flechita_03" src="../images/flecha-hacia-arriba.png" alt="" />
-  </div>
 </div>
 </template>
 

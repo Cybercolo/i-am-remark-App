@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h1>jaume pedaso de gato</h1>
+      
     </div>
 </template>
 
