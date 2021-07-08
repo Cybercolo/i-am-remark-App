@@ -91,6 +91,7 @@ body {
   margin: 0;
   top: 20px;
   right: 50%;
+  max-width: 120px;
   transform: translateX(50%);
 }
 </style>

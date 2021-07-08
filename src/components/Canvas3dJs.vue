@@ -271,11 +271,6 @@ export default {
     let corona = document.getElementById("ocultar-main_corona_03");
     let compartir = document.getElementById("ocultar-main_compartir_03");
 
-    console.log(burbuja)
-    console.log(estrellas)
-    console.log(corona)
-    console.log(compartir)
-
 
 
     document.getElementById("forwards").addEventListener("click", function() {
@@ -335,7 +330,6 @@ export default {
             camera.position.z + 10
           );
           camera.lookAt(getCameraTargetVector());
-          console.log(getCameraTargetVector())
           ground.scale.y = 1 + cameraPositionCounter / 1.5;
         });
       tween.start();
@@ -363,14 +357,6 @@ export default {
       bubblesContainer.style.transform = `translateX(-${(100 / people.length) * nextIndex}%)`;
     }
 
-
-
-
-
-
-
-
-
     //////////////////// LOOP ////////////////////
     function animate() {
       requestAnimationFrame(animate);
@@ -392,6 +378,7 @@ export default {
   position: absolute;
   top: 0;
   z-index: 0;
+
 }
 
 .boton2 {
@@ -403,6 +390,7 @@ export default {
 
 .main_llevame_03 {
   height: auto;
+  cursor: pointer;
 }
 
 #backwards {
