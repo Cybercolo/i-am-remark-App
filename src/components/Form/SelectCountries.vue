@@ -1,7 +1,7 @@
 <template>
-  <div>
-    <select class="main-country-2" @click="dataLocal" v-model="country">
-      <option selected disabled value="CERO"> Choose your Country </option>
+  <div class="select">
+    <select class="main-country-2"  @click="dataLocal" v-model="country">
+      <option class="CERO"> Country </option>
       <option v-for="pais in paises" :key="pais">
         {{ pais }}
       </option>
