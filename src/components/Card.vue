@@ -86,13 +86,18 @@ p {
 }
 
 .card {
+  box-sizing: border-box;
   width: 100vw;
-  padding: 120px 20vw 0 20vw;
+  margin: 120px 0 0 0;
+  padding: 10px 20px 10px 20px;
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 20px;
 }
 
 h5 {
   font-size: 1em;
   margin: 0;
-  margin-top: 20px;
+  margin-top: 40px;
 }
 </style>
