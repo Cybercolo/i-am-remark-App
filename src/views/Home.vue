@@ -15,7 +15,6 @@
   </div>
 
 
-
   <div class="all">
     <img class="main_pic_allPeople_pg_01" src="../images/allPeople.png" />
   </div>
