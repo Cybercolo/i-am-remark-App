@@ -5,7 +5,7 @@
     <br>
     <p>{{ person.country }}</p>
     <br>
-    <p>{{ person.name }}</p>
+    <h5>{{ person.name }}</h5>
   </div>
 </div>
 </template>
@@ -72,18 +72,32 @@ export default {
 <style scoped>
 * {
   box-sizing: border-box;
+  overflow: hidden;
+}
+
+.card-container {
+  position: fixed;
+  overflow: hidden;
+  display: flex;
 }
 
 p {
   float: left;
 }
 
-.card-container {
-  display: flex;
+.card {
+  box-sizing: border-box;
+  width: 100vw;
+  margin: 120px 0 0 0;
+  padding: 10px 20px 10px 20px;
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 20px;
 }
 
-.card {
-  width: 100vw;
-  padding: 100px 100px;
+h5 {
+  font-size: 1em;
+  margin: 0;
+  margin-top: 40px;
 }
 </style>
