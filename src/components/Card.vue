@@ -83,6 +83,7 @@ export default {
 
 p {
   float: left;
+  font-size: 1em;
 }
 
 .card {
