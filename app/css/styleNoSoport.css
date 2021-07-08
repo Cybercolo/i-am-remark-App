@@ -1,0 +1,29 @@
+/*@media (max-height: 1010px) {
+    
+}*/
+
+@media (max-height: 600px){
+
+        .container03 {
+            display: none;
+
+        }
+
+        body {
+            background: rgb(221, 229, 234);
+        }
+        .noSoporte {
+            display:flex;
+            justify-content: center;
+            position: absolute;
+            top: 200px;  
+            width: 100%;
+            left: 10px;
+            font-weight: 900px;
+            font-size: 90px;  
+            font-family: Roboto-Slab; 
+            
+          }
+          
+        
+}
