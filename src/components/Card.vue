@@ -1,5 +1,5 @@
 <template>
-<div class="card-container">
+<div id="card-container" class="card-container">
   <div class="card" v-for="person in people" :key="person">
     <p>{{ person.description }}</p>
     <br>
@@ -70,12 +70,15 @@ export default {
 </script>
 
 <style scoped>
+* {
+  box-sizing: border-box;
+}
+
 p {
   float: left;
 }
 
 .card-container {
-  position: absolute;
   display: flex;
 }
 

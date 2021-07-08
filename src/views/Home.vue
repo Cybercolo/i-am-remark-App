@@ -16,9 +16,6 @@
     <a href="/Formulario" class="btn-01"> Why are you remarkable? </a>
   </div>
 
-
-  <router-link to="/Formulario"> ttetet </router-link>
-
   <div class=" all">
     <img class="main_pic_allPeople_pg_01" src="../images/allPeople.png" />
   </div>

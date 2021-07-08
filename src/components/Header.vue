@@ -12,6 +12,8 @@ export default {
 }
 </script>
 
-<style >
-
+<style scoped>
+.header_logo {
+  z-index: 100;
+}
 </style>

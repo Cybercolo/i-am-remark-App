@@ -1,14 +1,18 @@
 <template>
 <div>
-  <div id="bubbles">
-  </div>
   <div id="forwards" style="position: absolute; top: 0; z-index: 100;">Siguiente</div>
   <div id="backwards" style="position: absolute; top: 30px; z-index: 100;">Anterior</div>
   <canvas id="canvas"></canvas>
+  <Card />
+  <div class="boton2">
+    <router-link class="main_llevame_03" to="/MasUsuarios"> See More Storys </router-link>
+    <img class="corazon" src="../images/megusta.png" />
+  </div>
 </div>
 </template>
 
 <script>
+import Card from "./Card.vue"
 import * as THREE from "../assets/libraries/three.module.js";
 import * as TWEEN from "../assets/libraries/tween.esm.js";
 import {
@@ -21,6 +25,9 @@ import {
 
 export default {
   name: 'Canvas3dJs',
+  components: {
+    Card
+  },
   mounted() {
     let colors = [0xc4ec6e, 0x7089fa, 0xef86f7, 0xb681eb];
 
@@ -194,6 +201,10 @@ export default {
       longerGroundScroll(e);
     });
 
+
+
+
+
     function moveCameraYScroll(e) {
       if (e.deltaY < 0) {
         // if moves to the front
@@ -252,7 +263,8 @@ export default {
     }
 
     let cameraPositionCounter = 0;
-    let bubblesContainer = document.getElementById("card");
+    let bubblesContainer = document.getElementById("card-container");
+    bubblesContainer.style.display = "none";
     let peopleIndex = 0;
 
     document.getElementById("forwards").addEventListener("click", function() {
@@ -316,12 +328,6 @@ export default {
       bubblesContainer.style.display = "none";
     }
 
-    // RETURNS THE INDEX OF THE ITEM IN ARRAY
-    // function getIndex(item) {
-    // 	let index = people.indexOf(item);
-    // 	return index;
-    // }
-
     // MOVES THE OBJECT THE EXACT AMOUNT TO BE CENTERED, BASED ON INDEX
     function moveBubbles(bubblesContainer, indexPeople, isFront) {
       let nextIndex;
@@ -334,6 +340,14 @@ export default {
       bubblesContainer.style.transform = `translateX(-${(100 / people.length) * nextIndex}%)`;
     }
 
+
+
+
+
+
+
+
+
     //////////////////// LOOP ////////////////////
     function animate() {
       requestAnimationFrame(animate);
@@ -345,8 +359,8 @@ export default {
     }
     animate();
     loadNextModel();
-
   }
+
 }
 </script>
 
@@ -355,5 +369,11 @@ export default {
   position: absolute;
   top: 0;
   z-index: 0;
+}
+
+.boton2 {
+  position: absolute;
+
+
 }
 </style>
