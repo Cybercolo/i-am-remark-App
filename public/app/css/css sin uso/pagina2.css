@@ -1,0 +1,134 @@
+/************************* PAGINA 02 ***************************************/
+
+body{
+display: flex;
+position: absolute;
+margin:0px;
+font-family: 'Roboto', sans-serif;
+
+}
+.container {
+    width: 100%;
+    height: 100vh;
+    position:fixed;
+    border:solid #9C895D 2px;
+    /* margin:10px; */
+    }
+.containerpg_02 {
+
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding:0;
+    box-sizing: border-box;   
+    background: radial-gradient(112.66% 58.05% at 48.31% -1.3%, rgba(255, 255, 255, 0.54) 16.78%, rgba(135, 237, 255, 0) 82.33%), linear-gradient(
+    0deg, #DDE9ED, #DDE9ED);  
+}
+.header-logo-2
+{
+    color: #202124;
+    font-family: 'Raleway', sans-serif;
+    border-radius: 25px;
+    text-shadow: gainsboro;
+}
+.header-message:hover {
+    color:royalblue;
+}
+.main-2
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90vw;
+    height: 90vh;
+    font-size: 10px;
+    position:relative;
+       
+}
+.main-origen-2
+{
+    margin-bottom: 12px;
+    justify-content: space-around;
+    
+} 
+.main-input-2 {
+    box-shadow: 0px 0px 10px 0px silver inset;
+    background-color:snow;
+    font-family:Arial, Helvetica, sans-serif;
+    border-radius: 35px;
+    opacity: 0.9;
+    width: 50vw;
+    height: 40vh; 
+    border:none; 
+}
+
+.main-alias-2  {
+    box-shadow: inset 0px 4px 6px 0px grey;
+    font-family:Arial, Helvetica, sans-serif;
+    border-radius: 30px;
+    opacity: 0.9;
+    padding: 5px; 
+    border:none;    
+}
+
+.main-country-2  {
+    box-shadow: inset 0px 4px 6px 0px grey;
+    font-family:Arial, Helvetica, sans-serif;
+    width:150px;
+    height: 25px;
+    border-radius: 40px;
+    opacity: 0.9;
+    border:none; 
+ 
+  
+}
+
+/*** ESTILOS BOTÓN  ***/
+
+.button-send-2{
+    
+    background: #fff; /* color de fondo */
+    color: #0D0C2F; /* color de fuente */
+    border: 2px solid #0D0C2F; /* tamaño y color de borde */
+    padding: 12px;
+    border-radius: 30px; /* redondear bordes */
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    display: inline-block;
+    text-decoration:none;
+    font-family:Arial, Helvetica, sans-serif;
+    height: 51px;
+    font-size: 20px;
+    box-shadow: 0px 4px 6px 0px rgb(64, 73, 106);
+    
+}
+
+.button-send-2:hover {
+    color: #fff;/* color de fuente hover */
+  }
+  
+.button-send-2::after {
+    content: "";
+    background: #0D0C2F; /* color de fondo hover */
+    position: absolute;
+    z-index: -1;
+    padding: 12px;
+    display: block;
+    left: -20%;
+    right: -20%;
+    top: 0;
+    bottom: 0;
+    transform: skewX(-45deg) scale(0, 1);
+    transition: all 0.3s ease;
+  }
+  
+.button-send-2:hover::after {
+    transition: all 0.3s ease-out;
+    transform: skewX(-45deg) scale(1, 1);
+  }
+
+
+  /************************* PAGINA 02 ***************************************/

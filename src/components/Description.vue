@@ -1,8 +1,8 @@
 <template>
 <div>
+  <h2>I'm Remarkable because</h2>
   <p>{{ Remarkable }}</p>
-  <p>{{ Country }}</p>
-  <p>{{ Name }}</p>
+  <h5>{{ Name }}</h5>
 </div>
 </template>
 
@@ -37,4 +37,12 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+p {
+  max-width: 100%;
+}
+
+h2 {
+  margin: 5px 0px 5px 0px;
+}
+</style>

@@ -1,18 +1,18 @@
 <template>
-  <div>
-    <header> 
-      <img class="header_logo" src="../images/brand.png" alt="">
-    </header>      
-  </div>
+<header>
+  <img class="corner" src="../images/Vectorcorner.png">
+  <img class="header_logo" src="../images/brand.png" alt="">
+</header>
 </template>
 
 <script>
 export default {
-    name:'Header'
+  name: 'Header'
 }
-
 </script>
 
-<style>
-
+<style scoped>
+.main_usuario_03 {
+  margin-top: 10px;
+}
 </style>

@@ -101,11 +101,11 @@ header {
      
 }
 .main_pic_flecha_pg_01 {
-  pointer-events: none; 
-  align-self:center;
-  position: absolute;
-  top:0;
-  right:0;
+    pointer-events: none;
+    align-self: center;
+    position: static;
+    margin-top: -74px;
+    margin-right: -262px;
 
 }
 
@@ -471,6 +471,9 @@ a.button-send-2:hover::after {
 ****************************************************************/
 
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+.noSoporte {
+  display: none;
+}
 
 .container03 {
     width: 100%;
@@ -634,11 +637,11 @@ align-items: center;
 
 } */
 .main_imgCompartir_03{
-    width: 15px;
-    height: 15px;
+    width: 30px;
+    height: 30px;
     position: absolute;
     z-index: 4;
-    margin-left: 17px;
+    
     
 }
 
@@ -663,8 +666,8 @@ align-items: center;
     cursor: pointer;
    
 }
-/*.main_com_03{
-  
+.main_com_03{
+
     background-color:  #FAFCFB;
     border-radius: 50px;
     padding: 20px;    
@@ -672,11 +675,12 @@ align-items: center;
     position: relative;
     z-index: 2;
     margin-left: 5px;
-    box-shadow: 
-    3px 3px 7px 0 rgb(255, 255, 255) inset,
-    -3px -3px 5px 0 rgba(0, 0, 0, .2) inset;
+    mix-blend-mode: multiply;
+    border: none;
+    width: 80px;
+    height: 75px;
     
-}*/
+}
 
 .main_comp1_03{
     z-index: 1;
@@ -763,10 +767,12 @@ align-items: center;
 ****************************************************************
 ****************************************************************/
 
-.container {
+.container04 {
+
   background: radial-gradient();
   box-sizing: border-box;
   width: 100%;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
