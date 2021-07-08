@@ -101,11 +101,11 @@ header {
      
 }
 .main_pic_flecha_pg_01 {
-  pointer-events: none; 
-  align-self:center;
-  position: absolute;
-  top:0;
-  right:0;
+    pointer-events: none;
+    align-self: center;
+    position: static;
+    margin-top: -74px;
+    margin-right: -262px;
 
 }
 
@@ -763,10 +763,12 @@ align-items: center;
 ****************************************************************
 ****************************************************************/
 
-.container {
+.container04 {
+
   background: radial-gradient();
   box-sizing: border-box;
   width: 100%;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
