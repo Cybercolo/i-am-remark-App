@@ -17,7 +17,7 @@
     <img id="ocultar-main_estrellas_03" class="main_estrellas_03" src="../images/estrellas.png" />
     <img id="ocultar-main_corona_03" class="main_corona_03" src="../images/corona.png" />
 
-    <div id="ocultar-main_compartir_03" class="main_compartir_03">
+    <div @click="downloadImg" id="ocultar-main_compartir_03" class="main_compartir_03">
       <button class="main_com_03"></button>
       <img class="main_imgCompartir_03" src="../images/share-2.png" alt="" />
       <img class="elipse" src="../images/elipse.png" />
@@ -33,14 +33,29 @@
 import Description from "@/components/Description.vue";
 
 import Canvas3dJs from "@/components/Canvas3dJs";
-
-
+import domtoimage from 'dom-to-image';
 export default {
   name: "Usuario",
   components: {
     Description,
     Canvas3dJs
   },
+  methods: {
+    downloadImg: function() {
+      console.log("descargaaaa");
+      domtoimage.toJpeg(document.getElementById('app'), {
+          quality: 0.95
+        })
+        .then(function(dataUrl) {
+          var link = document.createElement('a');
+          link.download = 'my-image-name.jpeg';
+          link.href = dataUrl;
+          link.click();
+        });
+    }
+  }
+
+
 };
 </script>
 
