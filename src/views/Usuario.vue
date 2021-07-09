@@ -1,7 +1,7 @@
 <template>
 <div>
-  <Canvas3dJs />
-  <div class="container03">
+ <Canvas3dJs />
+  <div id="torender" class="container03">
     <header class="header03">
       <img class="header_logo" src="../images/brand.png" alt="">
     </header>
@@ -42,13 +42,17 @@ export default {
   },
   methods: {
     downloadImg: function() {
-      console.log("descargaaaa");
-      domtoimage.toJpeg(document.getElementById('app'), {
-          quality: 0.95
+
+      domtoimage.toJpeg(document.getElementById('torender'), {
+          quality: 1,
+          height: 800,
+          width: 800,
+          bgcolor: "#dde8ec"
         })
         .then(function(dataUrl) {
+          
           var link = document.createElement('a');
-          link.download = 'my-image-name.jpeg';
+          link.download = 'i-am-remarkable.jpeg';
           link.href = dataUrl;
           link.click();
         });
